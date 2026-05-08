@@ -34,7 +34,7 @@ const guidelines = [
   { icon: "📏", title: "Extensión", desc: "El resumen descriptivo o analítico debe contener un máximo de 300 palabras." },
   { icon: "📊", title: "Formato empírico", desc: "Incluir claramente Contexto/Justificación, Metodología/Diseño, Resultados Clave e Implicaciones para la conservación." },
   { icon: "📖", title: "Formato de relatos", desc: "Incluir Situación abordada, Acciones implementadas, Desafíos superados e Impacto en la comunidad/biodiversidad." },
-  { icon: "🤝", title: "Lenguaje y Ética", desc: "Fomentamos el lenguaje inclusivo. Proyectos con pueblos indígenas deben certificar consentimiento informado. Se acepta síntesis en lengua originaria." },
+  { icon: "🤝", title: "Lenguaje y Ética", desc: "Fomentamos el uso de lenguaje inclusivo y ética taxonómica. Proyectos con pueblos indígenas deben certificar consentimiento informado." },
 ];
 ---
 
@@ -42,7 +42,7 @@ const guidelines = [
   title="Llamado de Resúmenes"
   description="Llamado a la Presentación de Resúmenes: III Congreso Peruano de Primatología. Integrando Ciencias, Saberes y Sociedad para la Conservación en el Perú."
   heroTitle="Llamado de Resúmenes"
-  heroSubtitle="III Congreso Peruano de Primatología 2026: Integrando Ciencias, Saberes y Sociedad"
+  heroSubtitle="III Congreso Peruano de Primatología: Integrando Ciencias, Saberes y Sociedad para la Conservación en el Perú"
   heroColor="var(--forest-mid)"
 >
 
@@ -61,8 +61,10 @@ const guidelines = [
         </div>
 
         <p class="call-desc reveal">
-          El Comité Organizador del III Congreso Peruano de Primatología se complace en invitar a investigadores, estudiantes, gestores de áreas protegidas, organizaciones indígenas, comunidades locales y comunicadores a presentar sus contribuciones. 
-          Alineados con el Plan Nacional de Conservación de Primates Amenazados (2019-2029), este congreso es una plataforma para articular esfuerzos interdisciplinarios y construir soluciones colaborativas.
+          <strong>Lugar:</strong> Facultad de Medicina Veterinaria UNMSM (Av. Circunvalación 28, San Borja, Lima).<br /><br />
+          El Comité Organizador del III Congreso Peruano de Primatología se complace en invitar a investigadores, estudiantes, gestores de áreas protegidas, organizaciones indígenas, comunidades locales, centros de rescate y fotógrafos de conservación a presentar sus propuestas. 
+          Alineados con el Plan Nacional de Conservación de Primates Amenazados del Perú (2019-2029) impulsado por el SERFOR, este congreso es una plataforma para articular esfuerzos interdisciplinarios y construir soluciones de manejo colaborativo.
+          Hacemos un llamado a investigaciones rigurosas y experiencias de base que exploren la biología evolutiva, el bienestar animal y el rol humano en la persistencia de las especies.
         </p>
       </div>
     </div>
@@ -102,11 +104,11 @@ const guidelines = [
       <div class="formats-grid">
         {[
           { icon: "🎤", name: "Ponencias Orales", time: "15 min", desc: "Presentación de datos empíricos, resultados de investigaciones biológicas o análisis sociales cuantitativos/cualitativos.", badge: "" },
-          { icon: "📖", name: "Relatos de Experiencia", time: "15 min", desc: "Para gestores, guardaparques y comunidades. Narrativa práctica de conservación, desafíos y lecciones aprendidas.", badge: "Nuevo" },
-          { icon: "⚡", name: "Charlas Relámpago", time: "5 min", desc: "Formato visual ágil para investigaciones en curso, innovaciones tecnológicas o estado de conservación.", badge: "Rápido" },
-          { icon: "📌", name: "Pósteres Visuales", time: "Digital / Físico", desc: "Infografías científicas, mapas participativos o colecciones de fotografía orientadas a la divulgación.", badge: "" },
-          { icon: "🗣️", name: "Simposios / Mesas Redondas", time: "90 min", desc: "Panel multidisciplinario garantizando representatividad (voces científicas + actores locales).", badge: "Grupal" },
-          { icon: "🛠️", name: "Talleres Colaborativos", time: "Práctico", desc: "Sesiones de transferencia de habilidades prácticas (técnicas, analíticas o de políticas).", badge: "" }
+          { icon: "📖", name: "Relatos de Experiencia", time: "15 min", desc: "Modalidad para gestores y comunidades; se centra en la narrativa práctica de la conservación y lecciones operativas.", badge: "Práctico" },
+          { icon: "⚡", name: "Charlas Relámpago", time: "5 min", desc: "Formato visual ágil para investigaciones en curso, innovaciones tecnológicas o denuncias de conservación.", badge: "Lightning" },
+          { icon: "📌", name: "Pósteres y Exposiciones", time: "Digital / Físico", desc: "Infografías científicas, mapas participativos o colecciones de fotografía/arte orientadas a la divulgación.", badge: "" },
+          { icon: "🗣️", name: "Simposios / Mesas Redondas", time: "90 min", desc: "Panel multidisciplinario para discutir temas críticos, garantizando la integración de diversas voces.", badge: "90 min" },
+          { icon: "🛠️", name: "Talleres Colaborativos", time: "Sesiones", desc: "Sesiones de transferencia de habilidades prácticas, técnicas, analíticas o de políticas.", badge: "" }
         ].map((f, i) => (
           <div class={`format-card reveal reveal-delay-${i+1}`}>
             <div class="format-card__icon">{f.icon}</div>
@@ -142,10 +144,10 @@ const guidelines = [
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">Matriz de 100 puntos</span>
-        <h2 class="section-title">Criterios de Evaluación</h2>
+        <span class="section-label">Proceso de Evaluación</span>
+        <h2 class="section-title">Evaluación por Pares</h2>
         <p class="section-subtitle">
-          Valoramos de manera equitativa la solidez técnica-metodológica y la aplicabilidad práctica para la solución de problemas descritos en el Plan Nacional del SERFOR.
+          Un Comité Científico Transdisciplinario revisará los resúmenes mediante un proceso ciego, empleando rúbricas que valoran la solidez técnica y la aplicabilidad práctica según el Plan Nacional del SERFOR (hábitats, caza y gobernanza).
         </p>
       </div>
 
@@ -224,6 +226,25 @@ const guidelines = [
     </div>
   </section>
 
+  <!-- Becas de Accesibilidad -->
+  <section class="section">
+    <div class="container">
+      <div class="scholarship-box reveal">
+        <div class="scholarship-box__content">
+          <span class="section-label">Equidad y Compromiso</span>
+          <h2 class="section-title">Becas de Accesibilidad</h2>
+          <p>
+            Reafirmando nuestro compromiso con la equidad, el congreso dispondrá de un número limitado de <strong>Becas de Apoyo de Viaje y Conectividad</strong> destinadas prioritariamente a miembros de organizaciones locales de la Amazonía/Andes, estudiantes peruanos e investigadores en etapas tempranas de su carrera.
+          </p>
+          <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            * Las bases de postulación se encuentran disponibles en nuestro portal de inscripciones.
+          </p>
+        </div>
+        <div class="scholarship-box__icon">🎓</div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ Acordeón -->
   <section class="section">
     <div class="container">
@@ -257,10 +278,10 @@ const guidelines = [
         ¿Listo para enviar tu resumen?
       </h2>
       <p style="color:rgba(255,255,255,0.7); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto;">
-        Tienes hasta el <strong style="color:var(--gold);">15 de junio de 2026</strong> para enviar tu investigación. Trabajemos juntos para diseñar el futuro de la primatología en el Perú. Consultas a: primatesperuapp@gmail.com
+        Tienes hasta el <strong style="color:var(--gold);">15 de junio de 2026</strong> para enviar tu resumen. Notificación de resultados: <strong>1 de julio de 2026</strong>. Trabajemos juntos para diseñar el futuro de la primatología en el Perú.
       </p>
       <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="cta-enviar-resumen">
-        📋 Enviar Resumen Ahora
+        📋 Enviar Resumen
       </a>
     </div>
   </section>
@@ -449,5 +470,23 @@ const guidelines = [
     color: var(--text-muted);
     line-height: 1.7;
     padding-top: 1rem;
+  }
+
+  /* Scholarship Box */
+  .scholarship-box {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+    background: var(--forest-soft);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.2);
+  }
+  [data-theme="dark"] .scholarship-box { background: rgba(26,58,46,0.3); }
+  .scholarship-box__content { flex: 1; }
+  .scholarship-box__icon { font-size: 5rem; opacity: 0.2; }
+  @media (max-width: 768px) {
+    .scholarship-box { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem; }
+    .scholarship-box__icon { font-size: 3rem; order: -1; }
   }
 </style>
