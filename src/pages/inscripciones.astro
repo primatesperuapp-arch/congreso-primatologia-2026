@@ -66,6 +66,72 @@ import pricing from '../data/pricing.json';
     </div>
   </section>
 
+  <!-- Payment Info -->
+  <section class="section" id="pago">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Registro</span>
+        <h2 class="section-title">Información de Pago</h2>
+      </div>
+
+      <div class="payment-grid">
+        <!-- Bank Details Card -->
+        <div class="payment-card reveal">
+          <div class="payment-card__header">
+            <div class="payment-card__icon">🏦</div>
+            <h3 class="payment-card__title">Datos Bancarios</h3>
+          </div>
+          <div class="payment-card__body">
+            <ul class="bank-details">
+              <li><span>Titular:</span> <strong>Estación Biológica Kawsay</strong></li>
+              <li><span>RUC:</span> <strong>20607343609</strong></li>
+              <li><span>Banco:</span> <strong>Banco Interbank</strong></li>
+              <li><span>Tipo de cuenta:</span> <strong>Cuenta Corriente Soles</strong></li>
+              <li><span>Cuenta:</span> <strong>335-3003392978</strong></li>
+              <li><span>CCI:</span> <strong>003-335-003003392978-74</strong></li>
+              <li><span>Yape / Plin:</span> <strong>966 381 468 — Raúl Bello</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Steps Card -->
+        <div class="payment-card reveal reveal-delay-2">
+          <div class="payment-card__header">
+            <div class="payment-card__icon">📝</div>
+            <h3 class="payment-card__title">Pasos para registrar tu pago</h3>
+          </div>
+          <div class="payment-card__body">
+            <ol class="payment-steps">
+              <li>
+                <strong>Realiza la transferencia o depósito:</strong> 
+                Guarda una imagen legible de tu comprobante (voucher) donde se vea claramente el monto, fecha y número de operación.
+              </li>
+              <li>
+                <strong>Completa el formulario:</strong> 
+                Ingresa tus datos en el enlace de registro de pago que encontrarás debajo.
+              </li>
+              <li>
+                <strong>Ten tus datos a la mano:</strong> 
+                Se solicitará tu número de DNI, Pasaporte o Carné de Extranjería.
+              </li>
+            </ol>
+            
+            <div class="invoice-info">
+              <h4>¿Necesitas factura?</h4>
+              <p>Si requieres factura institucional, deberás indicar el <strong>RUC (11 dígitos)</strong> y la <strong>Razón Social exacta</strong> en el formulario. De lo contrario, se emitirá boleta personal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="text-align:center; margin-top:3rem;">
+        <a href="https://forms.gle/nTKgiQEpBX1GJtc19" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="cta-registro-pago">
+          📋 Registrar mi Pago ahora →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Becas -->
   <section class="section" style="background: var(--cream-warm);">
     <div class="container">
@@ -282,6 +348,63 @@ import pricing from '../data/pricing.json';
   @media (max-width: 768px) {
     .discount-callout { flex-direction: column; text-align: center; gap: 1rem; }
   }
+
+  /* Payment Section */
+  .payment-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 1024px) {
+    .payment-grid { grid-template-columns: 1fr 1.2fr; }
+  }
+
+  .payment-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(82,183,136,0.15);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  [data-theme="dark"] .payment-card { background: rgba(26,58,46,0.55); }
+
+  .payment-card__header {
+    padding: 1.5rem 2rem;
+    background: rgba(82,183,136,0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(82,183,136,0.1);
+  }
+  .payment-card__icon { font-size: 2rem; }
+  .payment-card__title { font-family: var(--font-display); font-size: 1.2rem; color: var(--forest-mid); }
+  [data-theme="dark"] .payment-card__title { color: var(--forest-canopy); }
+
+  .payment-card__body { padding: 2rem; }
+
+  .bank-details { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .bank-details li { font-size: 0.95rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid rgba(82,183,136,0.05); padding-bottom: 0.5rem; }
+  .bank-details span { color: var(--text-muted); font-family: var(--font-ui); font-size: 0.75rem; text-transform: uppercase; font-weight: 700; }
+  .bank-details strong { color: var(--text-on-light); }
+  [data-theme="dark"] .bank-details strong { color: var(--text-on-dark); }
+
+  .payment-steps { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .payment-steps li { font-size: 0.95rem; color: var(--text-on-light); line-height: 1.6; }
+  [data-theme="dark"] .payment-steps li { color: var(--text-on-dark); }
+  .payment-steps strong { color: var(--forest-leaf); }
+
+  .invoice-info {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background: rgba(201,168,76,0.08);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius-sm);
+  }
+  .invoice-info h4 { font-family: var(--font-ui); font-size: 0.85rem; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .invoice-info p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
 
   /* Scholarships */
   .scholarships-grid {
