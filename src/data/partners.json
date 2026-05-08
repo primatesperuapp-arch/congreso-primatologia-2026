@@ -1,50 +1,65 @@
 [
   {
     "id": "org1",
-    "name": "Sociedad Peruana de Primatología",
-    "acronym": "SPP",
+    "name": "Asociación Peruana de Primatología",
+    "acronym": "APP",
     "type": "organizer",
-    "country": "Perú",
-    "url": "#"
+    "url": "https://primatologiaperu.org",
+    "logo": "images/organizadores/logo-app.png",
+    "useLogo": false
   },
   {
     "id": "org2",
-    "name": "Universidad Nacional Mayor de San Marcos",
-    "acronym": "UNMSM",
+    "name": "Facultad de Medicina Veterinaria UNMSM",
+    "acronym": "FMV",
     "type": "academic",
-    "country": "Perú",
-    "url": "https://www.unmsm.edu.pe"
+    "url": "#",
+    "logo": "images/aliados/logo-fmv.png",
+    "useLogo": false
   },
   {
     "id": "org3",
-    "name": "Servicio Nacional de Áreas Naturales Protegidas",
-    "acronym": "SERNANP",
-    "type": "government",
-    "country": "Perú",
-    "url": "https://www.sernanp.gob.pe"
+    "name": "Universidad Nacional Mayor de San Marcos",
+    "acronym": "UNMSM",
+    "type": "academic",
+    "url": "https://www.unmsm.edu.pe",
+    "logo": "images/aliados/logo-unmsm.png",
+    "useLogo": false
   },
   {
     "id": "org4",
-    "name": "Sociedad Latinoamericana de Primatología",
-    "acronym": "SLAPrim",
+    "name": "Yunkawasi",
+    "acronym": "Yunkawasi",
     "type": "partner",
-    "country": "Latinoamérica",
-    "url": "#"
+    "url": "#",
+    "logo": "images/aliados/logo-yunkawasi.png",
+    "useLogo": false
   },
   {
     "id": "org5",
-    "name": "International Primatological Society",
-    "acronym": "IPS",
+    "name": "Proyecto Mono Tocón",
+    "acronym": "PMT",
     "type": "partner",
-    "country": "Internacional",
-    "url": "https://www.internationalprimatologicalsociety.org"
+    "url": "#",
+    "logo": "images/aliados/logo-mono-tocon.png",
+    "useLogo": false
   },
   {
     "id": "org6",
-    "name": "Wildlife Conservation Society",
-    "acronym": "WCS",
+    "name": "Kawsay",
+    "acronym": "Kawsay",
     "type": "partner",
-    "country": "Perú / Internacional",
-    "url": "https://peru.wcs.org"
+    "url": "#",
+    "logo": "images/aliados/logo-kawsay.png",
+    "useLogo": false
+  },
+  {
+    "id": "org7",
+    "name": "Neotropical Primates Conservation",
+    "acronym": "NPC",
+    "type": "partner",
+    "url": "#",
+    "logo": "images/aliados/logo-npc.png",
+    "useLogo": false
   }
 ]

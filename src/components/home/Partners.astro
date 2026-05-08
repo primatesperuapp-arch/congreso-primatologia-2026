@@ -1,5 +1,6 @@
 ---
 import partners from '../../data/partners.json';
+const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
 ---
 
 <section class="section partners" id="aliados">
@@ -21,7 +22,11 @@ import partners from '../../data/partners.json';
           class={`partner-card partner-card--${partner.type}`}
           title={partner.name}
         >
-          <div class="partner-card__acronym">{partner.acronym}</div>
+          {partner.useLogo ? (
+            <img src={`${base}${partner.logo}`} alt={`Logo ${partner.name}`} class="partner-card__logo" loading="lazy" />
+          ) : (
+            <div class="partner-card__acronym">{partner.acronym}</div>
+          )}
           <div class="partner-card__name">{partner.name}</div>
           <div class="partner-card__type">
             {partner.type === 'organizer' && '🏆 Organizador'}
@@ -100,6 +105,13 @@ import partners from '../../data/partners.json';
     line-height: 1;
   }
   [data-theme="dark"] .partner-card__acronym { color: var(--forest-canopy); }
+
+  .partner-card__logo {
+    max-width: 90px;
+    max-height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.2rem;
+  }
 
   .partner-card__name {
     font-family: var(--font-ui);
