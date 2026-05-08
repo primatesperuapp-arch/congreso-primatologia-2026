@@ -1,6 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
 
 const speakers = [
   { id: 1, name: "Dra. María del Carmen Huertas", title: "Investigadora Principal", affiliation: "Instituto de Biodiversidad Amazónica", country: "Perú", flag: "🇵🇪", area: "Ecología de primates", bio: "Especialista en ecología comportamental de primates con 20 años de investigación en la Amazonía peruana y colombiana. Directora del Programa de Monitoreo de Primates en la cuenca del Madre de Dios. Autora de más de 40 publicaciones en revistas indexadas.", initials: "MH", color: "#2d6a4f", type: "Magistral" },

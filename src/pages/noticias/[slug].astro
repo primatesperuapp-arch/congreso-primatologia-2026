@@ -1,6 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
 
 // Definición de artículos — en producción usar Astro Content Collections
 const articles: Record<string, any> = {

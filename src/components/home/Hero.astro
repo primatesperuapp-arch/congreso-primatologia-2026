@@ -1,6 +1,6 @@
 ---
 import site from '../../data/site.json';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
 ---
 
 <section class="hero" aria-label="Presentación del congreso">
@@ -26,7 +26,7 @@ const base = import.meta.env.BASE_URL;
 
       <!-- Main Headline -->
       <h1 class="hero__title animate-fade-up" style="animation-delay: 0.2s">
-        I Congreso Peruano de
+        III Congreso Peruano de
         <span class="hero__title-highlight"> Primatología</span>
         <span class="hero__title-year"> 2026</span>
       </h1>
