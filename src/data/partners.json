@@ -3,7 +3,6 @@
     "id": "org1",
     "name": "Asociación Peruana de Primatología",
     "acronym": "APP",
-    "type": "organizer",
     "url": "https://primatologiaperu.org",
     "logo": "images/aliados/logo_app.jpg",
     "useLogo": true
@@ -12,7 +11,6 @@
     "id": "org2",
     "name": "Facultad de Medicina Veterinaria UNMSM",
     "acronym": "FMV",
-    "type": "academic",
     "url": "#",
     "logo": "images/aliados/logo_fmv.png",
     "useLogo": true
@@ -21,7 +19,6 @@
     "id": "org3",
     "name": "Universidad Nacional Mayor de San Marcos",
     "acronym": "UNMSM",
-    "type": "academic",
     "url": "https://www.unmsm.edu.pe",
     "logo": "images/aliados/logo_unmsm.png",
     "useLogo": true
@@ -30,7 +27,6 @@
     "id": "org4",
     "name": "Yunkawasi",
     "acronym": "Yunkawasi",
-    "type": "partner",
     "url": "#",
     "logo": "images/aliados/logo_yunkawasi.png",
     "useLogo": true
@@ -39,7 +35,6 @@
     "id": "org5",
     "name": "Proyecto Mono Tocón",
     "acronym": "PMT",
-    "type": "partner",
     "url": "#",
     "logo": "images/aliados/logo_pmt.png",
     "useLogo": true
@@ -48,7 +43,6 @@
     "id": "org6",
     "name": "Kawsay",
     "acronym": "Kawsay",
-    "type": "partner",
     "url": "#",
     "logo": "images/aliados/logo-kawsay.png",
     "useLogo": true
@@ -57,7 +51,6 @@
     "id": "org7",
     "name": "Sección de Fauna Silvestre FMV",
     "acronym": "SFS-FMV",
-    "type": "partner",
     "url": "#",
     "logo": "images/aliados/logo_faunasilvestre.jpg",
     "useLogo": true
@@ -66,7 +59,6 @@
     "id": "org8",
     "name": "Neotropical Primate Conservation",
     "acronym": "NPC",
-    "type": "partner",
     "url": "#",
     "logo": "images/aliados/logo_npc.png",
     "useLogo": true
