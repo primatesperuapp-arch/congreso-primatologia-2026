@@ -22,11 +22,10 @@ const currentPath = Astro.url.pathname;
     <!-- Logo / Brand -->
     <a href={`${base}`} class="header__brand" aria-label="Inicio — Congreso Peruano de Primatología 2026">
       <div class="header__logo" aria-hidden="true">
-        <img src={`${base}favicon2.ico`} alt="Logo CPP 2026" width="40" height="40" />
+        <img src={`${base}favicon.png`} alt="Logo III Congreso Peruano de Primatología" width="45" height="45" style="object-fit: contain;" />
       </div>
       <div class="header__brand-text">
-        <span class="header__brand-main">CPP 2026</span>
-        <span class="header__brand-sub">Congreso Peruano de Primatología</span>
+        <span class="header__brand-main">III CONGRESO PERUANO DE PRIMATOLOGÍA 2026</span>
       </div>
     </a>
 
@@ -150,7 +149,7 @@ const currentPath = Astro.url.pathname;
 
   .header__brand-main {
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: clamp(0.7rem, 2vw, 1.1rem);
     font-weight: 700;
     color: var(--forest-mid);
   }
