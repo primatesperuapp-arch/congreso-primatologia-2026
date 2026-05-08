@@ -20,10 +20,13 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
             Un congreso nacido desde la Amazonía
           </h2>
           <p class="body-lg">
-            El <strong>I Congreso Peruano de Primatología 2026</strong> es el primer evento nacional dedicado exclusivamente al estudio, conservación y conocimiento de los primates del Perú. Nace de la necesidad urgente de articular a la comunidad científica, las instituciones gubernamentales y las comunidades locales en torno a los primates neotropicales, uno de los grupos taxonómicos más diversos y amenazados del mundo.
+            El <strong>III Congreso Peruano de Primatología 2026</strong> es el evento nacional dedicado al estudio, conservación y conocimiento de los primates del Perú. Nace de la necesidad urgente de articular a la comunidad científica, instituciones gubernamentales y comunidades locales en torno a los primates neotropicales.
           </p>
           <p>
-            Organizado por la Sociedad Peruana de Primatología (SPP) en alianza con universidades nacionales, organismos de gobierno y socios internacionales, el CPP 2026 es un espacio de encuentro, debate científico riguroso y generación de compromisos concretos para la conservación.
+            El territorio peruano alberga una de las diversidades de primates más extraordinarias del planeta. Con aproximadamente <strong>47 especies reconocidas (55 taxones)</strong>, el Perú se posiciona en la vanguardia de la biodiversidad. Resulta fundamental destacar que <strong>11 de estos taxones son estrictamente endémicos</strong>, lo que confiere al Estado y la sociedad peruana una responsabilidad ineludible en la custodia global de este patrimonio genético.
+          </p>
+          <p>
+            Organizado en alianza con universidades nacionales, organismos de gobierno y socios internacionales, el congreso es un espacio de debate científico riguroso y generación de compromisos concretos para la conservación participativa.
           </p>
         </div>
 
@@ -31,9 +34,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
           <h3 style="font-family:var(--font-display); font-size:1.1rem; color:var(--forest-mid); margin-bottom:1rem;">🇵🇪 El Perú en números</h3>
           <div style="display:flex; flex-direction:column; gap:0.85rem;">
             {[
-              { n: '~40', l: 'especies de primates registradas en Perú' },
-              { n: '12', l: 'especies en categoría de amenaza UICN' },
-              { n: '5', l: 'ecosistemas con poblaciones de primates' },
+              { n: '47', l: 'especies de primates registradas' },
+              { n: '11', l: 'taxones estrictamente endémicos' },
+              { n: '15', l: 'géneros representados en 5 familias' },
               { n: '4°', l: 'lugar mundial en diversidad de primates' },
             ].map(item => (
               <div style="display:flex; align-items:center; gap:0.75rem;">
@@ -80,29 +83,58 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
 
       <div class="conservation-text reveal">
         <p>
-          Perú es uno de los países megadiversos del mundo, albergando aproximadamente el <strong>10% de la diversidad de primates del planeta</strong>. La Amazonía peruana, junto con los bosques de selva alta o yunga, constituye el hábitat de especies únicas como el mono choro de cola amarilla (<em>Oreonax flavicauda</em>), endémico del Perú y actualmente en peligro crítico de extinción.
+          Más allá de su valor intrínseco y evolutivo, los primates desempeñan un rol ecológico, cultural y social insustituible. Como dispersores de semillas y polinizadores, son críticos para la regeneración natural de los bosques y su capacidad para actuar como sumideros de carbono frente al cambio climático. Culturalmente, están profundamente entrelazados con las cosmovisiones y medios de vida de los pueblos indígenas amazónicos y andinos.
         </p>
         <p>
-          A pesar de esta riqueza biológica, la primatología en el Perú sigue siendo una disciplina con escasos investigadores, limitada financiación y ausencia de redes de coordinación formales. La deforestación, la caza, el tráfico de fauna silvestre y la expansión agrícola continúan amenazando a poblaciones de primates en todo el territorio nacional.
+          A pesar de su importancia, presiones antropogénicas como la expansión agrícola, la minería ilegal y el tráfico han precipitado una crisis. Como respuesta, el Estado peruano, a través de SERFOR, promulgó el <strong>Plan Nacional de Conservación de los Primates Amenazados (2019–2029)</strong>, un documento rector para revertir este declive.
         </p>
 
         <div class="plan-box">
-          <h3 class="plan-box__title">📋 Plan Nacional de Conservación de Primates Amenazados del Perú</h3>
-          <p class="plan-box__text">
-            El CPP 2026 se alinea directamente con el <strong>Plan Nacional de Conservación de Primates Amenazados del Perú</strong>, impulsado por el SERNANP y el Ministerio del Ambiente. El congreso buscará generar insumos científicos y técnicos para actualizar y fortalecer este plan, incorporando los últimos avances en investigación genómica, ecología del paisaje y ciencia ciudadana.
+          <h3 class="plan-box__title">📋 Alineación Estratégica con SERFOR</h3>
+          <p class="plan-box__text" style="margin-bottom: 1rem;">
+            El congreso se ancla sistemáticamente en los objetivos y metas de este plan nacional, actuando como asamblea para:
           </p>
-          <div style="display:flex; gap:0.75rem; margin-top:1.25rem; flex-wrap:wrap;">
-            {['Mono choro de cola amarilla', 'Mono tocón andino', 'Huapo colorado', 'Pichico de Goeldi'].map(sp => (
-              <span class="badge badge-green">🐒 {sp}</span>
-            ))}
-          </div>
+          <ul style="font-size: 0.9rem; color: var(--text-on-light); line-height: 1.6; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Recuperación de Hábitats:</strong> Promoción de corredores ecológicos, modelamiento espacial y restauración de áreas degradadas (Línea de Acción 1).</li>
+            <li><strong>Reducción de Tráfico y Caza:</strong> Análisis de rutas de tráfico ilegal, rescate, protocolos veterinarios y acuerdos comunitarios de subsistencia (Líneas 2 y 4).</li>
+            <li><strong>Información Consistente:</strong> Levantamiento masivo de datos poblacionales, genómicos y taxonómicos para alimentar el SNIFFS estatal (Línea 5).</li>
+            <li><strong>Gobernanza Participativa:</strong> Fortalecimiento de capacidades técnicas con Gobiernos Regionales (GORE), ARFFS y organizaciones indígenas (Líneas 6, 7 y 8).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tendencias Globales -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Perspectiva Internacional</span>
+        <h2 class="section-title">Tendencias Globales en Primatología</h2>
+      </div>
+
+      <div class="mv-grid">
+        <div class="mv-card reveal">
+          <div class="mv-card__icon">🌍</div>
+          <h2 class="mv-card__title">El Modelo de la IPS</h2>
+          <p class="mv-card__text">
+            Siguiendo las innovaciones de la <em>International Primatological Society</em> (IPS), este congreso divide la presentación de resúmenes en formatos empíricos y descriptivos. Esto garantiza que el conocimiento generado por gestores y educadores no sea descalificado por evaluadores puramente positivistas.
+          </p>
+        </div>
+
+        <div class="mv-card reveal reveal-delay-2">
+          <div class="mv-card__icon">🚪</div>
+          <h2 class="mv-card__title">Apropiación Social</h2>
+          <p class="mv-card__text">
+            En sintonía con la <em>Sociedad Latinoamericana de Primatología</em> (SLAPrim), integraremos políticas de "puertas abiertas" para facilitar la apropiación de la ciencia mediante formatos interactivos, rompiendo los esquemas tradicionales de comunicación y fomentando la ciencia ciudadana.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Comité Científico -->
-  <section class="section" style="background: var(--cream-warm);">
+  <section class="section">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Organización</span>

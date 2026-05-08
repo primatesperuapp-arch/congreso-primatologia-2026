@@ -138,20 +138,88 @@ const guidelines = [
         ))}
       </div>
     </div>
-  <!-- Evaluacion y Becas -->
+  <!-- Criterios de Evaluación -->
   <section class="section">
-    <div class="container" style="display:grid; gap:2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-      <div class="reveal">
-        <h3 style="font-family:var(--font-display); color:var(--forest-mid); font-size:1.5rem; margin-bottom:1rem;">Proceso de Evaluación</h3>
-        <p style="color:var(--text-muted); line-height:1.7;">
-          Un Comité Científico Transdisciplinario revisará los resúmenes mediante un proceso ciego, empleando rúbricas que valoran de manera equitativa la solidez técnica-metodológica y la aplicabilidad práctica para la solución de problemas descritos en el Plan Nacional del SERFOR.
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Matriz de 100 puntos</span>
+        <h2 class="section-title">Criterios de Evaluación</h2>
+        <p class="section-subtitle">
+          Valoramos de manera equitativa la solidez técnica-metodológica y la aplicabilidad práctica para la solución de problemas descritos en el Plan Nacional del SERFOR.
         </p>
       </div>
-      <div class="reveal reveal-delay-2">
-        <h3 style="font-family:var(--font-display); color:var(--gold); font-size:1.5rem; margin-bottom:1rem;">Becas de Accesibilidad</h3>
-        <p style="color:var(--text-muted); line-height:1.7;">
-          Reafirmando nuestro compromiso con la equidad, el congreso dispondrá de un número limitado de Becas de Apoyo de Viaje y Conectividad destinadas prioritariamente a miembros de organizaciones locales de la Amazonía/Andes y estudiantes peruanos.
-        </p>
+
+      <div class="policy-table reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Dimensión</th>
+              <th>Enfoque Académico / Tecnológico</th>
+              <th>Enfoque de Relatos / Divulgación</th>
+              <th>Peso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Relevancia Estratégica</strong></td>
+              <td>Aborda vacíos y se vincula al Plan Nacional SERFOR.</td>
+              <td>Responde a amenazas locales o carencias educativas.</td>
+              <td class="policy-green">20%</td>
+            </tr>
+            <tr>
+              <td><strong>Rigor Metodológico</strong></td>
+              <td>Diseño robusto, replicable y ético.</td>
+              <td>Planificación estructurada y conocimiento del contexto.</td>
+              <td class="policy-green">25%</td>
+            </tr>
+            <tr>
+              <td><strong>Impacto y Efectividad</strong></td>
+              <td>Provee modelos predictivos, teóricos o de manejo.</td>
+              <td>Impactos tangibles (reducción de caza, empoderamiento).</td>
+              <td class="policy-green">25%</td>
+            </tr>
+            <tr>
+              <td><strong>Equidad y Ética</strong></td>
+              <td>Evita "ciencia paracaidista", colabora con pares locales.</td>
+              <td>Respeta saberes originarios y asegura representatividad.</td>
+              <td class="policy-green">15%</td>
+            </tr>
+            <tr>
+              <td><strong>Claridad Expositiva</strong></td>
+              <td>Excepcionalmente claro, sin jerga inaccesible.</td>
+              <td>Narrativa coherente, ilustra lecciones aprendidas.</td>
+              <td class="policy-green">15%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lenguaje Inclusivo -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Lineamientos Éticos</span>
+        <h2 class="section-title">Lenguaje y Terminología Descolonizada</h2>
+      </div>
+
+      <div class="guidelines-grid">
+        <div class="guideline-card reveal">
+          <span class="guideline-card__icon">🐒</span>
+          <h3 class="guideline-card__title">Terminología de Especies</h3>
+          <p class="guideline-card__desc">Se desaconseja el término "Monos del Nuevo Mundo". Instamos a usar designaciones taxonómicas (Platirrinos) o nombres vernáculos originarios (ej. sugkamat, musmuqui, maquisapa).</p>
+        </div>
+        <div class="guideline-card reveal reveal-delay-2">
+          <span class="guideline-card__icon">🧑🏽‍🌾</span>
+          <h3 class="guideline-card__title">Denominación de Comunidades</h3>
+          <p class="guideline-card__desc">Evitar lenguaje genérico o paternalista como "los pobladores" o "tribus". Identificar específicamente a la Nación o Pueblo con el que se colabora (ej. Nación Awajún, Pueblo Kichwa).</p>
+        </div>
+        <div class="guideline-card reveal reveal-delay-3">
+          <span class="guideline-card__icon">🗣️</span>
+          <h3 class="guideline-card__title">Inclusión Lingüística</h3>
+          <p class="guideline-card__desc">Se permite y fomenta enviar una versión complementaria del resumen o video corto en lenguas originarias relevantes para la zona de estudio (Quechua, Aymara, Shipibo-Konibo, etc.).</p>
+        </div>
       </div>
     </div>
   </section>
@@ -296,6 +364,42 @@ const guidelines = [
   .guideline-card__title { font-weight: 700; font-size: 0.97rem; color: var(--text-on-light); margin-bottom: 0.4rem; }
   [data-theme="dark"] .guideline-card__title { color: var(--text-on-dark); }
   .guideline-card__desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* Policy table */
+  .policy-table {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  .policy-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.85);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  [data-theme="dark"] .policy-table table { background: rgba(26,58,46,0.5); }
+  .policy-table th {
+    background: var(--forest-mid);
+    color: #fff;
+    padding: 0.85rem 1.25rem;
+    text-align: left;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .policy-table td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid rgba(82,183,136,0.1);
+    color: var(--text-on-light);
+    font-size: 0.87rem;
+  }
+  [data-theme="dark"] .policy-table td { color: var(--text-on-dark); border-color: rgba(82,183,136,0.15); }
+  .policy-table tr:hover td { background: rgba(82,183,136,0.04); }
+
+  .policy-green { color: var(--forest-leaf); font-weight: 700; text-align: center; }
 
   /* FAQ */
   .faq-list { display: flex; flex-direction: column; gap: 0.6rem; max-width: 800px; margin: 0 auto; }
