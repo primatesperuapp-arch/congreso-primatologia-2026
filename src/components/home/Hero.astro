@@ -76,56 +76,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     </div>
 
     <!-- Right Column — Visual -->
-    <div class="hero__visual animate-fade-up" style="animation-delay: 0.3s" aria-hidden="true">
-      <div class="hero__primate-card">
-        <div class="hero__primate-icon animate-float">
-          <!-- Decorative primate illustration -->
-          <svg viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero__svg-primate">
-            <!-- Body -->
-            <ellipse cx="140" cy="200" rx="65" ry="85" fill="#2d6a4f" opacity="0.9"/>
-            <!-- Head -->
-            <circle cx="140" cy="110" r="58" fill="#3a7a5c"/>
-            <!-- Face -->
-            <ellipse cx="140" cy="120" rx="36" ry="30" fill="#8b5e3c" opacity="0.7"/>
-            <!-- Eyes -->
-            <circle cx="124" cy="108" r="9" fill="#1a3a2e"/>
-            <circle cx="156" cy="108" r="9" fill="#1a3a2e"/>
-            <circle cx="126" cy="106" r="4" fill="#fff"/>
-            <circle cx="158" cy="106" r="4" fill="#fff"/>
-            <!-- Nose -->
-            <ellipse cx="140" cy="122" rx="8" ry="6" fill="#5c4033"/>
-            <!-- Ears -->
-            <circle cx="80" cy="105" r="22" fill="#3a7a5c"/>
-            <circle cx="80" cy="105" r="14" fill="#8b5e3c" opacity="0.6"/>
-            <circle cx="200" cy="105" r="22" fill="#3a7a5c"/>
-            <circle cx="200" cy="105" r="14" fill="#8b5e3c" opacity="0.6"/>
-            <!-- Arms -->
-            <ellipse cx="72" cy="210" rx="20" ry="60" fill="#2d6a4f" opacity="0.85" transform="rotate(-20 72 210)"/>
-            <ellipse cx="208" cy="210" rx="20" ry="60" fill="#2d6a4f" opacity="0.85" transform="rotate(20 208 210)"/>
-            <!-- Leaf accents -->
-            <ellipse cx="55" cy="175" rx="18" ry="10" fill="#52b788" opacity="0.7" transform="rotate(-30 55 175)"/>
-            <ellipse cx="225" cy="175" rx="18" ry="10" fill="#52b788" opacity="0.7" transform="rotate(30 225 175)"/>
-            <!-- Decorative circles -->
-            <circle cx="140" cy="110" r="62" stroke="#52b788" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.4"/>
-          </svg>
-        </div>
-
-        <!-- Floating info chips -->
-        <div class="hero__chip hero__chip--1">
-          <span>🧬</span> Genética molecular
-        </div>
-        <div class="hero__chip hero__chip--2">
-          <span>🌿</span> Ecología amazónica
-        </div>
-        <div class="hero__chip hero__chip--3">
-          <span>🏘️</span> Etnoprimatología
-        </div>
-        <div class="hero__chip hero__chip--4">
-          <span>🛡️</span> Conservación
-        </div>
-
-        <!-- Decorative ring -->
-        <div class="hero__ring" aria-hidden="true"></div>
+    <div class="hero__visual animate-fade-up" style="animation-delay: 0.3s">
+      <div class="hero__banner-wrapper">
+        <img src={`${base}images/banners/hero-banner.jpg`} alt="Afiche Oficial del III Congreso Peruano de Primatología" class="hero__banner-img" />
       </div>
     </div>
   </div>
@@ -343,71 +296,31 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     align-items: center;
   }
 
-  .hero__primate-card {
+  .hero__banner-wrapper {
     position: relative;
-    width: 320px;
-    height: 380px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero__primate-icon {
-    width: 260px;
-    height: 310px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero__svg-primate {
     width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
-  }
-
-  .hero__ring {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(82, 183, 136, 0.2);
-    animation: spin-slow 20s linear infinite;
-  }
-
-  @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
-
-  /* Floating chips */
-  .hero__chip {
-    position: absolute;
+    max-width: 480px;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.45rem 0.9rem;
-    background: rgba(13, 35, 24, 0.85);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(82,183,136,0.3);
-    border-radius: 100px;
-    font-family: var(--font-ui);
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.85);
-    font-weight: 500;
-    white-space: nowrap;
-    animation: float 3s ease-in-out infinite;
+    justify-content: center;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+    transition: transform var(--transition-slow);
   }
 
-  .hero__chip--1 { top: 10%; left: -30px; animation-delay: 0s; }
-  .hero__chip--2 { top: 30%; right: -25px; animation-delay: 0.8s; }
-  .hero__chip--3 { bottom: 30%; left: -20px; animation-delay: 1.4s; }
-  .hero__chip--4 { bottom: 15%; right: -20px; animation-delay: 0.5s; }
+  .hero__banner-wrapper:hover {
+    transform: translateY(-5px);
+  }
+
+  .hero__banner-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  }
 
   @media (max-width: 1023px) {
-    .hero__chip { display: none; }
-    .hero__primate-card { width: 240px; height: 290px; }
-    .hero__primate-icon { width: 200px; height: 240px; }
+    .hero__banner-wrapper { max-width: 320px; }
   }
 
   /* ── Scroll hint ─────────────────────────────────── */
