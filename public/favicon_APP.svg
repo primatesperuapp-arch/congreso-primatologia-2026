@@ -6,14 +6,18 @@
 	</defs>
 	<style>
 		tspan { white-space:pre } 
-		.t0 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #492e22;font-weight: 400;font-family: "Colaborate-Thin", "Colaborate" } 
-		.t1 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #492e22;font-weight: 400;font-family: "Colaborate-Bold", "Colaborate" } 
-		.t2 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #492e22;font-weight: 800;font-family: "Compacta BT" } 
+		.t0 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff;font-weight: 400;font-family: "Colaborate-Thin", "Colaborate" } 
+		.t1 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff;font-weight: 400;font-family: "Colaborate-Bold", "Colaborate" } 
+		.t2 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff;font-weight: 800;font-family: "Compacta BT" } 
 	</style>
 	<g id="logo 1">
-		<text id="asociación peruana de primatología" style="transform: matrix(1.874,0,0,1.867,443.156,1034.044)">
+		<text id="asociación peruana de primatolog" style="transform: matrix(1.874,0,0,1.867,443.156,1034.044)">
 			<tspan x="0" y="0" class="t0">A</tspan><tspan  y="0" class="t0">SOCIACIÓN PERUANA </tspan><tspan  y="0" class="t1">DE PRIMATOLOGÍA
 </tspan>
+		</text>
+		<text id="" transform="translate(1452,-483)">
+		</text>
+		<text id="" transform="translate(1381,1217)">
 		</text>
 		<text id="pp" style="transform: matrix(15.405,0,0,15.375,1563.516,929.205)">
 			<tspan x="-33.8" y="0" class="t2" dx="0 -1 -1" >PP
@@ -22,5 +26,7 @@
 		<use id="A" href="#img1" x="455" y="337"/>
 		<use id="A copy" href="#img2" x="455" y="337"/>
 		<use id="Layer 1" href="#img3" x="455" y="337"/>
+		<text id="" transform="translate(811,957)">
+		</text>
 	</g>
 </svg>
