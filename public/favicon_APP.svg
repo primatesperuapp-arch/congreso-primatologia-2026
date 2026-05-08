@@ -6,9 +6,9 @@
 	</defs>
 	<style>
 		tspan { white-space:pre } 
-		.t0 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff;font-weight: 400;font-family: "Colaborate-Thin", "Colaborate" } 
-		.t1 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff;font-weight: 400;font-family: "Colaborate-Bold", "Colaborate" } 
-		.t2 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff;font-weight: 800;font-family: "Compacta BT" } 
+		.t0 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff !important;font-weight: 400;font-family: "Colaborate-Thin", "Colaborate" } 
+		.t1 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff !important;font-weight: 400;font-family: "Colaborate-Bold", "Colaborate" } 
+		.t2 { font-size: 47px;line-height: 47px;text-transform: uppercase;fill: #ffffff !important;font-weight: 800;font-family: "Compacta BT" } 
 	</style>
 	<g id="logo 1">
 		<text id="asociación peruana de primatolog" style="transform: matrix(1.874,0,0,1.867,443.156,1034.044)">
