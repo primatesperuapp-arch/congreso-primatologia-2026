@@ -43,12 +43,12 @@ import pricing from '../data/pricing.json';
             {pricing.map((plan) => (
               <tr>
                 <td><strong>{plan.category}</strong></td>
-                <td class="price-val">US$ {plan.prices.early.app}</td>
-                <td class="price-val">US$ {plan.prices.early.noApp}</td>
-                <td class="price-val">US$ {plan.prices.regular.app}</td>
-                <td class="price-val">US$ {plan.prices.regular.noApp}</td>
-                <td class="price-val">US$ {plan.prices.onsite.app}</td>
-                <td class="price-val">US$ {plan.prices.onsite.noApp}</td>
+                <td class="price-val">S/ {plan.prices.early.app}</td>
+                <td class="price-val">S/ {plan.prices.early.noApp}</td>
+                <td class="price-val">S/ {plan.prices.regular.app}</td>
+                <td class="price-val">S/ {plan.prices.regular.noApp}</td>
+                <td class="price-val">S/ {plan.prices.onsite.app}</td>
+                <td class="price-val">S/ {plan.prices.onsite.noApp}</td>
               </tr>
             ))}
           </tbody>
@@ -59,7 +59,7 @@ import pricing from '../data/pricing.json';
         <div class="discount-callout__icon">👥</div>
         <div class="discount-callout__content">
           <h3>Inscripción Grupal</h3>
-          <p>Obtén un <strong>20% de descuento</strong> adicional según tu categoría para grupos de <strong>3 personas o más</strong>.</p>
+          <p>Obtén un <strong>20% de descuento</strong> adicional por grupos de <strong>3 personas o más</strong>. Para validar el descuento, se debe adjuntar el voucher con los nombres de todos los miembros del grupo.</p>
         </div>
         <a href="mailto:primatesperuapp@gmail.com" class="btn btn-primary">Solicitar descuento</a>
       </div>
