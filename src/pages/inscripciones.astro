@@ -1,0 +1,306 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import pricing from '../data/pricing.json';
+---
+
+<PageLayout
+  title="Inscripciones"
+  description="Información sobre categorías, precios, becas y proceso de inscripción al I Congreso Peruano de Primatología 2026."
+  heroTitle="Inscripciones"
+  heroSubtitle="Regístrate en el I Congreso Peruano de Primatología 2026"
+  heroColor="var(--earth-mid)"
+>
+  <!-- Early Bird Alert -->
+  <section class="section">
+    <div class="container">
+      <div class="early-bird-alert reveal">
+        <div class="early-bird-alert__icon">⏰</div>
+        <div>
+          <strong>Inscripciones Early Bird</strong> — Disponibles desde el 15 de agosto hasta el 15 de septiembre de 2026. ¡Hasta 25% de descuento!
+        </div>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="pricing-grid">
+        {pricing.map((plan, i) => (
+          <div class={`pricing-card reveal reveal-delay-${i+1} ${plan.featured ? 'pricing-card--featured' : ''}`}>
+            {plan.featured && <div class="pricing-card__featured-badge">⭐ Más popular</div>}
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__category">{plan.category}</h3>
+              <p class="pricing-card__desc">{plan.description}</p>
+            </div>
+
+            <div class="pricing-card__prices">
+              <div class="pricing-card__price pricing-card__price--early">
+                <span class="pricing-card__price-label">Early Bird</span>
+                <span class="pricing-card__price-amount">US$ {plan.prices.earlyBird}</span>
+                <span class="pricing-card__price-period">hasta 15 sep 2026</span>
+              </div>
+              <div class="pricing-card__price">
+                <span class="pricing-card__price-label">Regular</span>
+                <span class="pricing-card__price-amount pricing-card__price-regular">US$ {plan.prices.regular}</span>
+              </div>
+              <div class="pricing-card__price">
+                <span class="pricing-card__price-label">En sede</span>
+                <span class="pricing-card__price-amount pricing-card__price-regular">US$ {plan.prices.onsite}</span>
+              </div>
+            </div>
+
+            <ul class="pricing-card__includes">
+              {plan.includes.map(item => (
+                <li>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="https://forms.google.com"
+              target="_blank"
+              rel="noopener"
+              class={`btn ${plan.featured ? 'btn-primary' : 'btn-secondary'}`}
+              style="width:100%; justify-content:center; margin-top:auto;"
+              id={`inscripcion-${plan.category.toLowerCase().replace(/ /g,'-')}`}
+            >
+              Inscribirse — {plan.category}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Becas -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Apoyo económico</span>
+        <h2 class="section-title">Programa de Becas</h2>
+      </div>
+
+      <div class="scholarships-grid">
+        {[
+          { icon: "🎓", title: "Beca Estudiante Latinoamerica", desc: "20 becas parciales (50% del costo de inscripción) para estudiantes de posgrado de países latinoamericanos con proyectos en primatología.", req: "CV + resumen de proyecto + carta de aval institucional", deadline: "15 junio 2026" },
+          { icon: "🌿", title: "Beca Conservacionista Comunitario", desc: "Becas completas para representantes de comunidades indígenas o guardianes de territorios con primates amenazados.", req: "Carta de organización o comunidad + descripción del trabajo de conservación", deadline: "30 mayo 2026" },
+          { icon: "🌍", title: "Beca Early Career Researcher", desc: "Apoyo para investigadores en etapa inicial (menos de 5 años postdoctorales) de cualquier país, con énfasis en candidatos del Sur Global.", req: "CV + publicaciones recientes + propuesta de presentación", deadline: "30 junio 2026" },
+        ].map((b, i) => (
+          <div class={`scholarship-card reveal reveal-delay-${i+1}`}>
+            <div class="scholarship-card__icon">{b.icon}</div>
+            <h3 class="scholarship-card__title">{b.title}</h3>
+            <p class="scholarship-card__desc">{b.desc}</p>
+            <div class="scholarship-card__req">
+              <strong>Requisitos:</strong> {b.req}
+            </div>
+            <div class="scholarship-card__deadline">
+              📅 Postular hasta: <strong>{b.deadline}</strong>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="reveal" style="text-align:center; margin-top:2rem;">
+        <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn btn-primary" id="cta-becas">
+          Postular a una beca →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Política de cancelación -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Términos y condiciones</span>
+        <h2 class="section-title">Política de Cancelación</h2>
+      </div>
+
+      <div class="policy-table reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha de cancelación</th>
+              <th>Reembolso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Más de 60 días antes del congreso</td><td class="policy-green">100% reembolso</td></tr>
+            <tr><td>30–60 días antes</td><td class="policy-gold">75% reembolso</td></tr>
+            <tr><td>15–29 días antes</td><td class="policy-warn">50% reembolso</td></tr>
+            <tr><td>Menos de 15 días o no presentación</td><td class="policy-red">Sin reembolso</td></tr>
+          </tbody>
+        </table>
+        <p class="policy-note">* Las cancelaciones deben notificarse por escrito al correo oficial del congreso. El nombre del inscrito puede transferirse a otro participante sin cargo adicional antes de la fecha límite de inscripción.</p>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .early-bird-alert {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(232,201,126,0.07));
+    border: 1.5px solid rgba(201,168,76,0.3);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--text-on-light);
+    margin-bottom: 2.5rem;
+  }
+  [data-theme="dark"] .early-bird-alert { color: var(--text-on-dark); }
+  .early-bird-alert__icon { font-size: 1.75rem; flex-shrink: 0; }
+  .early-bird-alert strong { color: var(--gold); }
+
+  /* Pricing */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  @media (min-width: 768px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .pricing-card {
+    position: relative;
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1.5px solid rgba(82,183,136,0.15);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: all var(--transition-mid);
+  }
+  [data-theme="dark"] .pricing-card {
+    background: rgba(26,58,46,0.55);
+    border-color: rgba(82,183,136,0.2);
+  }
+  .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+  .pricing-card--featured {
+    border-color: var(--forest-leaf);
+    box-shadow: var(--shadow-md), 0 0 30px rgba(82,183,136,0.12);
+  }
+
+  .pricing-card__featured-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--forest-leaf);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 1rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .pricing-card__category {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--forest-mid);
+  }
+  [data-theme="dark"] .pricing-card__category { color: var(--forest-canopy); }
+  .pricing-card__desc { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+  .pricing-card__prices { display: flex; flex-direction: column; gap: 0.5rem; }
+  .pricing-card__price { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+  .pricing-card__price-label { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600; color: var(--text-muted); min-width: 70px; }
+  .pricing-card__price-amount { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--text-on-light); }
+  [data-theme="dark"] .pricing-card__price-amount { color: var(--text-on-dark); }
+  .pricing-card__price--early .pricing-card__price-amount { color: var(--forest-leaf); font-size: 1.7rem; }
+  .pricing-card__price-regular { font-size: 1rem; color: var(--text-muted); }
+  .pricing-card__price-period { font-size: 0.7rem; color: var(--text-muted); }
+
+  .pricing-card__includes {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 1px solid rgba(82,183,136,0.1);
+    padding-top: 1rem;
+  }
+  .pricing-card__includes li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .pricing-card__includes svg { color: var(--forest-leaf); flex-shrink: 0; }
+
+  /* Scholarships */
+  .scholarships-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 768px) { .scholarships-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .scholarship-card {
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.12);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  [data-theme="dark"] .scholarship-card { background: rgba(26,58,46,0.5); }
+
+  .scholarship-card__icon { font-size: 2.5rem; }
+  .scholarship-card__title { font-weight: 700; font-size: 1rem; color: var(--text-on-light); }
+  [data-theme="dark"] .scholarship-card__title { color: var(--text-on-dark); }
+  .scholarship-card__desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
+  .scholarship-card__req {
+    font-size: 0.8rem; color: var(--text-muted); line-height: 1.55;
+    padding: 0.75rem; background: rgba(82,183,136,0.06); border-radius: var(--radius-sm);
+  }
+  .scholarship-card__deadline {
+    font-family: var(--font-ui); font-size: 0.78rem; color: var(--text-muted);
+  }
+  .scholarship-card__deadline strong { color: var(--gold); }
+
+  /* Policy table */
+  .policy-table {
+    max-width: 680px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  .policy-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .policy-table th {
+    background: var(--forest-mid);
+    color: #fff;
+    padding: 0.85rem 1.25rem;
+    text-align: left;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .policy-table td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid rgba(82,183,136,0.1);
+    color: var(--text-on-light);
+    font-size: 0.87rem;
+  }
+  [data-theme="dark"] .policy-table td { color: var(--text-on-dark); border-color: rgba(82,183,136,0.15); }
+  .policy-table tr:hover td { background: rgba(82,183,136,0.04); }
+
+  .policy-green { color: var(--forest-leaf); font-weight: 700; }
+  .policy-gold  { color: var(--gold); font-weight: 700; }
+  .policy-warn  { color: #e07b54; font-weight: 700; }
+  .policy-red   { color: #e05454; font-weight: 700; }
+
+  .policy-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6; }
+</style>

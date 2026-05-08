@@ -1,0 +1,451 @@
+---
+import site from '../../data/site.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="hero" aria-label="Presentación del congreso">
+  <!-- Background layers -->
+  <div class="hero__bg">
+    <div class="hero__bg-gradient"></div>
+    <div class="hero__bg-pattern"></div>
+    <div class="hero__particles" aria-hidden="true">
+      {Array.from({length: 12}).map((_, i) => (
+        <div class="hero__particle" style={`--delay: ${i * 0.4}s; --x: ${10 + i * 7}%; --size: ${4 + (i % 4) * 3}px;`}></div>
+      ))}
+    </div>
+  </div>
+
+  <div class="container hero__content">
+    <!-- Left Column -->
+    <div class="hero__text">
+      <!-- Label -->
+      <div class="hero__label animate-fade-up" style="animation-delay: 0.1s">
+        <span class="badge badge-leaf">🇵🇪 Lima, Perú</span>
+        <span class="badge badge-gold">Octubre 2026</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero__title animate-fade-up" style="animation-delay: 0.2s">
+        I Congreso Peruano de
+        <span class="hero__title-highlight"> Primatología</span>
+        <span class="hero__title-year"> 2026</span>
+      </h1>
+
+      <!-- Slogan -->
+      <p class="hero__slogan animate-fade-up" style="animation-delay: 0.35s">
+        {site.slogan}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero__ctas animate-fade-up" style="animation-delay: 0.5s">
+        <a href={`${base}llamado-de-resumenes`} class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Enviar Resumen
+        </a>
+        <a href={`${base}inscripciones`} class="btn btn-gold btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Inscribirse
+        </a>
+        <a href={`${base}programa`} class="btn btn-ghost btn-lg">
+          Ver Programa →
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero__stats animate-fade-up" style="animation-delay: 0.65s">
+        <div class="hero__stat">
+          <span class="hero__stat-number">3</span>
+          <span class="hero__stat-label">Días</span>
+        </div>
+        <div class="hero__stat-divider" aria-hidden="true"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">6</span>
+          <span class="hero__stat-label">Ejes Temáticos</span>
+        </div>
+        <div class="hero__stat-divider" aria-hidden="true"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">+20</span>
+          <span class="hero__stat-label">Países</span>
+        </div>
+        <div class="hero__stat-divider" aria-hidden="true"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">+200</span>
+          <span class="hero__stat-label">Participantes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column — Visual -->
+    <div class="hero__visual animate-fade-up" style="animation-delay: 0.3s" aria-hidden="true">
+      <div class="hero__primate-card">
+        <div class="hero__primate-icon animate-float">
+          <!-- Decorative primate illustration -->
+          <svg viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero__svg-primate">
+            <!-- Body -->
+            <ellipse cx="140" cy="200" rx="65" ry="85" fill="#2d6a4f" opacity="0.9"/>
+            <!-- Head -->
+            <circle cx="140" cy="110" r="58" fill="#3a7a5c"/>
+            <!-- Face -->
+            <ellipse cx="140" cy="120" rx="36" ry="30" fill="#8b5e3c" opacity="0.7"/>
+            <!-- Eyes -->
+            <circle cx="124" cy="108" r="9" fill="#1a3a2e"/>
+            <circle cx="156" cy="108" r="9" fill="#1a3a2e"/>
+            <circle cx="126" cy="106" r="4" fill="#fff"/>
+            <circle cx="158" cy="106" r="4" fill="#fff"/>
+            <!-- Nose -->
+            <ellipse cx="140" cy="122" rx="8" ry="6" fill="#5c4033"/>
+            <!-- Ears -->
+            <circle cx="80" cy="105" r="22" fill="#3a7a5c"/>
+            <circle cx="80" cy="105" r="14" fill="#8b5e3c" opacity="0.6"/>
+            <circle cx="200" cy="105" r="22" fill="#3a7a5c"/>
+            <circle cx="200" cy="105" r="14" fill="#8b5e3c" opacity="0.6"/>
+            <!-- Arms -->
+            <ellipse cx="72" cy="210" rx="20" ry="60" fill="#2d6a4f" opacity="0.85" transform="rotate(-20 72 210)"/>
+            <ellipse cx="208" cy="210" rx="20" ry="60" fill="#2d6a4f" opacity="0.85" transform="rotate(20 208 210)"/>
+            <!-- Leaf accents -->
+            <ellipse cx="55" cy="175" rx="18" ry="10" fill="#52b788" opacity="0.7" transform="rotate(-30 55 175)"/>
+            <ellipse cx="225" cy="175" rx="18" ry="10" fill="#52b788" opacity="0.7" transform="rotate(30 225 175)"/>
+            <!-- Decorative circles -->
+            <circle cx="140" cy="110" r="62" stroke="#52b788" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.4"/>
+          </svg>
+        </div>
+
+        <!-- Floating info chips -->
+        <div class="hero__chip hero__chip--1">
+          <span>🧬</span> Genética molecular
+        </div>
+        <div class="hero__chip hero__chip--2">
+          <span>🌿</span> Ecología amazónica
+        </div>
+        <div class="hero__chip hero__chip--3">
+          <span>🏘️</span> Etnoprimatología
+        </div>
+        <div class="hero__chip hero__chip--4">
+          <span>🛡️</span> Conservación
+        </div>
+
+        <!-- Decorative ring -->
+        <div class="hero__ring" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll-hint" aria-label="Desplázate hacia abajo">
+    <div class="hero__scroll-line"></div>
+    <span>Explorar</span>
+  </div>
+</section>
+
+<style>
+  /* ── Hero Base ───────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* ── Backgrounds ─────────────────────────────────── */
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      #0d2318 0%,
+      #1a3a2e 30%,
+      #1e4d38 55%,
+      #2a3d28 75%,
+      #1a2a18 100%
+    );
+  }
+
+  .hero__bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(82,183,136,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(201,168,76,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 60% 80%, rgba(45,106,79,0.15) 0%, transparent 40%);
+  }
+
+  /* Floating particles */
+  .hero__particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .hero__particle {
+    position: absolute;
+    bottom: -10px;
+    left: var(--x);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: rgba(82, 183, 136, 0.4);
+    animation: rise 8s ease-in infinite;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes rise {
+    0%   { transform: translateY(0) scale(1); opacity: 0.6; }
+    100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+  }
+
+  /* ── Layout ──────────────────────────────────────── */
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero__content {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      padding-top: 6rem;
+    }
+  }
+
+  /* ── Text Column ─────────────────────────────────── */
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero__label {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .badge-leaf {
+    background: rgba(82, 183, 136, 0.2);
+    color: var(--forest-canopy);
+    border: 1px solid rgba(82, 183, 136, 0.35);
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .badge-gold {
+    background: rgba(201, 168, 76, 0.2);
+    color: var(--gold-light);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    line-height: 1.1;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .hero__title-highlight {
+    color: var(--forest-canopy);
+    display: block;
+  }
+
+  .hero__title-year {
+    color: var(--gold);
+    font-size: 0.75em;
+    font-style: italic;
+  }
+
+  .hero__slogan {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: rgba(255,255,255,0.72);
+    line-height: 1.75;
+    max-width: 500px;
+    border-left: 3px solid var(--forest-leaf);
+    padding-left: 1rem;
+  }
+
+  .hero__ctas {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* ── Stats ───────────────────────────────────────── */
+  .hero__stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(82,183,136,0.2);
+    border-radius: var(--radius-lg);
+    width: fit-content;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .hero__stat-number {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--forest-canopy);
+    line-height: 1;
+  }
+
+  .hero__stat-label {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .hero__stat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(82,183,136,0.25);
+  }
+
+  /* ── Visual Column ───────────────────────────────── */
+  .hero__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__primate-card {
+    position: relative;
+    width: 320px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero__primate-icon {
+    width: 260px;
+    height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero__svg-primate {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+  }
+
+  .hero__ring {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(82, 183, 136, 0.2);
+    animation: spin-slow 20s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* Floating chips */
+  .hero__chip {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    background: rgba(13, 35, 24, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(82,183,136,0.3);
+    border-radius: 100px;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+    white-space: nowrap;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .hero__chip--1 { top: 10%; left: -30px; animation-delay: 0s; }
+  .hero__chip--2 { top: 30%; right: -25px; animation-delay: 0.8s; }
+  .hero__chip--3 { bottom: 30%; left: -20px; animation-delay: 1.4s; }
+  .hero__chip--4 { bottom: 15%; right: -20px; animation-delay: 0.5s; }
+
+  @media (max-width: 1023px) {
+    .hero__chip { display: none; }
+    .hero__primate-card { width: 240px; height: 290px; }
+    .hero__primate-icon { width: 200px; height: 240px; }
+  }
+
+  /* ── Scroll hint ─────────────────────────────────── */
+  .hero__scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(82,183,136,0.8), transparent);
+    animation: scroll-line 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scroll-line {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50%       { transform: scaleY(0.5); opacity: 0.4; }
+  }
+
+  .hero__scroll-hint span {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Ensure animations only play once on load */
+  .animate-fade-up {
+    opacity: 0;
+    animation: fadeInUp 0.7s ease forwards;
+  }
+</style>

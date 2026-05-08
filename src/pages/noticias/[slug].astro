@@ -1,0 +1,239 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+// Definición de artículos — en producción usar Astro Content Collections
+const articles: Record<string, any> = {
+  "apertura-llamado-resumenes-2026": {
+    title: "Se abre oficialmente el llamado de resúmenes para el CPP 2026",
+    date: "30 de abril, 2026",
+    author: "Comité CPP 2026",
+    category: "Llamado de resúmenes",
+    categoryColor: "#52b788",
+    emoji: "📋",
+    readTime: "2 min",
+    content: `
+      <p>El Comité Organizador del <strong>I Congreso Peruano de Primatología 2026</strong> tiene el agrado de anunciar la apertura oficial del llamado de resúmenes para todos los formatos de presentación del congreso.</p>
+      <h2>¿Qué presentaciones se aceptarán?</h2>
+      <p>El comité científico recibirá contribuciones originales en los siguientes formatos:</p>
+      <ul>
+        <li><strong>Ponencias orales:</strong> presentaciones de 15 minutos + 5 de preguntas</li>
+        <li><strong>Pósters científicos:</strong> sesión de 90 minutos en sala de exposición</li>
+        <li><strong>Simposios:</strong> sesiones coordinadas de 90-120 minutos con 4-6 ponentes</li>
+        <li><strong>Mesas redondas:</strong> debates sobre política, conservación o metodología</li>
+      </ul>
+      <h2>Fecha límite</h2>
+      <p>Todos los resúmenes deben ser enviados antes del <strong>30 de junio de 2026</strong>. No se aceptarán envíos tardíos bajo ninguna circunstancia.</p>
+      <h2>¿Cómo enviar?</h2>
+      <p>Los resúmenes se envían exclusivamente a través del formulario en línea disponible en la página de Llamado de Resúmenes. El sistema confirmará automáticamente la recepción por correo electrónico.</p>
+      <p>Para consultas, escribir a: <strong>congreso@primatologiaperu.org</strong></p>
+    `
+  },
+  "talleres-precongresuales-anunciados": {
+    title: "Anunciados los talleres pre-congresuales: metodologías de campo y análisis genómico",
+    date: "1 de mayo, 2026",
+    author: "Comité Científico",
+    category: "Programa",
+    categoryColor: "#c9a84c",
+    emoji: "🔬",
+    readTime: "3 min",
+    content: `
+      <p>El comité científico del CPP 2026 confirma la realización de tres talleres intensivos pre-congresuales el día anterior al inicio oficial del congreso.</p>
+      <h2>Talleres confirmados</h2>
+      <ul>
+        <li><strong>Taller A:</strong> Técnicas de censo de primates en campo — métodos de transectos lineales, vocalizaciones y cámaras trampa</li>
+        <li><strong>Taller B:</strong> Análisis estadístico para primatólogos con R — desde datos de campo hasta publicación</li>
+        <li><strong>Taller C:</strong> Técnicas de secuenciación genómica en campo — extracción no invasiva y análisis bioinformático básico</li>
+      </ul>
+      <h2>Inscripción a talleres</h2>
+      <p>Los talleres tienen cupo limitado (máximo 20 participantes cada uno) y requieren inscripción separada al congreso principal. La inscripción a talleres se habilitará junto con las inscripciones regulares.</p>
+    `
+  },
+  "becas-estudiantes-latinoamerica": {
+    title: "Disponibles becas de participación para estudiantes de Latinoamérica",
+    date: "5 de mayo, 2026",
+    author: "Comité Organizador",
+    category: "Becas",
+    categoryColor: "#8b5e3c",
+    emoji: "🎓",
+    readTime: "4 min",
+    content: `
+      <p>En alianza con la Sociedad Latinoamericana de Primatología (SLAPrim) y la International Primatological Society (IPS), el I Congreso Peruano de Primatología 2026 anuncia la disponibilidad de becas parciales para estudiantes.</p>
+      <h2>Becas disponibles</h2>
+      <ul>
+        <li><strong>20 becas parciales (50%):</strong> Para estudiantes de maestría o doctorado de países latinoamericanos</li>
+        <li><strong>5 becas completas:</strong> Para representantes de comunidades indígenas con trabajo de conservación</li>
+      </ul>
+      <h2>Requisitos</h2>
+      <ul>
+        <li>Ser estudiante activo de posgrado con carnet universitario</li>
+        <li>Presentar un resumen aceptado al congreso</li>
+        <li>Carta de aval de su director/a de tesis</li>
+        <li>CV actualizado (máximo 3 páginas)</li>
+      </ul>
+      <h2>Postulación</h2>
+      <p>Las postulaciones se recibirán hasta el <strong>15 de junio de 2026</strong> a través del formulario disponible en la página de Inscripciones.</p>
+    `
+  },
+  "primer-ponente-magistral-confirmado": {
+    title: "Confirmada primera conferenciante magistral del CPP 2026",
+    date: "7 de mayo, 2026",
+    author: "Comité Científico",
+    category: "Ponentes",
+    categoryColor: "#2d6a4f",
+    emoji: "🎤",
+    readTime: "2 min",
+    content: `
+      <p>El Comité Científico del I Congreso Peruano de Primatología 2026 tiene el honor de anunciar a la primera ponente magistral confirmada para el evento: la <strong>Dra. María del Carmen Huertas</strong>, investigadora principal del Instituto de Biodiversidad Amazónica.</p>
+      <p>La Dra. Huertas es especialista en ecología comportamental de primates con más de 20 años de investigación en la Amazonía peruana y colombiana. Ha publicado más de 40 artículos en revistas indexadas y lidera el Programa de Monitoreo de Primates en la cuenca del Madre de Dios.</p>
+      <h2>Título tentativo de la conferencia</h2>
+      <p><em>"Diversidad y distribución de primates en el Perú del siglo XXI: avances, vacíos y urgencias"</em></p>
+      <p>Se anunciarán más ponentes magistrales en las próximas semanas. Mantente pendiente de nuestras noticias.</p>
+    `
+  },
+  "alianza-sernanp-cpp2026": {
+    title: "SERNANP se une como aliado institucional del CPP 2026",
+    date: "8 de mayo, 2026",
+    author: "Comité Organizador",
+    category: "Institucional",
+    categoryColor: "#74c69d",
+    emoji: "🏛️",
+    readTime: "3 min",
+    content: `
+      <p>El <strong>Servicio Nacional de Áreas Naturales Protegidas por el Estado (SERNANP)</strong> ha confirmado su alianza institucional con el I Congreso Peruano de Primatología 2026, fortaleciendo el vínculo entre la investigación científica y la gestión de áreas protegidas en el Perú.</p>
+      <p>Esta alianza es de especial relevancia, ya que el Perú alberga más de 40 especies de primates, muchas de las cuales dependen de las áreas naturales protegidas para su supervivencia.</p>
+      <h2>Actividades conjuntas</h2>
+      <ul>
+        <li>Mesa redonda sobre primates en ANP peruanas</li>
+        <li>Presentación del estado de conservación de primates en el SINANPE</li>
+        <li>Taller de protocolos de monitoreo para guardaparques</li>
+      </ul>
+      <p>El CPP 2026 continúa sumando aliados de primer nivel. Si tu institución quiere ser parte, contáctanos.</p>
+    `
+  },
+};
+
+export function getStaticPaths() {
+  const slugs = [
+    "apertura-llamado-resumenes-2026",
+    "talleres-precongresuales-anunciados",
+    "becas-estudiantes-latinoamerica",
+    "primer-ponente-magistral-confirmado",
+    "alianza-sernanp-cpp2026",
+  ];
+  return slugs.map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const article = (articles as Record<string, any>)[slug as string] || {
+  title: "Artículo no encontrado",
+  date: "",
+  author: "CPP 2026",
+  category: "Noticias",
+  categoryColor: "#52b788",
+  emoji: "📰",
+  readTime: "—",
+  content: "<p>Este artículo no existe o ha sido movido.</p>"
+};
+---
+
+<PageLayout
+  title={article.title}
+  description={article.title}
+  heroTitle={article.title}
+  heroSubtitle={`${article.date} · ${article.author}`}
+  heroColor="var(--forest-dark)"
+>
+  <section class="section">
+    <div class="container article-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb reveal" aria-label="Ruta de navegación">
+        <a href={`${base}`}>Inicio</a>
+        <span>›</span>
+        <a href={`${base}noticias`}>Noticias</a>
+        <span>›</span>
+        <span>{article.category}</span>
+      </nav>
+
+      <article class="article-body reveal">
+        <!-- Meta -->
+        <div class="article-meta">
+          <span class="article-category" style={`color:${article.categoryColor}; background:${article.categoryColor}15; border-color:${article.categoryColor}30;`}>
+            {article.emoji} {article.category}
+          </span>
+          <time class="article-date">{article.date}</time>
+          <span class="article-author">👤 {article.author}</span>
+          <span class="article-read">⏱ {article.readTime} lectura</span>
+        </div>
+
+        <!-- Content -->
+        <div class="article-content" set:html={article.content}></div>
+
+        <!-- Back -->
+        <div class="article-back">
+          <a href={`${base}noticias`} class="btn btn-secondary">
+            ← Volver a noticias
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .article-container { max-width: 780px; }
+
+  .breadcrumb {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-ui); font-size: 0.8rem;
+    color: var(--text-muted); margin-bottom: 2rem; flex-wrap: wrap;
+  }
+  .breadcrumb a { color: var(--forest-leaf); }
+  .breadcrumb a:hover { color: var(--forest-mid); }
+
+  .article-body {
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.1);
+    box-shadow: var(--shadow-sm);
+    padding: 2.5rem;
+  }
+  [data-theme="dark"] .article-body { background: rgba(26,58,46,0.5); }
+
+  .article-meta {
+    display: flex; align-items: center; gap: 0.75rem;
+    flex-wrap: wrap; margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(82,183,136,0.1);
+  }
+
+  .article-category {
+    font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700;
+    padding: 0.3rem 0.8rem; border-radius: 100px; border: 1px solid;
+  }
+  .article-date, .article-author, .article-read {
+    font-family: var(--font-ui); font-size: 0.78rem; color: var(--text-muted);
+  }
+
+  .article-content {
+    line-height: 1.8; color: var(--text-on-light); font-size: 1rem;
+  }
+  [data-theme="dark"] .article-content { color: rgba(240,237,232,0.85); }
+  .article-content h2 {
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--forest-mid); margin: 1.75rem 0 0.75rem;
+  }
+  [data-theme="dark"] .article-content h2 { color: var(--forest-canopy); }
+  .article-content p { margin-bottom: 1.1rem; }
+  .article-content ul {
+    list-style: none; padding: 0; margin: 1rem 0 1.25rem;
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .article-content ul li { padding-left: 1.25rem; position: relative; font-size: 0.95rem; }
+  .article-content ul li::before { content: '🌿'; position: absolute; left: 0; font-size: 0.8rem; }
+  .article-content a { color: var(--forest-leaf); font-weight: 600; }
+  .article-content strong { color: var(--text-on-light); }
+  [data-theme="dark"] .article-content strong { color: var(--text-on-dark); }
+
+  .article-back { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(82,183,136,0.1); }
+</style>

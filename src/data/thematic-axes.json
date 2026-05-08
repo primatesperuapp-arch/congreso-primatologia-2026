@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "emoji": "🌿",
+    "code": "ECO",
+    "title": "Ecología y Comportamiento",
+    "description": "Estudios sobre uso de hábitat, dieta, estructura social, comunicación y cognición de primates neotropicales en ambientes naturales y perturbados.",
+    "subtopics": ["Ecología de comunidades", "Comportamiento social", "Cognición animal", "Etología comparada"],
+    "color": "#52b788"
+  },
+  {
+    "id": 2,
+    "emoji": "🛡️",
+    "code": "CONS",
+    "title": "Conservación y Manejo",
+    "description": "Estrategias, metodologías y políticas para la conservación in situ y ex situ, con énfasis en especies amenazadas del Perú.",
+    "subtopics": ["Especies amenazadas", "Áreas protegidas", "Corredores biológicos", "Rescate y rehabilitación"],
+    "color": "#2d6a4f"
+  },
+  {
+    "id": 3,
+    "emoji": "🧬",
+    "code": "GEN",
+    "title": "Genética y Sistemática",
+    "description": "Análisis filogenéticos, diversidad genética, taxonomía y biogeografía de primates sudamericanos, incluyendo nuevas tecnologías de secuenciación.",
+    "subtopics": ["Filogenia molecular", "Genética de poblaciones", "Taxonomía integrativa", "Biogeografía"],
+    "color": "#c9a84c"
+  },
+  {
+    "id": 4,
+    "emoji": "🏘️",
+    "code": "ETN",
+    "title": "Etnoprimatología",
+    "description": "Relaciones entre comunidades humanas y primates: conocimiento tradicional, cacería, tenencia de mascotas y coexistencia humano-primate.",
+    "subtopics": ["Conocimiento ecológico local", "Coexistencia humano-primate", "Primates como mascotas", "Conflicto e interacción"],
+    "color": "#8b5e3c"
+  },
+  {
+    "id": 5,
+    "emoji": "🏥",
+    "code": "SAL",
+    "title": "Salud y Medicina de Primates",
+    "description": "Enfermedades infecciosas, One Health, medicina de fauna silvestre, zoonosis y bienestar animal en primates cautivos y silvestres.",
+    "subtopics": ["One Health", "Zoonosis emergentes", "Medicina de fauna", "Bienestar animal"],
+    "color": "#e07b54"
+  },
+  {
+    "id": 6,
+    "emoji": "📚",
+    "code": "EDU",
+    "title": "Educación y Ciencia Ciudadana",
+    "description": "Programas educativos, comunicación científica, ciencia abierta, monitoreo participativo y tecnologías digitales para la conservación.",
+    "subtopics": ["Educación ambiental", "Monitoreo comunitario", "Comunicación científica", "Tecnología y conservación"],
+    "color": "#74c69d"
+  }
+]

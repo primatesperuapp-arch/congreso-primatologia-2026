@@ -1,0 +1,195 @@
+---
+import dates from '../../data/important-dates.json';
+---
+
+<section class="section dates" id="fechas">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Agenda del evento</span>
+      <h2 class="section-title">Fechas Importantes</h2>
+      <p class="section-subtitle">
+        Marca estas fechas en tu calendario. Los plazos son inamovibles.
+      </p>
+    </div>
+
+    <div class="dates__timeline">
+      {dates.map((item, i) => (
+        <div class={`timeline-item reveal reveal-delay-${(i % 4) + 1} ${item.highlight ? 'timeline-item--highlight' : ''}`}>
+          <!-- Connector line -->
+          <div class="timeline-item__line" aria-hidden="true">
+            <div class={`timeline-item__dot timeline-item__dot--${item.type}`} aria-hidden="true">
+              {item.type === 'event' && '🎉'}
+              {item.type === 'deadline' && '⏰'}
+              {item.type === 'open' && '🟢'}
+              {item.type === 'notification' && '📬'}
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="timeline-item__content">
+            <div class="timeline-item__date">{item.label}</div>
+            <h3 class="timeline-item__title">{item.title}</h3>
+            <p class="timeline-item__desc">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .dates {
+    background: var(--cream);
+  }
+
+  [data-theme="dark"] .dates {
+    background: var(--forest-darkest);
+  }
+
+  .dates__timeline {
+    max-width: 750px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 0;
+  }
+
+  /* Vertical connecting line */
+  .dates__timeline::before {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: linear-gradient(to bottom,
+      rgba(82,183,136,0.1),
+      rgba(82,183,136,0.4) 20%,
+      rgba(82,183,136,0.4) 80%,
+      rgba(82,183,136,0.1)
+    );
+  }
+
+  @media (min-width: 768px) {
+    .dates__timeline::before { left: 50%; transform: translateX(-50%); }
+  }
+
+  /* ── Timeline Item ───────────────────────────────── */
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .dates__timeline { padding: 0; }
+    .timeline-item {
+      grid-template-columns: 1fr 56px 1fr;
+    }
+    .timeline-item:nth-child(even) .timeline-item__content {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) .timeline-item__line {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .timeline-item:nth-child(odd) .timeline-item__content {
+      grid-column: 3;
+      grid-row: 1;
+    }
+    .timeline-item:nth-child(odd) .timeline-item__line {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  .timeline-item__line {
+    display: flex;
+    justify-content: center;
+  }
+
+  .timeline-item__dot {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    border: 3px solid rgba(82,183,136,0.3);
+    background: rgba(253,246,227,0.95);
+    box-shadow: var(--shadow-sm);
+    z-index: 1;
+    position: relative;
+  }
+
+  [data-theme="dark"] .timeline-item__dot {
+    background: var(--forest-dark);
+  }
+
+  .timeline-item__dot--event {
+    border-color: var(--gold);
+    background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(232,201,126,0.2));
+    box-shadow: 0 0 20px rgba(201,168,76,0.25);
+  }
+
+  .timeline-item__dot--deadline {
+    border-color: #e07b54;
+    background: rgba(224,123,84,0.1);
+  }
+
+  .timeline-item__dot--open {
+    border-color: var(--forest-leaf);
+    background: rgba(82,183,136,0.1);
+  }
+
+  .timeline-item__content {
+    padding-bottom: 1rem;
+  }
+
+  .timeline-item__date {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--forest-leaf);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+  }
+
+  .timeline-item__title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-on-light);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+
+  [data-theme="dark"] .timeline-item__title { color: var(--text-on-dark); }
+
+  .timeline-item__desc {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Highlight (main event) */
+  .timeline-item--highlight .timeline-item__content {
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(82,183,136,0.06));
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .timeline-item--highlight .timeline-item__title {
+    color: var(--gold);
+    font-size: 1.1rem;
+  }
+
+  .timeline-item--highlight .timeline-item__date { color: var(--gold); }
+</style>

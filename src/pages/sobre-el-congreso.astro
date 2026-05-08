@@ -1,0 +1,257 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<PageLayout
+  title="Sobre el Congreso"
+  description="Conoce la misión, visión y objetivos del I Congreso Peruano de Primatología 2026, y su alineación con el Plan Nacional de Conservación de Primates Amenazados."
+  heroTitle="Sobre el Congreso"
+  heroSubtitle="Misión, visión y contexto del I Congreso Peruano de Primatología 2026"
+  heroColor="var(--forest-darkest)"
+>
+  <!-- Presentación -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="about-intro">
+        <div class="about-intro__text reveal">
+          <span class="section-label">Presentación</span>
+          <h2 class="section-title" style="text-align:left; margin-bottom:1.25rem;">
+            Un congreso nacido desde la Amazonía
+          </h2>
+          <p class="body-lg">
+            El <strong>I Congreso Peruano de Primatología 2026</strong> es el primer evento nacional dedicado exclusivamente al estudio, conservación y conocimiento de los primates del Perú. Nace de la necesidad urgente de articular a la comunidad científica, las instituciones gubernamentales y las comunidades locales en torno a los primates neotropicales, uno de los grupos taxonómicos más diversos y amenazados del mundo.
+          </p>
+          <p>
+            Organizado por la Sociedad Peruana de Primatología (SPP) en alianza con universidades nacionales, organismos de gobierno y socios internacionales, el CPP 2026 es un espacio de encuentro, debate científico riguroso y generación de compromisos concretos para la conservación.
+          </p>
+        </div>
+
+        <div class="about-intro__card card-glass reveal" style="padding:2rem;">
+          <h3 style="font-family:var(--font-display); font-size:1.1rem; color:var(--forest-mid); margin-bottom:1rem;">🇵🇪 El Perú en números</h3>
+          <div style="display:flex; flex-direction:column; gap:0.85rem;">
+            {[
+              { n: '~40', l: 'especies de primates registradas en Perú' },
+              { n: '12', l: 'especies en categoría de amenaza UICN' },
+              { n: '5', l: 'ecosistemas con poblaciones de primates' },
+              { n: '4°', l: 'lugar mundial en diversidad de primates' },
+            ].map(item => (
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--forest-leaf); min-width:50px;">{item.n}</span>
+                <span style="font-size:0.85rem; color:var(--text-muted);">{item.l}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión y Visión -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="mv-grid">
+        <div class="mv-card reveal">
+          <div class="mv-card__icon">🎯</div>
+          <h2 class="mv-card__title">Misión</h2>
+          <p class="mv-card__text">
+            Ser la plataforma científica y conservacionista de referencia en el Perú y Latinoamérica para el intercambio de conocimiento sobre primates neotropicales, articulando academia, gobierno, organizaciones de la sociedad civil y comunidades indígenas en un marco inclusivo, riguroso y orientado a la acción.
+          </p>
+        </div>
+
+        <div class="mv-card reveal reveal-delay-2">
+          <div class="mv-card__icon">🔭</div>
+          <h2 class="mv-card__title">Visión</h2>
+          <p class="mv-card__text">
+            Convertirse en el congreso de primatología más importante de América del Sur, reconocido internacionalmente por su contribución al conocimiento científico, la política pública de conservación y la integración de saberes indígenas en la investigación biológica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contexto de Conservación -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Contexto nacional</span>
+        <h2 class="section-title">Los Primates del Perú y su Conservación</h2>
+      </div>
+
+      <div class="conservation-text reveal">
+        <p>
+          Perú es uno de los países megadiversos del mundo, albergando aproximadamente el <strong>10% de la diversidad de primates del planeta</strong>. La Amazonía peruana, junto con los bosques de selva alta o yunga, constituye el hábitat de especies únicas como el mono choro de cola amarilla (<em>Oreonax flavicauda</em>), endémico del Perú y actualmente en peligro crítico de extinción.
+        </p>
+        <p>
+          A pesar de esta riqueza biológica, la primatología en el Perú sigue siendo una disciplina con escasos investigadores, limitada financiación y ausencia de redes de coordinación formales. La deforestación, la caza, el tráfico de fauna silvestre y la expansión agrícola continúan amenazando a poblaciones de primates en todo el territorio nacional.
+        </p>
+
+        <div class="plan-box">
+          <h3 class="plan-box__title">📋 Plan Nacional de Conservación de Primates Amenazados del Perú</h3>
+          <p class="plan-box__text">
+            El CPP 2026 se alinea directamente con el <strong>Plan Nacional de Conservación de Primates Amenazados del Perú</strong>, impulsado por el SERNANP y el Ministerio del Ambiente. El congreso buscará generar insumos científicos y técnicos para actualizar y fortalecer este plan, incorporando los últimos avances en investigación genómica, ecología del paisaje y ciencia ciudadana.
+          </p>
+          <div style="display:flex; gap:0.75rem; margin-top:1.25rem; flex-wrap:wrap;">
+            {['Mono choro de cola amarilla', 'Mono tocón andino', 'Huapo colorado', 'Pichico de Goeldi'].map(sp => (
+              <span class="badge badge-green">🐒 {sp}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comité Científico -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Organización</span>
+        <h2 class="section-title">Comité Organizador</h2>
+      </div>
+      <div class="committee-grid">
+        {[
+          { role: 'Presidenta', name: 'Por confirmar', org: 'Sociedad Peruana de Primatología', icon: '👑' },
+          { role: 'Secretaría Científica', name: 'Por confirmar', org: 'UNMSM / Universidad Peruana', icon: '🔬' },
+          { role: 'Comité de Programa', name: 'Por confirmar', org: 'Instituciones aliadas', icon: '📋' },
+          { role: 'Comité de Comunicaciones', name: 'Por confirmar', org: 'Equipo CPP 2026', icon: '📡' },
+        ].map((member, i) => (
+          <div class={`committee-card reveal reveal-delay-${i+1}`}>
+            <div class="committee-card__icon">{member.icon}</div>
+            <div class="committee-card__role">{member.role}</div>
+            <div class="committee-card__name">{member.name}</div>
+            <div class="committee-card__org">{member.org}</div>
+          </div>
+        ))}
+      </div>
+      <p class="reveal" style="text-align:center; margin-top:2rem; color:var(--text-muted); font-size:0.9rem;">
+        El comité completo será anunciado próximamente. Si deseas formar parte,
+        <a href={`${base}contacto`} style="color:var(--forest-leaf); font-weight:600;">contáctanos →</a>
+      </p>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .about-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (min-width: 1024px) {
+    .about-intro { grid-template-columns: 1.4fr 0.6fr; }
+  }
+
+  .about-intro__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .about-intro__text p {
+    font-size: 0.97rem;
+    color: var(--text-on-light);
+    line-height: 1.8;
+  }
+  [data-theme="dark"] .about-intro__text p { color: rgba(240,237,232,0.85); }
+
+  /* Mission/Vision */
+  .mv-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) { .mv-grid { grid-template-columns: 1fr 1fr; } }
+
+  .mv-card {
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.12);
+    box-shadow: var(--shadow-sm);
+  }
+  [data-theme="dark"] .mv-card {
+    background: rgba(26,58,46,0.5);
+  }
+
+  .mv-card__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .mv-card__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--forest-mid);
+    margin-bottom: 1rem;
+  }
+  [data-theme="dark"] .mv-card__title { color: var(--forest-canopy); }
+  .mv-card__text { font-size: 0.95rem; color: var(--text-on-light); line-height: 1.8; }
+  [data-theme="dark"] .mv-card__text { color: rgba(240,237,232,0.8); }
+
+  /* Conservation */
+  .conservation-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .conservation-text p {
+    font-size: 0.97rem;
+    color: var(--text-on-light);
+    line-height: 1.8;
+  }
+  [data-theme="dark"] .conservation-text p { color: rgba(240,237,232,0.8); }
+
+  .plan-box {
+    background: linear-gradient(135deg, rgba(82,183,136,0.08), rgba(45,106,79,0.05));
+    border: 1px solid rgba(82,183,136,0.25);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-top: 0.5rem;
+  }
+  .plan-box__title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--forest-mid);
+    margin-bottom: 0.75rem;
+  }
+  [data-theme="dark"] .plan-box__title { color: var(--forest-canopy); }
+  .plan-box__text { font-size: 0.9rem; color: var(--text-on-light); line-height: 1.75; }
+  [data-theme="dark"] .plan-box__text { color: rgba(240,237,232,0.8); }
+
+  /* Committee */
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  @media (min-width: 768px) { .committee-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .committee-card {
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.85);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(82,183,136,0.12);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  [data-theme="dark"] .committee-card { background: rgba(26,58,46,0.5); }
+
+  .committee-card__icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .committee-card__role {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--forest-leaf);
+    margin-bottom: 0.4rem;
+  }
+  .committee-card__name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-on-light);
+    margin-bottom: 0.2rem;
+  }
+  [data-theme="dark"] .committee-card__name { color: var(--text-on-dark); }
+  .committee-card__org { font-size: 0.75rem; color: var(--text-muted); }
+</style>

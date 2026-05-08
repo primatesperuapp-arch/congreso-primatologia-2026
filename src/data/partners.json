@@ -1,0 +1,50 @@
+[
+  {
+    "id": "org1",
+    "name": "Sociedad Peruana de Primatología",
+    "acronym": "SPP",
+    "type": "organizer",
+    "country": "Perú",
+    "url": "#"
+  },
+  {
+    "id": "org2",
+    "name": "Universidad Nacional Mayor de San Marcos",
+    "acronym": "UNMSM",
+    "type": "academic",
+    "country": "Perú",
+    "url": "https://www.unmsm.edu.pe"
+  },
+  {
+    "id": "org3",
+    "name": "Servicio Nacional de Áreas Naturales Protegidas",
+    "acronym": "SERNANP",
+    "type": "government",
+    "country": "Perú",
+    "url": "https://www.sernanp.gob.pe"
+  },
+  {
+    "id": "org4",
+    "name": "Sociedad Latinoamericana de Primatología",
+    "acronym": "SLAPrim",
+    "type": "partner",
+    "country": "Latinoamérica",
+    "url": "#"
+  },
+  {
+    "id": "org5",
+    "name": "International Primatological Society",
+    "acronym": "IPS",
+    "type": "partner",
+    "country": "Internacional",
+    "url": "https://www.internationalprimatologicalsociety.org"
+  },
+  {
+    "id": "org6",
+    "name": "Wildlife Conservation Society",
+    "acronym": "WCS",
+    "type": "partner",
+    "country": "Perú / Internacional",
+    "url": "https://peru.wcs.org"
+  }
+]

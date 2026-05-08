@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/home/Hero.astro';
+import Welcome from '../components/home/Welcome.astro';
+import Objectives from '../components/home/Objectives.astro';
+import ThematicAxis from '../components/home/ThematicAxis.astro';
+import Speakers from '../components/home/Speakers.astro';
+import ImportantDates from '../components/home/ImportantDates.astro';
+import Partners from '../components/home/Partners.astro';
+import RecentNews from '../components/home/RecentNews.astro';
+import site from '../data/site.json';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Inicio"
+  description={site.meta.description}
+>
+  <Header />
+
+  <main id="main-content">
+    <Hero />
+    <Welcome />
+    <Objectives />
+    <ThematicAxis />
+    <Speakers />
+    <ImportantDates />
+    <Partners />
+    <RecentNews />
+
+    <!-- Final CTA Banner -->
+    <section class="cta-banner">
+      <div class="cta-banner__bg" aria-hidden="true"></div>
+      <div class="container cta-banner__content">
+        <div class="cta-banner__text">
+          <h2 class="cta-banner__title">¿Listo para ser parte del CPP 2026?</h2>
+          <p class="cta-banner__subtitle">
+            Envía tu resumen, regístrate como asistente o conviértete en patrocinador. El futuro de los primates en Perú se construye juntos.
+          </p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href={`${base}llamado-de-resumenes`} class="btn btn-primary btn-lg">
+            Enviar Resumen
+          </a>
+          <a href={`${base}inscripciones`} class="btn btn-gold btn-lg">
+            Inscribirse Ahora
+          </a>
+          <a href={`${base}contacto`} class="btn btn-ghost btn-lg">
+            Contactar
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .cta-banner {
+    position: relative;
+    padding: 5rem 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--forest-darkest) 0%, var(--forest-dark) 50%, #1e3d30 100%);
+  }
+
+  .cta-banner__bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(82,183,136,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 40%);
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2352b788' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .cta-banner__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .cta-banner__content {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .cta-banner__text { max-width: 580px; }
+
+  .cta-banner__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+    color: #fff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .cta-banner__subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.7;
+  }
+
+  .cta-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .cta-banner__actions { justify-content: flex-start; }
+  }
+</style>

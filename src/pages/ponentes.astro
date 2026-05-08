@@ -1,0 +1,192 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const speakers = [
+  { id: 1, name: "Dra. María del Carmen Huertas", title: "Investigadora Principal", affiliation: "Instituto de Biodiversidad Amazónica", country: "Perú", flag: "🇵🇪", area: "Ecología de primates", bio: "Especialista en ecología comportamental de primates con 20 años de investigación en la Amazonía peruana y colombiana. Directora del Programa de Monitoreo de Primates en la cuenca del Madre de Dios. Autora de más de 40 publicaciones en revistas indexadas.", initials: "MH", color: "#2d6a4f", type: "Magistral" },
+  { id: 2, name: "Dr. Carlos Boubli", title: "Profesor Titular", affiliation: "Universidad de São Paulo", country: "Brasil", flag: "🇧🇷", area: "Sistemática y genómica", bio: "Reconocido experto en filogenia molecular de primates neotropicales, con más de 150 publicaciones indexadas. Ha descrito 8 nuevas especies de primates amazónicos utilizando técnicas integradas de morfología y genómica.", initials: "CB", color: "#c9a84c", type: "Magistral" },
+  { id: 3, name: "Dr. Alejandro García-Naranjo", title: "Director de Conservación", affiliation: "Wildlife Conservation Society Perú", country: "Colombia", flag: "🇨🇴", area: "Conservación in situ", bio: "Lidera programas de conservación de primates amenazados en la cuenca del Orinoco y la Amazonía occidental. Pionero en el uso de cámaras trampa para el monitoreo de primates nocturnos.", initials: "AG", color: "#8b5e3c", type: "Invitado" },
+  { id: 4, name: "Dra. Yamila Roca Pasca", title: "Investigadora Asociada", affiliation: "UNAM — México", country: "México", flag: "🇲🇽", area: "Etnoprimatología", bio: "Pionera en estudios de coexistencia humano-primate y conocimiento ecológico de comunidades indígenas amazónicas. Su trabajo integra metodologías de ciencias sociales y ecología para entender las relaciones culturales con los primates.", initials: "YR", color: "#52b788", type: "Invitado" },
+  { id: 5, name: "Dr. Pablo Stevenson", title: "Profesor", affiliation: "Universidad de los Andes", country: "Colombia", flag: "🇨🇴", area: "Comportamiento y dieta", bio: "Investigador líder en ecología de comunidades de primates y dispersión de semillas. Coordina el programa de monitoreo de primates a largo plazo en La Macarena, Colombia.", initials: "PS", color: "#74c69d", type: "Invitado" },
+  { id: 6, name: "Dra. Gisella Orihuela", title: "Médico Veterinario Wildlife", affiliation: "SERNANP - Perú", country: "Perú", flag: "🇵🇪", area: "Medicina de fauna / One Health", bio: "Especialista en salud de fauna silvestre y zoonosis emergentes. Lidera el programa de vigilancia epidemiológica en primates de áreas naturales protegidas del Perú.", initials: "GO", color: "#e07b54", type: "Invitado" },
+];
+---
+
+<PageLayout
+  title="Ponentes"
+  description="Conoce a los ponentes magistrales e invitados del I Congreso Peruano de Primatología 2026: investigadores y conservacionistas líderes de Latinoamérica y el mundo."
+  heroTitle="Ponentes"
+  heroSubtitle="Investigadores y conservacionistas líderes del I CPP 2026"
+  heroColor="var(--forest-dark)"
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Expertos confirmados</span>
+        <h2 class="section-title">Ponentes del Congreso</h2>
+        <p class="section-subtitle">
+          Científicos de clase mundial reunidos en Lima para construir el futuro de la primatología latinoamericana.
+          <br><em style="font-size:0.85rem; color:var(--text-muted);">* Más ponentes serán anunciados próximamente.</em>
+        </p>
+      </div>
+
+      <!-- Magistrales -->
+      <h3 class="speakers-section-title reveal">🏆 Conferenciantes Magistrales</h3>
+      <div class="speakers-main-grid">
+        {speakers.filter(s => s.type === 'Magistral').map((s, i) => (
+          <article class={`speaker-full-card reveal reveal-delay-${i+1}`} style={`--sc: ${s.color};`}>
+            <div class="speaker-full-card__avatar" style={`background: linear-gradient(135deg, ${s.color}, ${s.color}80);`}>
+              {s.initials}
+            </div>
+            <div class="speaker-full-card__info">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+                <span class="badge badge-gold" style="font-size:0.7rem;">Conferencia Magistral</span>
+                <span style="font-size:1.2rem;">{s.flag}</span>
+              </div>
+              <h3 class="speaker-full-card__name">{s.name}</h3>
+              <p class="speaker-full-card__title">{s.title} · {s.affiliation}</p>
+              <p class="speaker-full-card__area">{s.area}</p>
+              <p class="speaker-full-card__bio">{s.bio}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Invitados -->
+      <h3 class="speakers-section-title reveal" style="margin-top:3rem;">🎤 Ponentes Invitados</h3>
+      <div class="speakers-grid">
+        {speakers.filter(s => s.type === 'Invitado').map((s, i) => (
+          <article class={`speaker-card-mini reveal reveal-delay-${(i%4)+1}`} style={`--sc: ${s.color};`}>
+            <div class="speaker-card-mini__avatar" style={`background: linear-gradient(135deg, ${s.color}, ${s.color}80);`}>
+              {s.initials}
+            </div>
+            <div class="speaker-card-mini__flag">{s.flag}</div>
+            <div class="speaker-card-mini__area">{s.area}</div>
+            <h3 class="speaker-card-mini__name">{s.name}</h3>
+            <p class="speaker-card-mini__role">{s.title}</p>
+            <p class="speaker-card-mini__affil">{s.affiliation}</p>
+            <p class="speaker-card-mini__bio">{s.bio}</p>
+          </article>
+        ))}
+      </div>
+
+      <!-- Coming soon -->
+      <div class="reveal" style="text-align:center; margin-top:3rem; padding:2.5rem; border:1.5px dashed rgba(82,183,136,0.3); border-radius:var(--radius-lg);">
+        <div style="font-size:2.5rem; margin-bottom:0.75rem;">🔔</div>
+        <h3 style="font-family:var(--font-display); font-size:1.3rem; color:var(--forest-mid); margin-bottom:0.5rem;">Más ponentes en camino</h3>
+        <p style="font-size:0.9rem; color:var(--text-muted); max-width:400px; margin:0 auto 1.5rem;">
+          El comité científico continúa confirmando ponentes nacionales e internacionales. Suscríbete a nuestras noticias para no perderte los anuncios.
+        </p>
+        <a href={`${base}noticias`} class="btn btn-secondary">Ver novedades →</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .speakers-section-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--text-on-light);
+    margin-bottom: 1.5rem;
+  }
+  [data-theme="dark"] .speakers-section-title { color: var(--text-on-dark); }
+
+  /* Main speakers (2 col) */
+  .speakers-main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 768px) { .speakers-main-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .speaker-full-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.75rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--sc);
+    box-shadow: var(--shadow-md);
+    align-items: flex-start;
+    transition: transform var(--transition-mid);
+  }
+  [data-theme="dark"] .speaker-full-card { background: rgba(26,58,46,0.6); }
+  .speaker-full-card:hover { transform: translateY(-4px); }
+
+  .speaker-full-card__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    flex-shrink: 0;
+  }
+
+  .speaker-full-card__info { flex: 1; }
+  .speaker-full-card__name {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-on-light);
+    margin-bottom: 0.2rem;
+  }
+  [data-theme="dark"] .speaker-full-card__name { color: var(--text-on-dark); }
+  .speaker-full-card__title { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+  .speaker-full-card__area {
+    font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700;
+    color: var(--sc); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem;
+  }
+  .speaker-full-card__bio { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* Mini grid */
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) { .speakers-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .speakers-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .speaker-card-mini {
+    position: relative;
+    padding: 1.5rem 1.25rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.12);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all var(--transition-mid);
+  }
+  [data-theme="dark"] .speaker-card-mini { background: rgba(26,58,46,0.5); }
+  .speaker-card-mini:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--sc); }
+
+  .speaker-card-mini__avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    margin: 0 auto 0.75rem;
+  }
+
+  .speaker-card-mini__flag { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .speaker-card-mini__area {
+    font-family: var(--font-ui); font-size: 0.65rem; font-weight: 700;
+    color: var(--sc); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem;
+  }
+  .speaker-card-mini__name { font-weight: 700; font-size: 0.9rem; color: var(--text-on-light); margin-bottom: 0.2rem; }
+  [data-theme="dark"] .speaker-card-mini__name { color: var(--text-on-dark); }
+  .speaker-card-mini__role { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
+  .speaker-card-mini__affil { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+  .speaker-card-mini__bio {
+    font-size: 0.78rem; color: var(--text-muted); line-height: 1.55;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+</style>

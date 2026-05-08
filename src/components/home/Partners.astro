@@ -1,0 +1,140 @@
+---
+import partners from '../../data/partners.json';
+---
+
+<section class="section partners" id="aliados">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Instituciones aliadas</span>
+      <h2 class="section-title">Organizadores y Aliados</h2>
+      <p class="section-subtitle">
+        El congreso es posible gracias al apoyo de instituciones académicas, gubernamentales y de conservación comprometidas con la primatología latinoamericana.
+      </p>
+    </div>
+
+    <div class="partners__grid reveal">
+      {partners.map(partner => (
+        <a
+          href={partner.url}
+          target={partner.url !== '#' ? '_blank' : undefined}
+          rel="noopener noreferrer"
+          class={`partner-card partner-card--${partner.type}`}
+          title={partner.name}
+        >
+          <div class="partner-card__acronym">{partner.acronym}</div>
+          <div class="partner-card__name">{partner.name}</div>
+          <div class="partner-card__type">
+            {partner.type === 'organizer' && '🏆 Organizador'}
+            {partner.type === 'academic' && '🎓 Académico'}
+            {partner.type === 'government' && '🏛️ Gubernamental'}
+            {partner.type === 'partner' && '🤝 Aliado'}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <p class="partners__note reveal">
+      ¿Tu institución quiere ser aliada del congreso?
+      <a href="/contacto" class="partners__link">Contáctanos →</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .partners {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+  }
+
+  [data-theme="dark"] .partners {
+    background: linear-gradient(180deg, #0a1f14 0%, #0d2318 100%);
+  }
+
+  .partners__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .partners__grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .partners__grid { grid-template-columns: repeat(6, 1fr); }
+  }
+
+  .partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.25rem 0.75rem;
+    background: rgba(255,255,255,0.85);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(82,183,136,0.1);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    text-decoration: none;
+    transition: all var(--transition-mid);
+    min-height: 110px;
+  }
+
+  [data-theme="dark"] .partner-card {
+    background: rgba(26,58,46,0.5);
+    border-color: rgba(82,183,136,0.15);
+  }
+
+  .partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(82,183,136,0.3);
+  }
+
+  .partner-card__acronym {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--forest-mid);
+    line-height: 1;
+  }
+  [data-theme="dark"] .partner-card__acronym { color: var(--forest-canopy); }
+
+  .partner-card__name {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .partner-card__type {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+  .partner-card--organizer {
+    border-color: rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.06);
+  }
+  .partner-card--organizer .partner-card__acronym { color: var(--gold); }
+
+  .partners__note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .partners__link {
+    color: var(--forest-leaf);
+    font-weight: 600;
+    margin-left: 0.25rem;
+    transition: color var(--transition-fast);
+  }
+  .partners__link:hover { color: var(--forest-mid); }
+</style>

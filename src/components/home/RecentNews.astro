@@ -1,0 +1,225 @@
+---
+const base = import.meta.env.BASE_URL;
+
+// Mock news — reemplazar con Astro content collections
+const news = [
+  {
+    slug: "apertura-llamado-resumenes-2026",
+    title: "Se abre oficialmente el llamado de resúmenes para el CPP 2026",
+    excerpt: "La Sociedad Peruana de Primatología anuncia la apertura del proceso de envío de resúmenes para ponencias orales, simposios y pósters del primer congreso nacional.",
+    date: "2026-04-30",
+    dateFormatted: "30 abr 2026",
+    category: "Llamado de resúmenes",
+    categoryColor: "#52b788",
+    emoji: "📋",
+    readTime: "2 min",
+  },
+  {
+    slug: "talleres-precongresuales-anunciados",
+    title: "Anunciados los talleres pre-congresuales: metodologías de campo y análisis genómico",
+    excerpt: "El comité científico confirma tres talleres intensivos el día previo al congreso: censos de primates, análisis de datos con R y técnicas de secuenciación en campo.",
+    date: "2026-05-01",
+    dateFormatted: "01 may 2026",
+    category: "Programa",
+    categoryColor: "#c9a84c",
+    emoji: "🔬",
+    readTime: "3 min",
+  },
+  {
+    slug: "becas-estudiantes-latinoamerica",
+    title: "Disponibles becas de participación para estudiantes de Latinoamérica",
+    excerpt: "En alianza con SLAPrim e IPS, el congreso ofrece 20 becas parciales para estudiantes de posgrado de países latinoamericanos con proyectos de investigación en primatología.",
+    date: "2026-05-05",
+    dateFormatted: "05 may 2026",
+    category: "Becas",
+    categoryColor: "#8b5e3c",
+    emoji: "🎓",
+    readTime: "4 min",
+  },
+];
+---
+
+<section class="section news" id="noticias">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Mantente informado</span>
+      <h2 class="section-title">Últimas Noticias</h2>
+      <p class="section-subtitle">
+        Novedades del congreso, convocatorias abiertas y anuncios del comité organizador.
+      </p>
+    </div>
+
+    <div class="news__grid">
+      {news.map((item, i) => (
+        <article class={`news-card reveal reveal-delay-${i + 1}`} style={`--cat-color: ${item.categoryColor};`}>
+          <div class="news-card__top">
+            <span class="news-card__emoji" aria-hidden="true">{item.emoji}</span>
+            <span class="news-card__category" style={`color: ${item.categoryColor}; background: ${item.categoryColor}18; border-color: ${item.categoryColor}30;`}>
+              {item.category}
+            </span>
+          </div>
+
+          <h3 class="news-card__title">
+            <a href={`${base}noticias/${item.slug}`}>{item.title}</a>
+          </h3>
+
+          <p class="news-card__excerpt">{item.excerpt}</p>
+
+          <div class="news-card__meta">
+            <time datetime={item.date} class="news-card__date">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              {item.dateFormatted}
+            </time>
+            <span class="news-card__read">⏱ {item.readTime} lectura</span>
+
+            <a href={`${base}noticias/${item.slug}`} class="news-card__link">
+              Leer →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="news__cta reveal">
+      <a href={`${base}noticias`} class="btn btn-secondary">
+        Ver todas las noticias
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .news {
+    background: var(--cream-warm);
+  }
+  [data-theme="dark"] .news {
+    background: linear-gradient(180deg, #0d2318 0%, #0a1f14 100%);
+  }
+
+  .news__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .news__grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .news-card {
+    padding: 1.75rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.1);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: all var(--transition-mid);
+    position: relative;
+    overflow: hidden;
+  }
+
+  [data-theme="dark"] .news-card {
+    background: rgba(26,58,46,0.55);
+    border-color: rgba(82,183,136,0.18);
+  }
+
+  .news-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--cat-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-mid);
+  }
+
+  .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .news-card:hover::before { transform: scaleX(1); }
+
+  .news-card__top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .news-card__emoji { font-size: 1.6rem; }
+
+  .news-card__category {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+    border: 1px solid;
+    letter-spacing: 0.04em;
+  }
+
+  .news-card__title {
+    font-family: var(--font-body);
+    font-size: 0.97rem;
+    font-weight: 700;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .news-card__title a {
+    color: var(--text-on-light);
+    transition: color var(--transition-fast);
+  }
+  [data-theme="dark"] .news-card__title a { color: var(--text-on-dark); }
+  .news-card__title a:hover { color: var(--forest-leaf); }
+
+  .news-card__excerpt {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(82,183,136,0.1);
+  }
+
+  .news-card__date {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--font-ui);
+  }
+
+  .news-card__link {
+    margin-left: auto;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    color: var(--forest-leaf);
+    font-size: 0.78rem;
+    transition: color var(--transition-fast);
+  }
+  .news-card__link:hover { color: var(--forest-mid); }
+
+  .news__cta {
+    display: flex;
+    justify-content: center;
+  }
+</style>

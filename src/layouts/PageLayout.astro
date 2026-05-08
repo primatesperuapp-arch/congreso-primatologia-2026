@@ -1,0 +1,59 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  heroTitle?: string;
+  heroSubtitle?: string;
+  heroColor?: string;
+}
+
+const { title, description, heroTitle, heroSubtitle, heroColor = 'var(--forest-dark)' } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  {heroTitle && (
+    <section class="page-hero" style={`background: linear-gradient(135deg, ${heroColor}, var(--forest-mid));`}>
+      <div class="pattern-amazonico" style="position:absolute;inset:0;opacity:0.4"></div>
+      <div class="container page-hero__content">
+        <h1 class="page-hero__title">{heroTitle}</h1>
+        {heroSubtitle && <p class="page-hero__subtitle">{heroSubtitle}</p>}
+      </div>
+    </section>
+  )}
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    padding: 5rem 0 4rem;
+    overflow: hidden;
+  }
+  .page-hero__content {
+    position: relative;
+    z-index: 1;
+  }
+  .page-hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: #fff;
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+  }
+  .page-hero__subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    line-height: 1.65;
+  }
+</style>

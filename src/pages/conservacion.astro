@@ -1,0 +1,200 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<PageLayout
+  title="Conservación y Comunidades"
+  description="El I Congreso Peruano de Primatología 2026 pone en el centro a los pueblos indígenas, las comunidades locales y las iniciativas de conservación participativa."
+  heroTitle="Conservación y Comunidades"
+  heroSubtitle="Ciencia colaborativa, comunidades y conservación de primates en el Perú"
+  heroColor="var(--earth-dark)"
+>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="cons-intro reveal">
+        <div class="cons-intro__visual" aria-hidden="true">
+          <div class="cons-intro__icons">
+            <span style="font-size:4rem">🌿</span>
+            <span style="font-size:3rem">🤝</span>
+            <span style="font-size:4rem">🐒</span>
+          </div>
+          <p style="font-family:var(--font-display); font-style:italic; font-size:1.1rem; color:var(--forest-leaf); text-align:center; padding:1rem 0;">
+            "La conservación nace del territorio"
+          </p>
+        </div>
+        <div class="cons-intro__text">
+          <span class="section-label">Enfoque central</span>
+          <h2 class="section-title" style="text-align:left; margin-bottom:1rem;">La Conservación como Acto Colectivo</h2>
+          <p>
+            El I Congreso Peruano de Primatología reconoce que la conservación efectiva de los primates en Perú solo es posible cuando se integran los saberes y las decisiones de <strong>quienes habitan los territorios</strong>: los pueblos indígenas amazónicos, las comunidades nativas ribereñas y los guardianes comunitarios de bosques.
+          </p>
+          <p>
+            El congreso dedicará un espacio especial a la <strong>etnoprimatología</strong> y la conservación participativa, garantizando que las voces indígenas no sean solo objeto de estudio, sino protagonistas activos del conocimiento y la toma de decisiones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Iniciativas -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Áreas de acción</span>
+        <h2 class="section-title">Iniciativas y Enfoques</h2>
+      </div>
+
+      <div class="initiatives-grid">
+        {[
+          { icon: "🏘️", title: "Pueblos Indígenas y Primates", desc: "Los pueblos amazónicos como los Awajún, Shipibo-Conibo, Kukama y Matsigenka tienen conocimientos ecológicos milenarios sobre primates. El congreso creará un espacio de diálogo intercultural donde estos saberes sean reconocidos como ciencia legítima.", color: "#8b5e3c" },
+          { icon: "🌱", title: "Educación Ambiental Comunitaria", desc: "Programas educativos diseñados con y para comunidades: materiales en lenguas indígenas, talleres de identificación de primates, y formación de guardabosques locales como monitores de biodiversidad.", color: "#52b788" },
+          { icon: "👁️", title: "Monitoreo Participativo", desc: "La ciencia ciudadana como herramienta central: aplicaciones móviles para el registro de avistamientos, redes comunitarias de guardianes de primates, y datos compartidos en plataformas abiertas.", color: "#2d6a4f" },
+          { icon: "🦌", title: "Manejo Comunitario de Fauna", desc: "Protocolos para el manejo sostenible de primates en zonas de amortiguamiento, rescate de animales traficados, y programas de reintegración de primates rescatados coordinados con comunidades.", color: "#c9a84c" },
+          { icon: "🔬", title: "Ciencia Abierta", desc: "Compromisos de acceso abierto a datos, publicaciones y metodologías. El conocimiento generado en territorios indígenas debe retornar a esos territorios en formatos comprensibles y útiles.", color: "#74c69d" },
+          { icon: "⚖️", title: "Políticas y Gobernanza", desc: "Incidencia para el fortalecimiento del marco legal de protección de primates: ampliación de áreas protegidas, control del tráfico de fauna, y reconocimiento legal del conocimiento ecológico tradicional.", color: "#e07b54" },
+        ].map((item, i) => (
+          <div class={`initiative-card reveal reveal-delay-${(i%3)+1}`} style={`--ic: ${item.color};`}>
+            <div class="initiative-card__icon">{item.icon}</div>
+            <h3 class="initiative-card__title">{item.title}</h3>
+            <p class="initiative-card__desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Especies Amenazadas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">En peligro</span>
+        <h2 class="section-title">Primates Amenazados del Perú</h2>
+        <p class="section-subtitle">
+          Estas son algunas de las especies que el CPP 2026 busca proteger con urgencia científica y acción colectiva.
+        </p>
+      </div>
+
+      <div class="species-grid">
+        {[
+          { emoji: "🐒", name: "Mono choro de cola amarilla", sci: "Oreonax flavicauda", status: "CR", statusLabel: "En Peligro Crítico", habitat: "Selva alta del norte y centro del Perú", icon: "🔴" },
+          { emoji: "🐵", name: "Mono tocón andino", sci: "Callicebus oenanthe", status: "CR", statusLabel: "En Peligro Crítico", habitat: "Alto Mayo, San Martín", icon: "🔴" },
+          { emoji: "🦅", name: "Huapo colorado", sci: "Cacajao calvus", status: "VU", statusLabel: "Vulnerable", habitat: "Amazonía baja, ríos Ucayali y Marañón", icon: "🟡" },
+          { emoji: "🐾", name: "Mono araña de frente blanca", sci: "Ateles belzebuth", status: "EN", statusLabel: "En Peligro", habitat: "Loreto y Ucayali", icon: "🟠" },
+          { emoji: "🌿", name: "Chichico de Goeldi", sci: "Callimico goeldii", status: "VU", statusLabel: "Vulnerable", habitat: "Madre de Dios y Loreto", icon: "🟡" },
+          { emoji: "🌳", name: "Machín blanco", sci: "Cebus albifrons", status: "VU", statusLabel: "Vulnerable", habitat: "Amazonía peruana en general", icon: "🟡" },
+        ].map((sp, i) => (
+          <div class={`species-card reveal reveal-delay-${(i%3)+1}`}>
+            <div class="species-card__emoji">{sp.emoji}</div>
+            <div class={`species-card__status species-card__status--${sp.status}`}>
+              {sp.icon} {sp.statusLabel} ({sp.status})
+            </div>
+            <h3 class="species-card__name">{sp.name}</h3>
+            <p class="species-card__sci"><em>{sp.sci}</em></p>
+            <p class="species-card__habitat">📍 {sp.habitat}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:var(--forest-dark); text-align:center;">
+    <div class="container">
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.5rem,3vw,2rem); color:#fff; margin-bottom:1rem;">
+        ¿Tu trabajo vincula ciencia y comunidades?
+      </h2>
+      <p style="color:rgba(255,255,255,0.7); margin-bottom:2rem; max-width:500px; margin-left:auto; margin-right:auto;">
+        Envía tu resumen en el eje de Etnoprimatología o Educación y Ciencia Ciudadana. Queremos escucharte.
+      </p>
+      <a href={`${base}llamado-de-resumenes`} class="btn btn-primary btn-lg">
+        Enviar mi resumen →
+      </a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .cons-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) { .cons-intro { grid-template-columns: 0.5fr 1fr; } }
+
+  .cons-intro__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(82,183,136,0.08), rgba(45,106,79,0.05));
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(82,183,136,0.2);
+  }
+  .cons-intro__icons { display: flex; align-items: center; gap: 0.5rem; }
+  .cons-intro__text { display: flex; flex-direction: column; gap: 1.25rem; }
+  .cons-intro__text p { font-size: 0.97rem; color: var(--text-on-light); line-height: 1.8; }
+  [data-theme="dark"] .cons-intro__text p { color: rgba(240,237,232,0.85); }
+
+  /* Initiatives */
+  .initiatives-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) { .initiatives-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .initiatives-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .initiative-card {
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.12);
+    border-left: 4px solid var(--ic);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-mid), box-shadow var(--transition-mid);
+  }
+  [data-theme="dark"] .initiative-card { background: rgba(26,58,46,0.5); }
+  .initiative-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .initiative-card__icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .initiative-card__title { font-weight: 700; font-size: 1rem; color: var(--text-on-light); margin-bottom: 0.6rem; }
+  [data-theme="dark"] .initiative-card__title { color: var(--text-on-dark); }
+  .initiative-card__desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* Species */
+  .species-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 640px) { .species-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .species-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .species-card {
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(82,183,136,0.1);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-mid);
+  }
+  [data-theme="dark"] .species-card { background: rgba(26,58,46,0.5); }
+  .species-card:hover { transform: translateY(-4px); }
+  .species-card__emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .species-card__status {
+    font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700;
+    padding: 0.25rem 0.65rem; border-radius: 100px; border: 1px solid;
+    width: fit-content; margin-bottom: 0.6rem;
+  }
+  .species-card__status--CR { color: #d32f2f; background: rgba(211,47,47,0.1); border-color: rgba(211,47,47,0.3); }
+  .species-card__status--EN { color: #e65100; background: rgba(230,81,0,0.1); border-color: rgba(230,81,0,0.3); }
+  .species-card__status--VU { color: #f57f17; background: rgba(245,127,23,0.1); border-color: rgba(245,127,23,0.3); }
+
+  .species-card__name { font-weight: 700; font-size: 0.95rem; color: var(--text-on-light); margin-bottom: 0.2rem; }
+  [data-theme="dark"] .species-card__name { color: var(--text-on-dark); }
+  .species-card__sci { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+  .species-card__habitat { font-size: 0.78rem; color: var(--text-muted); }
+</style>

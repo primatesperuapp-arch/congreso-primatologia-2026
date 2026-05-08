@@ -1,0 +1,333 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const schedule = {
+  "Día 1": {
+    date: "Día 1 | Octubre 2026",
+    theme: "Ciencia y Conocimiento",
+    sessions: [
+      { time: "08:00", duration: "60 min", type: "inscripcion", title: "Registro y acreditación de participantes", location: "Vestíbulo principal", speaker: "" },
+      { time: "09:00", duration: "30 min", type: "apertura", title: "Ceremonia de apertura oficial", location: "Auditorio principal", speaker: "Presidenta del CPP 2026" },
+      { time: "09:30", duration: "60 min", type: "conferencia", title: "Conferencia magistral inaugural: Diversidad y distribución de primates en el Perú del siglo XXI", location: "Auditorio principal", speaker: "Ponente magistral invitado/a" },
+      { time: "10:30", duration: "30 min", type: "break", title: "Coffee break", location: "Foyer", speaker: "" },
+      { time: "11:00", duration: "90 min", type: "simposio", title: "Simposio: Ecología y comportamiento de primates en paisajes fragmentados", location: "Sala A", speaker: "Moderador/a: Por confirmar" },
+      { time: "11:00", duration: "90 min", type: "simposio", title: "Simposio: Genómica de conservación de primates neotropicales", location: "Sala B", speaker: "Moderador/a: Por confirmar" },
+      { time: "12:30", duration: "90 min", type: "break", title: "Almuerzo", location: "Comedor", speaker: "" },
+      { time: "14:00", duration: "90 min", type: "ponencias", title: "Sesión de ponencias orales: Conservación y manejo", location: "Auditorio principal", speaker: "" },
+      { time: "15:30", duration: "30 min", type: "break", title: "Coffee break", speaker: "", location: "Foyer" },
+      { time: "16:00", duration: "90 min", type: "posters", title: "Sesión de pósters: Ecología, comportamiento y conservación", location: "Sala de exposición", speaker: "" },
+      { time: "19:00", duration: "120 min", type: "social", title: "Cena de bienvenida y networking", location: "Por confirmar", speaker: "" },
+    ]
+  },
+  "Día 2": {
+    date: "Día 2 | Octubre 2026",
+    theme: "Comunidades y Conservación",
+    sessions: [
+      { time: "09:00", duration: "60 min", type: "conferencia", title: "Conferencia magistral: Etnoprimatología y saberes indígenas en la conservación", location: "Auditorio principal", speaker: "Por confirmar" },
+      { time: "10:00", duration: "30 min", type: "break", title: "Coffee break", location: "Foyer", speaker: "" },
+      { time: "10:30", duration: "90 min", type: "simposio", title: "Simposio: Comunidades indígenas y conservación de primates — voces del territorio", location: "Sala A", speaker: "" },
+      { time: "10:30", duration: "90 min", type: "simposio", title: "Simposio: One Health y medicina de fauna silvestre en primates", location: "Sala B", speaker: "" },
+      { time: "12:00", duration: "90 min", type: "break", title: "Almuerzo", location: "Comedor", speaker: "" },
+      { time: "13:30", duration: "90 min", type: "mesa_redonda", title: "Mesa redonda: Políticas públicas y legislación para la protección de primates en Perú", location: "Auditorio principal", speaker: "" },
+      { time: "15:00", duration: "30 min", type: "break", title: "Coffee break", location: "Foyer", speaker: "" },
+      { time: "15:30", duration: "90 min", type: "ponencias", title: "Sesión de ponencias orales: Educación y ciencia ciudadana", location: "Auditorio principal", speaker: "" },
+      { time: "17:00", duration: "60 min", type: "social", title: "Actividad cultural: Arte amazónico y conservación", location: "Espacio cultural", speaker: "" },
+    ]
+  },
+  "Día 3": {
+    date: "Día 3 | Octubre 2026",
+    theme: "Acción y Compromiso",
+    sessions: [
+      { time: "09:00", duration: "60 min", type: "taller", title: "Talleres paralelos: A) Técnicas de censo de primates, B) Análisis estadístico con R, C) Comunicación científica en redes", location: "Salas A, B, C", speaker: "" },
+      { time: "10:00", duration: "30 min", type: "break", title: "Coffee break", location: "Foyer", speaker: "" },
+      { time: "10:30", duration: "90 min", type: "ponencias", title: "Sesión de ponencias orales: Sistemática y genética", location: "Auditorio principal", speaker: "" },
+      { time: "12:00", duration: "90 min", type: "break", title: "Almuerzo", location: "Comedor", speaker: "" },
+      { time: "13:30", duration: "60 min", type: "conferencia", title: "Conferencia de cierre: El futuro de los primates en Latinoamérica — perspectivas 2030", location: "Auditorio principal", speaker: "Por confirmar" },
+      { time: "14:30", duration: "60 min", type: "mesa_redonda", title: "Asamblea de la Sociedad Peruana de Primatología", location: "Auditorio principal", speaker: "" },
+      { time: "15:30", duration: "30 min", type: "break", title: "Coffee break", location: "Foyer", speaker: "" },
+      { time: "16:00", duration: "60 min", type: "clausura", title: "Ceremonia de clausura y premiación de mejores trabajos", location: "Auditorio principal", speaker: "" },
+    ]
+  }
+};
+
+const typeConfig: Record<string, { color: string; label: string; icon: string }> = {
+  conferencia:   { color: '#2d6a4f', label: 'Conferencia Magistral', icon: '🎤' },
+  simposio:      { color: '#52b788', label: 'Simposio', icon: '🗣️' },
+  ponencias:     { color: '#c9a84c', label: 'Ponencias Orales', icon: '📢' },
+  posters:       { color: '#8b5e3c', label: 'Sesión de Pósters', icon: '📌' },
+  taller:        { color: '#74c69d', label: 'Taller', icon: '🔬' },
+  mesa_redonda:  { color: '#e07b54', label: 'Mesa Redonda', icon: '🔵' },
+  apertura:      { color: '#c9a84c', label: 'Apertura', icon: '🏛️' },
+  clausura:      { color: '#c9a84c', label: 'Clausura', icon: '🏆' },
+  break:         { color: '#aaa', label: 'Descanso', icon: '☕' },
+  social:        { color: '#74c69d', label: 'Actividad Social', icon: '🌿' },
+  inscripcion:   { color: '#aaa', label: 'Registro', icon: '📋' },
+};
+---
+
+<PageLayout
+  title="Programa"
+  description="Programa completo del I Congreso Peruano de Primatología 2026: conferencias magistrales, simposios, talleres, ponencias y sesiones de pósters."
+  heroTitle="Programa"
+  heroSubtitle="Agenda científica del I Congreso Peruano de Primatología 2026"
+  heroColor="var(--earth-dark)"
+>
+  <!-- Nota -->
+  <section class="section">
+    <div class="container">
+      <div class="program-note reveal">
+        <div class="program-note__icon">📌</div>
+        <div class="program-note__text">
+          <strong>Nota:</strong> El programa a continuación es preliminar y está sujeto a modificaciones. Las fechas y horarios exactos se confirmarán al anunciar la sede oficial del congreso.
+        </div>
+      </div>
+
+      <!-- Leyenda -->
+      <div class="legend reveal">
+        {Object.entries(typeConfig).filter(([k]) => !['inscripcion','break','apertura','clausura'].includes(k)).map(([, v]) => (
+          <span class="legend-item" style={`--lc: ${v.color};`}>
+            {v.icon} {v.label}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Programa por día con tabs -->
+  <section class="section" style="background: var(--cream-warm); padding-top: 0;">
+    <div class="container">
+      <div class="program-tabs" id="program-tabs">
+        {Object.entries(schedule).map(([day, data], i) => (
+          <button
+            class={`program-tab ${i === 0 ? 'active' : ''}`}
+            data-tab={day}
+            id={`tab-${day.replace(' ','')}`}
+            aria-controls={`panel-${day.replace(' ','')}`}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            role="tab"
+          >
+            <span class="program-tab__day">{day}</span>
+            <span class="program-tab__theme">{data.theme}</span>
+          </button>
+        ))}
+      </div>
+
+      {Object.entries(schedule).map(([day, data], i) => (
+        <div
+          class={`program-panel ${i === 0 ? 'active' : ''}`}
+          id={`panel-${day.replace(' ','')}`}
+          role="tabpanel"
+          aria-labelledby={`tab-${day.replace(' ','')}`}
+        >
+          <div class="program-header-day">
+            <h2 class="program-header-day__title">{data.date}</h2>
+            <p class="program-header-day__theme">Eje central: {data.theme}</p>
+          </div>
+
+          <div class="schedule-list">
+            {data.sessions.map(session => {
+              const cfg = typeConfig[session.type] || typeConfig.ponencias;
+              return (
+                <div class={`schedule-item ${session.type === 'break' ? 'schedule-item--break' : ''}`} style={`--s-color: ${cfg.color};`}>
+                  <div class="schedule-item__time">
+                    <span class="schedule-item__hour">{session.time}</span>
+                    <span class="schedule-item__dur">{session.duration}</span>
+                  </div>
+                  <div class="schedule-item__bar" aria-hidden="true"></div>
+                  <div class="schedule-item__content">
+                    <div class="schedule-item__type-badge" style={`color: ${cfg.color}; background: ${cfg.color}15; border-color: ${cfg.color}30;`}>
+                      {cfg.icon} {cfg.label}
+                    </div>
+                    <h3 class="schedule-item__title">{session.title}</h3>
+                    {session.speaker && <p class="schedule-item__speaker">👤 {session.speaker}</p>}
+                    {session.location && <p class="schedule-item__location">📍 {session.location}</p>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</PageLayout>
+
+<script>
+  const tabs = document.querySelectorAll('.program-tab');
+  const panels = document.querySelectorAll('.program-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = (tab as HTMLElement).dataset.tab;
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(`panel-${target?.replace(' ','')}`)?.classList.add('active');
+    });
+  });
+</script>
+
+<style>
+  .program-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+  }
+  .program-note__icon { font-size: 1.5rem; }
+  .program-note__text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+  .program-note__text strong { color: var(--gold); }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .legend-item {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    background: color-mix(in srgb, var(--lc) 10%, transparent);
+    color: var(--lc);
+    border: 1px solid color-mix(in srgb, var(--lc) 25%, transparent);
+  }
+
+  /* Tabs */
+  .program-tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1.5rem 0 0;
+    flex-wrap: wrap;
+  }
+
+  .program-tab {
+    display: flex;
+    flex-direction: column;
+    padding: 0.85rem 1.5rem;
+    background: rgba(255,255,255,0.7);
+    border: 1.5px solid rgba(82,183,136,0.15);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: var(--font-body);
+    text-align: left;
+  }
+  [data-theme="dark"] .program-tab {
+    background: rgba(26,58,46,0.4);
+    border-color: rgba(82,183,136,0.2);
+  }
+
+  .program-tab:hover { background: rgba(82,183,136,0.08); }
+  .program-tab.active {
+    background: white;
+    border-color: var(--forest-leaf);
+    border-bottom-color: white;
+  }
+  [data-theme="dark"] .program-tab.active {
+    background: var(--forest-dark);
+    border-color: var(--forest-leaf);
+    border-bottom-color: var(--forest-dark);
+  }
+
+  .program-tab__day { font-weight: 700; font-size: 0.9rem; color: var(--forest-mid); }
+  [data-theme="dark"] .program-tab__day { color: var(--forest-canopy); }
+  .program-tab__theme { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+  /* Panel */
+  .program-panel { display: none; }
+  .program-panel.active { display: block; }
+
+  .program-header-day {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid rgba(82,183,136,0.15);
+    border-top: 3px solid var(--forest-leaf);
+    border-radius: 0 var(--radius-md) 0 0;
+    margin-bottom: 1.25rem;
+  }
+  [data-theme="dark"] .program-header-day {
+    background: var(--forest-dark);
+    border-color: rgba(82,183,136,0.2);
+  }
+  .program-header-day__title { font-family: var(--font-display); font-size: 1.2rem; color: var(--text-on-light); }
+  [data-theme="dark"] .program-header-day__title { color: var(--text-on-dark); }
+  .program-header-day__theme { font-size: 0.85rem; color: var(--forest-leaf); margin-top: 0.3rem; }
+
+  /* Schedule */
+  .schedule-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .schedule-item {
+    display: grid;
+    grid-template-columns: 80px 4px 1fr;
+    gap: 1rem;
+    align-items: stretch;
+    padding: 0.75rem 0;
+  }
+
+  .schedule-item--break { opacity: 0.6; }
+
+  .schedule-item__time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 0.25rem;
+  }
+  .schedule-item__hour {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-on-light);
+  }
+  [data-theme="dark"] .schedule-item__hour { color: var(--text-on-dark); }
+  .schedule-item__dur {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .schedule-item__bar {
+    width: 4px;
+    border-radius: 2px;
+    background: var(--s-color);
+    flex-shrink: 0;
+  }
+
+  .schedule-item__content {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .schedule-item__type-badge {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    border: 1px solid;
+    width: fit-content;
+  }
+
+  .schedule-item__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-on-light);
+    line-height: 1.35;
+  }
+  [data-theme="dark"] .schedule-item__title { color: var(--text-on-dark); }
+
+  .schedule-item__speaker,
+  .schedule-item__location {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+</style>

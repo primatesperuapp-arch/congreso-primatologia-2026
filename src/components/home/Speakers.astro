@@ -1,0 +1,267 @@
+---
+const base = import.meta.env.BASE_URL;
+
+// Mock speakers — reemplazar con Astro content collection cuando haya datos reales
+const speakers = [
+  {
+    id: 1,
+    name: "Dra. María del Carmen Huertas",
+    title: "Investigadora Principal",
+    affiliation: "Instituto de Biodiversidad Amazónica",
+    country: "Perú",
+    flag: "🇵🇪",
+    area: "Ecología de primates",
+    bio: "Especialista en ecología comportamental de primates con 20 años de investigación en la Amazonía peruana y colombiana.",
+    photo: null,
+    initials: "MH",
+    color: "#2d6a4f"
+  },
+  {
+    id: 2,
+    name: "Dr. Carlos Boubli",
+    title: "Profesor Titular",
+    affiliation: "Universidad de São Paulo",
+    country: "Brasil",
+    flag: "🇧🇷",
+    area: "Sistemática y genómica",
+    bio: "Reconocido experto en filogenia molecular de primates neotropicales, con más de 150 publicaciones indexadas.",
+    photo: null,
+    initials: "CB",
+    color: "#c9a84c"
+  },
+  {
+    id: 3,
+    name: "Dr. Alejandro García-Naranjo",
+    title: "Director de Conservación",
+    affiliation: "Wildlife Conservation Society",
+    country: "Colombia",
+    flag: "🇨🇴",
+    area: "Conservación in situ",
+    bio: "Lidera programas de conservación de primates amenazados en la cuenca del Orinoco y la Amazonía occidental.",
+    photo: null,
+    initials: "AG",
+    color: "#8b5e3c"
+  },
+  {
+    id: 4,
+    name: "Dra. Yamila Roca Pasca",
+    title: "Investigadora Asociada",
+    affiliation: "UNAM — México",
+    country: "México",
+    flag: "🇲🇽",
+    area: "Etnoprimatología",
+    bio: "Pionera en estudios de coexistencia humano-primate y conocimiento ecológico de comunidades indígenas amazónicas.",
+    photo: null,
+    initials: "YR",
+    color: "#52b788"
+  },
+];
+---
+
+<section class="section speakers" id="ponentes">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Expertos invitados</span>
+      <h2 class="section-title">Ponentes Destacados</h2>
+      <p class="section-subtitle">
+        Líderes científicos de Latinoamérica y el mundo que compartirán su conocimiento en el I CPP 2026.
+      </p>
+    </div>
+
+    <div class="speakers__grid">
+      {speakers.map((speaker, i) => (
+        <article class={`speaker-card reveal reveal-delay-${(i % 4) + 1}`} style={`--speaker-color: ${speaker.color};`}>
+          <!-- Photo / Avatar -->
+          <div class="speaker-card__photo">
+            {speaker.photo ? (
+              <img src={speaker.photo} alt={`Foto de ${speaker.name}`} loading="lazy" />
+            ) : (
+              <div class="speaker-card__initials" style={`background: linear-gradient(135deg, ${speaker.color}, ${speaker.color}99);`}>
+                {speaker.initials}
+              </div>
+            )}
+            <div class="speaker-card__flag" aria-label={speaker.country}>{speaker.flag}</div>
+          </div>
+
+          <!-- Info -->
+          <div class="speaker-card__info">
+            <div class="speaker-card__area">{speaker.area}</div>
+            <h3 class="speaker-card__name">{speaker.name}</h3>
+            <p class="speaker-card__title">{speaker.title}</p>
+            <p class="speaker-card__affiliation">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              {speaker.affiliation}
+            </p>
+            <p class="speaker-card__bio">{speaker.bio}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="speakers__cta reveal">
+      <p class="speakers__coming-soon">
+        🔔 Se anunciarán más ponentes próximamente
+      </p>
+      <a href={`${base}ponentes`} class="btn btn-secondary">
+        Ver todos los ponentes
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .speakers {
+    background: var(--cream-warm);
+  }
+
+  [data-theme="dark"] .speakers {
+    background: linear-gradient(180deg, #0d2318 0%, #0a1f14 100%);
+  }
+
+  .speakers__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .speakers__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .speakers__grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* ── Speaker Card ────────────────────────────────── */
+  .speaker-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.12);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all var(--transition-mid);
+    display: flex;
+    flex-direction: column;
+  }
+
+  [data-theme="dark"] .speaker-card {
+    background: rgba(26,58,46,0.55);
+    border-color: rgba(82,183,136,0.18);
+  }
+
+  .speaker-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md), 0 0 30px color-mix(in srgb, var(--speaker-color) 15%, transparent);
+    border-color: var(--speaker-color);
+  }
+
+  /* Photo */
+  .speaker-card__photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(82,183,136,0.1), rgba(45,106,79,0.2));
+  }
+
+  .speaker-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .speaker-card__initials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .speaker-card__flag {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+
+  /* Info */
+  .speaker-card__info {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .speaker-card__area {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--speaker-color);
+    margin-bottom: 0.2rem;
+  }
+
+  .speaker-card__name {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-on-light);
+    line-height: 1.3;
+  }
+
+  [data-theme="dark"] .speaker-card__name { color: var(--text-on-dark); }
+
+  .speaker-card__title {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .speaker-card__affiliation {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.1rem;
+  }
+
+  .speaker-card__bio {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-top: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* CTA */
+  .speakers__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .speakers__coming-soon {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    padding: 0.6rem 1.25rem;
+    background: rgba(82,183,136,0.08);
+    border-radius: 100px;
+    border: 1px solid rgba(82,183,136,0.2);
+  }
+</style>

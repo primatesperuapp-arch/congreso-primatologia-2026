@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "icon": "🔬",
+    "title": "Avanzar el conocimiento científico",
+    "description": "Generar y difundir investigaciones de vanguardia sobre ecología, comportamiento y sistemática de primates neotropicales.",
+    "color": "green"
+  },
+  {
+    "id": 2,
+    "icon": "🌿",
+    "title": "Fortalecer la conservación",
+    "description": "Articular estrategias efectivas para la protección de primates amenazados, alineadas con el Plan Nacional de Conservación.",
+    "color": "forest"
+  },
+  {
+    "id": 3,
+    "icon": "🤝",
+    "title": "Integrar comunidades",
+    "description": "Incorporar el conocimiento indígena y las comunidades locales como actores clave en la ciencia y conservación participativa.",
+    "color": "earth"
+  },
+  {
+    "id": 4,
+    "icon": "🎓",
+    "title": "Formar nuevas generaciones",
+    "description": "Capacitar a jóvenes investigadores peruanos y latinoamericanos en metodologías modernas de investigación primatológica.",
+    "color": "gold"
+  },
+  {
+    "id": 5,
+    "icon": "🌍",
+    "title": "Crear redes latinoamericanas",
+    "description": "Establecer vínculos duraderos entre instituciones científicas, universidades y centros de investigación de la región.",
+    "color": "green"
+  },
+  {
+    "id": 6,
+    "icon": "📋",
+    "title": "Proponer políticas públicas",
+    "description": "Traducir el conocimiento científico en recomendaciones concretas para tomadores de decisiones y organismos del Estado.",
+    "color": "forest"
+  }
+]

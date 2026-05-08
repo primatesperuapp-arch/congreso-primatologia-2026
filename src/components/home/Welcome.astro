@@ -1,0 +1,240 @@
+---
+import site from '../../data/site.json';
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="section welcome" id="bienvenida">
+  <div class="container welcome__inner">
+    <!-- Text side -->
+    <div class="welcome__text">
+      <div class="welcome__tag reveal">
+        <span class="section-label">Bienvenida oficial</span>
+      </div>
+
+      <h2 class="welcome__title reveal" style="animation-delay:0.1s">
+        Un hito para la primatología latinoamericana
+      </h2>
+
+      <div class="welcome__body reveal" style="animation-delay:0.2s">
+        <p>
+          El <strong>I Congreso Peruano de Primatología 2026</strong> representa un momento histórico para la ciencia y conservación de primates en el Perú. Por primera vez, la comunidad científica nacional e internacional se reunirá en un espacio dedicado exclusivamente a los primates neotropicales, sus ecosistemas y las comunidades humanas que los rodean.
+        </p>
+        <p>
+          El Perú alberga más de <strong>40 especies de primates</strong>, muchas de ellas endémicas y amenazadas. El congreso busca convertirse en una plataforma de encuentro entre la academia, los organismos de gobierno, las organizaciones conservacionistas y los pueblos indígenas, bajo un enfoque <em>interdisciplinario, inclusivo y orientado a la acción</em>.
+        </p>
+        <p>
+          Inspirado en los estándares de la Sociedad Internacional de Primatología (IPS) y la Sociedad Latinoamericana de Primatología (SLAPrim), pero con identidad y voz propias desde la Amazonía y los Andes del Perú.
+        </p>
+      </div>
+
+      <div class="welcome__stats reveal" style="animation-delay:0.3s">
+        <div class="welcome__stat">
+          <span class="welcome__stat-n">+40</span>
+          <span class="welcome__stat-l">especies en Perú</span>
+        </div>
+        <div class="welcome__stat">
+          <span class="welcome__stat-n">12</span>
+          <span class="welcome__stat-l">especies amenazadas</span>
+        </div>
+        <div class="welcome__stat">
+          <span class="welcome__stat-n">2026</span>
+          <span class="welcome__stat-l">primer congreso</span>
+        </div>
+      </div>
+
+      <div class="reveal" style="animation-delay:0.4s">
+        <a href={`${base}sobre-el-congreso`} class="btn btn-primary">
+          Conocer más sobre el congreso →
+        </a>
+      </div>
+    </div>
+
+    <!-- Visual side -->
+    <div class="welcome__visual reveal" aria-hidden="true">
+      <div class="welcome__map-card card-glass">
+        <div class="welcome__map-title">🌏 Alcance del congreso</div>
+        <div class="welcome__map-items">
+          <div class="welcome__map-item">
+            <span class="welcome__map-flag">🇵🇪</span>
+            <div>
+              <div class="welcome__map-country">Perú</div>
+              <div class="welcome__map-info">Sede principal · Host</div>
+            </div>
+          </div>
+          <div class="welcome__map-item">
+            <span class="welcome__map-flag">🌎</span>
+            <div>
+              <div class="welcome__map-country">Latinoamérica</div>
+              <div class="welcome__map-info">Participantes de toda la región</div>
+            </div>
+          </div>
+          <div class="welcome__map-item">
+            <span class="welcome__map-flag">🌍</span>
+            <div>
+              <div class="welcome__map-country">Global</div>
+              <div class="welcome__map-info">Colaboración internacional</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="welcome__ecosystems">
+          <div class="welcome__eco">
+            <span>🌿</span>
+            <span>Amazonía</span>
+          </div>
+          <div class="welcome__eco">
+            <span>⛰️</span>
+            <span>Andes</span>
+          </div>
+          <div class="welcome__eco">
+            <span>🏞️</span>
+            <span>Selva alta</span>
+          </div>
+          <div class="welcome__eco">
+            <span>🌊</span>
+            <span>Várzea</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .welcome {
+    background: linear-gradient(180deg, var(--cream-warm) 0%, var(--cream) 100%);
+    border-top: 1px solid rgba(82,183,136,0.1);
+  }
+
+  [data-theme="dark"] .welcome {
+    background: linear-gradient(180deg, #0a1f14 0%, #0d2318 100%);
+  }
+
+  .welcome__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .welcome__inner {
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 5rem;
+    }
+  }
+
+  .welcome__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .welcome__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+    color: var(--forest-dark);
+    line-height: 1.2;
+  }
+  [data-theme="dark"] .welcome__title { color: var(--forest-canopy); }
+
+  .welcome__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .welcome__body p {
+    font-size: 0.97rem;
+    color: var(--text-on-light);
+    line-height: 1.8;
+  }
+  [data-theme="dark"] .welcome__body p { color: rgba(240,237,232,0.85); }
+
+  .welcome__stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .welcome__stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .welcome__stat-n {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--forest-leaf);
+    line-height: 1;
+  }
+
+  .welcome__stat-l {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* Visual card */
+  .welcome__map-card {
+    padding: 2rem;
+  }
+
+  .welcome__map-title {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--forest-leaf);
+    margin-bottom: 1.5rem;
+  }
+
+  .welcome__map-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .welcome__map-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .welcome__map-flag { font-size: 1.75rem; }
+
+  .welcome__map-country {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-on-light);
+  }
+  [data-theme="dark"] .welcome__map-country { color: var(--text-on-dark); }
+
+  .welcome__map-info {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .welcome__ecosystems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(82,183,136,0.15);
+  }
+
+  .welcome__eco {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+</style>

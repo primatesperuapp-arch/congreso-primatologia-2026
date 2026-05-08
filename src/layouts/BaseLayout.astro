@@ -1,0 +1,130 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description = site.meta.description,
+  ogImage = site.meta.ogImage,
+  noIndex = false,
+} = Astro.props;
+
+const fullTitle = title ? `${title} | ${site.shortName}` : site.name;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL;
+---
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  <meta name="keywords" content={site.meta.keywords} />
+  <meta name="author" content={site.organizer.name} />
+  {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Canonical -->
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:site_name" content={site.name} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalURL} />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
+
+  <!-- Sitemap -->
+  <link rel="sitemap" href={`${base}sitemap-index.xml`} />
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#1a3a2e" />
+</head>
+<body>
+  <slot />
+
+  <!-- Dark Mode & Animations Script -->
+  <script is:inline>
+    // Dark mode init
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Intersection Observer for reveal animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      );
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Mobile nav toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      if (navToggle && mobileNav) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = mobileNav.classList.contains('open');
+          mobileNav.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', String(!isOpen));
+        });
+      }
+
+      // Dark mode toggle
+      const darkToggle = document.getElementById('dark-toggle');
+      if (darkToggle) {
+        darkToggle.addEventListener('click', () => {
+          const html = document.documentElement;
+          const current = html.getAttribute('data-theme');
+          const next = current === 'dark' ? 'light' : 'dark';
+          html.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        });
+      }
+    });
+  </script>
+
+  <style is:global>
+    /* Mobile nav styles */
+    #mobile-nav {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    #mobile-nav.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+  </style>
+</body>
+</html>

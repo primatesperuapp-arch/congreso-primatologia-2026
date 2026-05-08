@@ -1,0 +1,214 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const news = [
+  {
+    slug: "apertura-llamado-resumenes-2026",
+    title: "Se abre oficialmente el llamado de resúmenes para el CPP 2026",
+    excerpt: "La Sociedad Peruana de Primatología anuncia la apertura del proceso de envío de resúmenes para ponencias orales, simposios y pósters del primer congreso nacional.",
+    date: "2026-04-30",
+    dateFormatted: "30 de abril, 2026",
+    category: "Llamado de resúmenes",
+    categoryColor: "#52b788",
+    emoji: "📋",
+    readTime: "2 min",
+    author: "Comité CPP 2026",
+  },
+  {
+    slug: "talleres-precongresuales-anunciados",
+    title: "Anunciados los talleres pre-congresuales: metodologías de campo y análisis genómico",
+    excerpt: "El comité científico confirma tres talleres intensivos el día previo al congreso: censos de primates, análisis de datos con R y técnicas de secuenciación en campo.",
+    date: "2026-05-01",
+    dateFormatted: "1 de mayo, 2026",
+    category: "Programa",
+    categoryColor: "#c9a84c",
+    emoji: "🔬",
+    readTime: "3 min",
+    author: "Comité Científico",
+  },
+  {
+    slug: "becas-estudiantes-latinoamerica",
+    title: "Disponibles becas de participación para estudiantes de Latinoamérica",
+    excerpt: "En alianza con SLAPrim e IPS, el congreso ofrece 20 becas parciales para estudiantes de posgrado de países latinoamericanos con proyectos de investigación en primatología.",
+    date: "2026-05-05",
+    dateFormatted: "5 de mayo, 2026",
+    category: "Becas",
+    categoryColor: "#8b5e3c",
+    emoji: "🎓",
+    readTime: "4 min",
+    author: "Comité Organizador",
+  },
+  {
+    slug: "primer-ponente-magistral-confirmado",
+    title: "Confirmada primera conferenciante magistral del CPP 2026",
+    excerpt: "El comité tiene el placer de anunciar a la primera ponente magistral confirmada para el I Congreso Peruano de Primatología. Una investigadora de trayectoria internacional en ecología de primates amazónicos.",
+    date: "2026-05-07",
+    dateFormatted: "7 de mayo, 2026",
+    category: "Ponentes",
+    categoryColor: "#2d6a4f",
+    emoji: "🎤",
+    readTime: "2 min",
+    author: "Comité Científico",
+  },
+  {
+    slug: "alianza-sernanp-cpp2026",
+    title: "SERNANP se une como aliado institucional del CPP 2026",
+    excerpt: "El Servicio Nacional de Áreas Naturales Protegidas by el Estado confirma su apoyo institucional al congreso, fortaleciendo el vínculo entre ciencia y política pública de conservación.",
+    date: "2026-05-08",
+    dateFormatted: "8 de mayo, 2026",
+    category: "Institucional",
+    categoryColor: "#74c69d",
+    emoji: "🏛️",
+    readTime: "3 min",
+    author: "Comité Organizador",
+  },
+];
+---
+
+<PageLayout
+  title="Noticias"
+  description="Últimas noticias y novedades del I Congreso Peruano de Primatología 2026: convocatorias, ponentes, programa y más."
+  heroTitle="Noticias y Novedades"
+  heroSubtitle="Mantente al día con todo lo que pasa en el CPP 2026"
+  heroColor="var(--forest-dark)"
+>
+  <section class="section">
+    <div class="container">
+      <!-- Filters (visual only) -->
+      <div class="news-filters reveal">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        {['Llamado de resúmenes','Programa','Becas','Ponentes','Institucional'].map(cat => (
+          <button class="filter-btn" data-filter={cat}>{cat}</button>
+        ))}
+      </div>
+
+      <!-- News Grid -->
+      <div class="news-index-grid">
+        {news.map((item, i) => (
+          <article class={`news-index-card reveal reveal-delay-${(i%3)+1}`} style={`--cat-color: ${item.categoryColor};`}>
+            <div class="news-index-card__top">
+              <span class="news-index-card__emoji">{item.emoji}</span>
+              <span class="news-index-card__category" style={`color:${item.categoryColor}; background:${item.categoryColor}15; border-color:${item.categoryColor}30;`}>
+                {item.category}
+              </span>
+            </div>
+
+            <h2 class="news-index-card__title">
+              <a href={`${base}noticias/${item.slug}`}>{item.title}</a>
+            </h2>
+
+            <p class="news-index-card__excerpt">{item.excerpt}</p>
+
+            <div class="news-index-card__meta">
+              <time datetime={item.date}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                {item.dateFormatted}
+              </time>
+              <span>👤 {item.author}</span>
+              <span>⏱ {item.readTime}</span>
+              <a href={`${base}noticias/${item.slug}`} class="news-index-card__read-more">
+                Leer →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .news-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 600;
+    border: 1.5px solid rgba(82,183,136,0.25);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--forest-mid);
+    border-color: var(--forest-mid);
+    color: #fff;
+  }
+
+  .news-index-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) { .news-index-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .news-index-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .news-index-card {
+    padding: 1.75rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.1);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: all var(--transition-mid);
+    position: relative;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .news-index-card {
+    background: rgba(26,58,46,0.55);
+    border-color: rgba(82,183,136,0.18);
+  }
+  .news-index-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--cat-color);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform var(--transition-mid);
+  }
+  .news-index-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+  .news-index-card:hover::after { transform: scaleX(1); }
+
+  .news-index-card__top { display: flex; align-items: center; gap: 0.75rem; }
+  .news-index-card__emoji { font-size: 1.6rem; }
+  .news-index-card__category {
+    font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700;
+    padding: 0.25rem 0.7rem; border-radius: 100px; border: 1px solid;
+  }
+
+  .news-index-card__title { font-family: var(--font-body); font-size: 1rem; font-weight: 700; line-height: 1.4; }
+  .news-index-card__title a { color: var(--text-on-light); transition: color var(--transition-fast); }
+  [data-theme="dark"] .news-index-card__title a { color: var(--text-on-dark); }
+  .news-index-card__title a:hover { color: var(--forest-leaf); }
+
+  .news-index-card__excerpt {
+    font-size: 0.85rem; color: var(--text-muted); line-height: 1.65;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  .news-index-card__meta {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.75rem; color: var(--text-muted);
+    flex-wrap: wrap; margin-top: auto;
+    padding-top: 0.75rem; border-top: 1px solid rgba(82,183,136,0.1);
+    font-family: var(--font-ui);
+  }
+  .news-index-card__meta time { display: flex; align-items: center; gap: 0.3rem; }
+  .news-index-card__read-more {
+    margin-left: auto; font-weight: 600; color: var(--forest-leaf);
+    transition: color var(--transition-fast);
+  }
+  .news-index-card__read-more:hover { color: var(--forest-mid); }
+</style>

@@ -1,0 +1,304 @@
+---
+import site from '../../data/site.json';
+const base = import.meta.env.BASE_URL;
+
+const navLinks = [
+  { href: `${base}`, label: 'Inicio' },
+  { href: `${base}sobre-el-congreso`, label: 'Sobre el Congreso' },
+  { href: `${base}llamado-de-resumenes`, label: 'Resúmenes' },
+  { href: `${base}programa`, label: 'Programa' },
+  { href: `${base}ponentes`, label: 'Ponentes' },
+  { href: `${base}inscripciones`, label: 'Inscripciones' },
+  { href: `${base}noticias`, label: 'Noticias' },
+  { href: `${base}contacto`, label: 'Contacto' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header nav-sticky" id="site-header">
+  <div class="header__inner container">
+
+    <!-- Logo / Brand -->
+    <a href={`${base}`} class="header__brand" aria-label="Inicio — Congreso Peruano de Primatología 2026">
+      <div class="header__logo" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Primate silhouette logo mark -->
+          <circle cx="20" cy="20" r="19" stroke="#52b788" stroke-width="2" fill="rgba(82,183,136,0.1)"/>
+          <text x="20" y="27" text-anchor="middle" font-size="20" fill="#52b788">🐒</text>
+        </svg>
+      </div>
+      <div class="header__brand-text">
+        <span class="header__brand-main">CPP 2026</span>
+        <span class="header__brand-sub">Congreso Peruano de Primatología</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="header__nav hide-mobile" aria-label="Navegación principal">
+      <ul class="header__nav-list">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`header__nav-link ${currentPath === link.href || currentPath.startsWith(link.href + '/') ? 'active' : ''}`}
+              aria-current={currentPath === link.href ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Actions -->
+    <div class="header__actions">
+      <!-- Dark Mode Toggle -->
+      <button
+        id="dark-toggle"
+        class="header__icon-btn"
+        aria-label="Cambiar modo oscuro/claro"
+        title="Cambiar modo oscuro"
+      >
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- CTA Button -->
+      <a href={`${base}inscripciones`} class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.875rem;">
+        Inscribirse
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button
+        id="nav-toggle"
+        class="header__hamburger"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-nav" aria-label="Menú móvil">
+    <ul class="mobile-nav__list">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class={`mobile-nav__link ${currentPath === link.href ? 'active' : ''}`}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li class="mobile-nav__cta">
+        <a href={`${base}inscripciones`} class="btn btn-primary" style="width:100%; justify-content:center;">
+          Inscribirse al Congreso
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /* ── Header Base ─────────────────────────────────── */
+  .header {
+    background: rgba(253, 246, 227, 0.88);
+    transition: background var(--transition-mid), box-shadow var(--transition-mid);
+  }
+  [data-theme="dark"] .header {
+    background: rgba(13, 35, 24, 0.92);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 68px;
+  }
+
+  /* ── Brand ───────────────────────────────────────── */
+  .header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .header__brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .header__brand-main {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--forest-mid);
+  }
+  [data-theme="dark"] .header__brand-main { color: var(--forest-canopy); }
+
+  .header__brand-sub {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .header__brand-sub { display: block; }
+  }
+
+  /* ── Nav Links ───────────────────────────────────── */
+  .header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: 0.45rem 0.7rem;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-on-light);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+  [data-theme="dark"] .header__nav-link { color: var(--text-on-dark); }
+
+  .header__nav-link:hover,
+  .header__nav-link.active {
+    background: rgba(82, 183, 136, 0.12);
+    color: var(--forest-mid);
+  }
+  [data-theme="dark"] .header__nav-link:hover,
+  [data-theme="dark"] .header__nav-link.active {
+    color: var(--forest-canopy);
+  }
+
+  /* ── Actions ─────────────────────────────────────── */
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .header__icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+  }
+  .header__icon-btn:hover {
+    background: rgba(82,183,136,0.1);
+    color: var(--forest-mid);
+  }
+
+  /* Sun/Moon toggle icons */
+  .icon-moon { display: none; }
+  [data-theme="dark"] .icon-sun { display: none; }
+  [data-theme="dark"] .icon-moon { display: block; color: var(--gold); }
+
+  /* ── Hamburger ───────────────────────────────────── */
+  .header__hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+  }
+
+  @media (min-width: 768px) {
+    .header__hamburger { display: none; }
+  }
+
+  .header__hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--text-on-light);
+    border-radius: 2px;
+    transition: all var(--transition-mid);
+  }
+  [data-theme="dark"] .header__hamburger span { background: var(--text-on-dark); }
+
+  .header__hamburger:hover { background: rgba(82,183,136,0.1); }
+
+  /* ── Mobile Nav ──────────────────────────────────── */
+  .mobile-nav__list {
+    list-style: none;
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-top: 1px solid rgba(82, 183, 136, 0.15);
+    background: rgba(253, 246, 227, 0.98);
+  }
+  [data-theme="dark"] .mobile-nav__list {
+    background: rgba(13, 35, 24, 0.98);
+    border-top-color: rgba(82, 183, 136, 0.2);
+  }
+
+  .mobile-nav__link {
+    display: block;
+    padding: 0.7rem 1rem;
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-on-light);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+  }
+  [data-theme="dark"] .mobile-nav__link { color: var(--text-on-dark); }
+
+  .mobile-nav__link:hover,
+  .mobile-nav__link.active {
+    background: rgba(82, 183, 136, 0.1);
+    color: var(--forest-mid);
+  }
+
+  .mobile-nav__cta { margin-top: 0.75rem; }
+</style>

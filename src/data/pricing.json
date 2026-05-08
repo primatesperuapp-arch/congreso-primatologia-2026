@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "category": "Estudiante",
+    "description": "Estudiantes de pregrado y posgrado con carnet universitario vigente",
+    "prices": {
+      "earlyBird": 80,
+      "regular": 120,
+      "onsite": 150
+    },
+    "currency": "USD",
+    "includes": ["Acceso a todas las sesiones", "Kit del congreso", "Coffee breaks", "Certificado de participación"],
+    "featured": false
+  },
+  {
+    "id": 2,
+    "category": "Profesional Nacional",
+    "description": "Investigadores, docentes y profesionales peruanos",
+    "prices": {
+      "earlyBird": 150,
+      "regular": 200,
+      "onsite": 250
+    },
+    "currency": "USD",
+    "includes": ["Acceso a todas las sesiones", "Kit del congreso", "Coffee breaks y almuerzos", "Certificado de participación", "Acceso a materiales digitales"],
+    "featured": true
+  },
+  {
+    "id": 3,
+    "category": "Internacional",
+    "description": "Participantes provenientes de países fuera de Perú",
+    "prices": {
+      "earlyBird": 250,
+      "regular": 320,
+      "onsite": 380
+    },
+    "currency": "USD",
+    "includes": ["Acceso a todas las sesiones", "Kit del congreso", "Coffee breaks y almuerzos", "Certificado de participación", "Acceso a materiales digitales", "Welcome dinner"],
+    "featured": false
+  }
+]
