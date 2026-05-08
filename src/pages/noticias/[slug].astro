@@ -4,6 +4,25 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
 
 // Definición de artículos — en producción usar Astro Content Collections
 const articles: Record<string, any> = {
+  "unmsm-sede-oficial-cpp-2026": {
+    title: "UNMSM confirmada como sede oficial del III Congreso Peruano de Primatología 2026",
+    date: "8 de mayo, 2026",
+    author: "Comité Organizador",
+    category: "Institucional",
+    categoryColor: "#74c69d",
+    emoji: "🏫",
+    readTime: "2 min",
+    content: `
+      <p>Es un honor para el Comité Organizador del <strong>III Congreso Peruano de Primatología 2026</strong> confirmar que la <strong>Facultad de Medicina Veterinaria de la Universidad Nacional Mayor de San Marcos (UNMSM)</strong> será la sede oficial de nuestro encuentro.</p>
+      <p>Esta importante decisión se selló tras una fructífera reunión de coordinación entre el <strong>Dr. Víctor Leyva</strong>, Decano de la Facultad, y la <strong>Dra. Fanny Cornejo</strong>, directora ejecutiva de Yunkawasi y miembro del comité organizador.</p>
+      <h2>Ciencia y Academia para la Conservación</h2>
+      <p>La elección de la Facultad de Medicina Veterinaria de la UNMSM, reconocida por su excelencia académica y su compromiso con la investigación de la fauna silvestre, refuerza el objetivo del congreso de integrar la ciencia académica con la realidad de la conservación en el Perú.</p>
+      <h2>Compromiso Institucional</h2>
+      <p>Durante la reunión, el Dr. Leyva expresó el pleno respaldo de la Decana de América para brindar las facilidades necesarias en el desarrollo de ponencias, talleres y mesas de trabajo que congregarán a la comunidad primatológica nacional e internacional.</p>
+      <p><em>"Contar con el respaldo de la UNMSM no solo nos garantiza una infraestructura de primer nivel, sino que sitúa a la primatología en el corazón de la formación profesional y científica del país"</em>, señaló Fanny Cornejo tras el encuentro.</p>
+      <p>Próximamente estaremos publicando detalles sobre la logística y accesos dentro del campus. ¡Nos vemos en San Marcos!</p>
+    `
+  },
   "apertura-llamado-resumenes-2026": {
     title: "Se abre oficialmente el llamado de resúmenes para el CPP 2026",
     date: "30 de abril, 2026",
@@ -115,6 +134,7 @@ const articles: Record<string, any> = {
 
 export function getStaticPaths() {
   const slugs = [
+    "unmsm-sede-oficial-cpp-2026",
     "apertura-llamado-resumenes-2026",
     "talleres-precongresuales-anunciados",
     "becas-estudiantes-latinoamerica",
