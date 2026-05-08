@@ -1,41 +1,38 @@
 [
   {
     "id": 1,
-    "category": "Estudiante",
-    "description": "Estudiantes de pregrado y posgrado con carnet universitario vigente",
+    "category": "Estudiantes de pregrado o persona del territorio que trabaja en conservación sin un título profesional",
     "prices": {
-      "earlyBird": 80,
-      "regular": 120,
-      "onsite": 150
-    },
-    "currency": "USD",
-    "includes": ["Acceso a todas las sesiones", "Kit del congreso", "Coffee breaks", "Certificado de participación"],
-    "featured": false
+      "early": { "app": 80, "noApp": 120 },
+      "regular": { "app": 120, "noApp": 180 },
+      "onsite": { "app": 160, "noApp": 240 }
+    }
   },
   {
     "id": 2,
-    "category": "Profesional Nacional",
-    "description": "Investigadores, docentes y profesionales peruanos",
+    "category": "Estudiante de postgrado o personal de áreas protegidas",
     "prices": {
-      "earlyBird": 150,
-      "regular": 200,
-      "onsite": 250
-    },
-    "currency": "USD",
-    "includes": ["Acceso a todas las sesiones", "Kit del congreso", "Coffee breaks y almuerzos", "Certificado de participación", "Acceso a materiales digitales"],
-    "featured": true
+      "early": { "app": 120, "noApp": 180 },
+      "regular": { "app": 180, "noApp": 270 },
+      "onsite": { "app": 240, "noApp": 360 }
+    }
   },
   {
     "id": 3,
-    "category": "Internacional",
-    "description": "Participantes provenientes de países fuera de Perú",
+    "category": "Profesional",
     "prices": {
-      "earlyBird": 250,
-      "regular": 320,
-      "onsite": 380
-    },
-    "currency": "USD",
-    "includes": ["Acceso a todas las sesiones", "Kit del congreso", "Coffee breaks y almuerzos", "Certificado de participación", "Acceso a materiales digitales", "Welcome dinner"],
-    "featured": false
+      "early": { "app": 200, "noApp": 300 },
+      "regular": { "app": 300, "noApp": 450 },
+      "onsite": { "app": 400, "noApp": 600 }
+    }
+  },
+  {
+    "id": 4,
+    "category": "Estudiantes Vet UNMSM",
+    "prices": {
+      "early": { "app": 60, "noApp": 100 },
+      "regular": { "app": 100, "noApp": 160 },
+      "onsite": { "app": 140, "noApp": 220 }
+    }
   }
 ]

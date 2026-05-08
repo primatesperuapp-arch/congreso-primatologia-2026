@@ -16,57 +16,52 @@ import pricing from '../data/pricing.json';
       <div class="early-bird-alert reveal">
         <div class="early-bird-alert__icon">⏰</div>
         <div>
-          <strong>Inscripciones Early Bird</strong> — Disponibles desde el 8 de mayo hasta el 15 de julio de 2026. ¡Hasta 25% de descuento!
+          <strong>Inscripciones Early Bird</strong> — Disponibles hasta el 31 de mayo de 2026. ¡Asegura tu participación con el mejor precio!
         </div>
       </div>
 
-      <!-- Pricing Cards -->
-      <div class="pricing-grid">
-        {pricing.map((plan, i) => (
-          <div class={`pricing-card reveal reveal-delay-${i+1} ${plan.featured ? 'pricing-card--featured' : ''}`}>
-            {plan.featured && <div class="pricing-card__featured-badge">⭐ Más popular</div>}
-            <div class="pricing-card__header">
-              <h3 class="pricing-card__category">{plan.category}</h3>
-              <p class="pricing-card__desc">{plan.description}</p>
-            </div>
+      <!-- Pricing Table -->
+      <div class="pricing-table-wrapper reveal">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th rowspan="2">Categoría</th>
+              <th colspan="2">Early Bird <br /><small>(hasta 31 mayo)</small></th>
+              <th colspan="2">Regular <br /><small>(hasta 15 julio)</small></th>
+              <th colspan="2">En sede <br /><small>(Durante el congreso)</small></th>
+            </tr>
+            <tr>
+              <th>APP</th>
+              <th>No APP</th>
+              <th>APP</th>
+              <th>No APP</th>
+              <th>APP</th>
+              <th>No APP</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pricing.map((plan) => (
+              <tr>
+                <td><strong>{plan.category}</strong></td>
+                <td class="price-val">US$ {plan.prices.early.app}</td>
+                <td class="price-val">US$ {plan.prices.early.noApp}</td>
+                <td class="price-val">US$ {plan.prices.regular.app}</td>
+                <td class="price-val">US$ {plan.prices.regular.noApp}</td>
+                <td class="price-val">US$ {plan.prices.onsite.app}</td>
+                <td class="price-val">US$ {plan.prices.onsite.noApp}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-            <div class="pricing-card__prices">
-              <div class="pricing-card__price pricing-card__price--early">
-                <span class="pricing-card__price-label">Early Bird</span>
-                <span class="pricing-card__price-amount">US$ {plan.prices.earlyBird}</span>
-                <span class="pricing-card__price-period">hasta 15 jul 2026</span>
-              </div>
-              <div class="pricing-card__price">
-                <span class="pricing-card__price-label">Regular</span>
-                <span class="pricing-card__price-amount pricing-card__price-regular">US$ {plan.prices.regular}</span>
-              </div>
-              <div class="pricing-card__price">
-                <span class="pricing-card__price-label">En sede</span>
-                <span class="pricing-card__price-amount pricing-card__price-regular">US$ {plan.prices.onsite}</span>
-              </div>
-            </div>
-
-            <ul class="pricing-card__includes">
-              {plan.includes.map(item => (
-                <li>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="https://forms.google.com"
-              target="_blank"
-              rel="noopener"
-              class={`btn ${plan.featured ? 'btn-primary' : 'btn-secondary'}`}
-              style="width:100%; justify-content:center; margin-top:auto;"
-              id={`inscripcion-${plan.category.toLowerCase().replace(/ /g,'-')}`}
-            >
-              Inscribirse — {plan.category}
-            </a>
-          </div>
-        ))}
+      <div class="discount-callout reveal">
+        <div class="discount-callout__icon">👥</div>
+        <div class="discount-callout__content">
+          <h3>Inscripción Grupal</h3>
+          <p>Obtén un <strong>20% de descuento</strong> adicional según tu categoría para grupos de <strong>3 personas o más</strong>.</p>
+        </div>
+        <a href="mailto:primatesperuapp@gmail.com" class="btn btn-primary">Solicitar descuento</a>
       </div>
     </div>
   </section>
@@ -234,6 +229,59 @@ import pricing from '../data/pricing.json';
     color: var(--text-muted);
   }
   .pricing-card__includes svg { color: var(--forest-leaf); flex-shrink: 0; }
+
+  /* Pricing Table */
+  .pricing-table-wrapper {
+    overflow-x: auto;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+  }
+  [data-theme="dark"] .pricing-table-wrapper { background: rgba(26,58,46,0.5); }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+  }
+  .pricing-table th, .pricing-table td {
+    padding: 1.25rem 1rem;
+    text-align: center;
+    border: 1px solid rgba(82,183,136,0.15);
+    font-size: 0.9rem;
+  }
+  .pricing-table th {
+    background: var(--forest-mid);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-weight: 600;
+  }
+  .pricing-table th small { font-weight: 400; opacity: 0.9; display: block; margin-top: 0.2rem; }
+  .pricing-table td:first-child { text-align: left; background: rgba(82,183,136,0.05); width: 30%; }
+  .price-val { font-family: var(--font-display); font-weight: 700; color: var(--text-on-light); }
+  [data-theme="dark"] .price-val { color: var(--text-on-dark); }
+  .pricing-table tr:hover td { background: rgba(82,183,136,0.08); }
+
+  /* Discount Callout */
+  .discount-callout {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--forest-soft);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--forest-leaf);
+    margin-top: 3rem;
+  }
+  [data-theme="dark"] .discount-callout { background: rgba(26,58,46,0.4); }
+  .discount-callout__icon { font-size: 3rem; }
+  .discount-callout__content { flex: 1; }
+  .discount-callout__content h3 { font-family: var(--font-display); color: var(--forest-mid); margin-bottom: 0.5rem; }
+  .discount-callout__content p { font-size: 1rem; color: var(--text-on-light); }
+  @media (max-width: 768px) {
+    .discount-callout { flex-direction: column; text-align: center; gap: 1rem; }
+  }
 
   /* Scholarships */
   .scholarships-grid {
