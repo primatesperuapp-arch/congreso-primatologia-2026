@@ -5,8 +5,8 @@
     "acronym": "APP",
     "type": "organizer",
     "url": "https://primatologiaperu.org",
-    "logo": "images/organizadores/logo-app.png",
-    "useLogo": false
+    "logo": "images/aliados/logo_app.jpg",
+    "useLogo": true
   },
   {
     "id": "org2",
@@ -14,8 +14,8 @@
     "acronym": "FMV",
     "type": "academic",
     "url": "#",
-    "logo": "images/aliados/logo-fmv.png",
-    "useLogo": false
+    "logo": "images/aliados/logo_fmv.png",
+    "useLogo": true
   },
   {
     "id": "org3",
@@ -23,8 +23,8 @@
     "acronym": "UNMSM",
     "type": "academic",
     "url": "https://www.unmsm.edu.pe",
-    "logo": "images/aliados/logo-unmsm.png",
-    "useLogo": false
+    "logo": "images/aliados/logo_unmsm.png",
+    "useLogo": true
   },
   {
     "id": "org4",
@@ -32,8 +32,8 @@
     "acronym": "Yunkawasi",
     "type": "partner",
     "url": "#",
-    "logo": "images/aliados/logo-yunkawasi.png",
-    "useLogo": false
+    "logo": "images/aliados/logo_yunkawasi.png",
+    "useLogo": true
   },
   {
     "id": "org5",
@@ -41,8 +41,8 @@
     "acronym": "PMT",
     "type": "partner",
     "url": "#",
-    "logo": "images/aliados/logo-mono-tocon.png",
-    "useLogo": false
+    "logo": "images/aliados/logo_pmt.png",
+    "useLogo": true
   },
   {
     "id": "org6",
@@ -51,15 +51,15 @@
     "type": "partner",
     "url": "#",
     "logo": "images/aliados/logo-kawsay.png",
-    "useLogo": false
+    "useLogo": true
   },
   {
     "id": "org7",
-    "name": "Neotropical Primates Conservation",
-    "acronym": "NPC",
+    "name": "Sección de Fauna Silvestre FMV",
+    "acronym": "SFS-FMV",
     "type": "partner",
     "url": "#",
-    "logo": "images/aliados/logo-npc.png",
-    "useLogo": false
+    "logo": "images/aliados/logo_faunasilvestre.jpg",
+    "useLogo": true
   }
 ]
