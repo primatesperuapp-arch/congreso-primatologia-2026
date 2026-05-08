@@ -31,20 +31,18 @@ const faqs = [
 ];
 
 const guidelines = [
-  { icon: "📝", title: "Título", desc: "Conciso, descriptivo e informativo. Máximo 25 palabras. Evitar abreviaciones." },
-  { icon: "👥", title: "Autores", desc: "Nombre completo, institución y correo de contacto del autor responsable. Indicar con asterisco (*) el presentador." },
-  { icon: "📏", title: "Extensión", desc: "250–350 palabras para ponencias y pósters. 400 palabras para simposios. No incluir referencias bibliográficas." },
-  { icon: "🔬", title: "Estructura", desc: "Se recomienda: Introducción/Objetivos, Metodología, Resultados esperados/preliminares, Conclusiones e Implicaciones." },
-  { icon: "🖼️", title: "Figuras", desc: "No se incluyen figuras o tablas en el resumen. Estas podrán presentarse en el archivo completo si se solicita." },
-  { icon: "🌿", title: "Nombres científicos", desc: "Siempre en cursiva. La primera mención debe incluir nombre completo del autor y año de descripción." },
+  { icon: "📏", title: "Extensión", desc: "El resumen descriptivo o analítico debe contener un máximo de 300 palabras." },
+  { icon: "📊", title: "Formato empírico", desc: "Incluir claramente Contexto/Justificación, Metodología/Diseño, Resultados Clave e Implicaciones para la conservación." },
+  { icon: "📖", title: "Formato de relatos", desc: "Incluir Situación abordada, Acciones implementadas, Desafíos superados e Impacto en la comunidad/biodiversidad." },
+  { icon: "🤝", title: "Lenguaje y Ética", desc: "Fomentamos el lenguaje inclusivo. Proyectos con pueblos indígenas deben certificar consentimiento informado. Se acepta síntesis en lengua originaria." },
 ];
 ---
 
 <PageLayout
   title="Llamado de Resúmenes"
-  description="Información completa sobre el proceso de envío de resúmenes para el I Congreso Peruano de Primatología 2026: categorías, formatos, lineamientos y fechas."
+  description="Llamado a la Presentación de Resúmenes: III Congreso Peruano de Primatología. Integrando Ciencias, Saberes y Sociedad para la Conservación en el Perú."
   heroTitle="Llamado de Resúmenes"
-  heroSubtitle="Envía tu investigación al I Congreso Peruano de Primatología 2026"
+  heroSubtitle="III Congreso Peruano de Primatología 2026: Integrando Ciencias, Saberes y Sociedad"
   heroColor="var(--forest-mid)"
 >
 
@@ -55,7 +53,7 @@ const guidelines = [
         <div class="deadline-alert reveal">
           <div class="deadline-alert__icon">📅</div>
           <div class="deadline-alert__text">
-            <strong>Fecha límite de envío:</strong> 30 de junio de 2026
+            <strong>Apertura:</strong> 8 de mayo 2026 &nbsp;|&nbsp; <strong>Cierre:</strong> 15 de junio 2026
           </div>
           <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn btn-primary">
             Enviar Resumen →
@@ -63,7 +61,8 @@ const guidelines = [
         </div>
 
         <p class="call-desc reveal">
-          El Comité Científico del I CPP 2026 invita a investigadores, estudiantes, conservacionistas y representantes de comunidades a presentar sus trabajos originales en cualquiera de los ejes temáticos del congreso. Se aceptarán presentaciones en los formatos de <strong>ponencia oral</strong>, <strong>póster</strong>, <strong>simposio</strong> y <strong>mesa redonda</strong>.
+          El Comité Organizador del III Congreso Peruano de Primatología se complace en invitar a investigadores, estudiantes, gestores de áreas protegidas, organizaciones indígenas, comunidades locales y comunicadores a presentar sus contribuciones. 
+          Alineados con el Plan Nacional de Conservación de Primates Amenazados (2019-2029), este congreso es una plataforma para articular esfuerzos interdisciplinarios y construir soluciones colaborativas.
         </p>
       </div>
     </div>
@@ -102,10 +101,12 @@ const guidelines = [
 
       <div class="formats-grid">
         {[
-          { icon: "🎤", name: "Ponencia Oral", time: "15 min + 5 min preguntas", desc: "Presentación individual de resultados de investigación original. Formato preferente para investigaciones finalizadas o con resultados concretos.", badge: "Más solicitado" },
-          { icon: "📌", name: "Póster Científico", time: "90 min sesión", desc: "Presentación en formato A0 durante la sesión de pósters. Ideal para resultados preliminares, estudios de caso y proyectos en curso.", badge: "" },
-          { icon: "🗣️", name: "Simposio", time: "90–120 min", desc: "Sesión temática coordinada por un moderador con 4–6 ponentes sobre un tema específico. Requiere propuesta previa al 15 de mayo 2026.", badge: "Invitación previa" },
-          { icon: "🔵", name: "Mesa Redonda", time: "60 min", desc: "Debate estructurado sobre temas de política, conservación o metodología. Modalidad abierta a panelistas con perspectivas diversas.", badge: "" },
+          { icon: "🎤", name: "Ponencias Orales", time: "15 min", desc: "Presentación de datos empíricos, resultados de investigaciones biológicas o análisis sociales cuantitativos/cualitativos.", badge: "" },
+          { icon: "📖", name: "Relatos de Experiencia", time: "15 min", desc: "Para gestores, guardaparques y comunidades. Narrativa práctica de conservación, desafíos y lecciones aprendidas.", badge: "Nuevo" },
+          { icon: "⚡", name: "Charlas Relámpago", time: "5 min", desc: "Formato visual ágil para investigaciones en curso, innovaciones tecnológicas o estado de conservación.", badge: "Rápido" },
+          { icon: "📌", name: "Pósteres Visuales", time: "Digital / Físico", desc: "Infografías científicas, mapas participativos o colecciones de fotografía orientadas a la divulgación.", badge: "" },
+          { icon: "🗣️", name: "Simposios / Mesas Redondas", time: "90 min", desc: "Panel multidisciplinario garantizando representatividad (voces científicas + actores locales).", badge: "Grupal" },
+          { icon: "🛠️", name: "Talleres Colaborativos", time: "Práctico", desc: "Sesiones de transferencia de habilidades prácticas (técnicas, analíticas o de políticas).", badge: "" }
         ].map((f, i) => (
           <div class={`format-card reveal reveal-delay-${i+1}`}>
             <div class="format-card__icon">{f.icon}</div>
@@ -135,6 +136,22 @@ const guidelines = [
             <p class="guideline-card__desc">{g.desc}</p>
           </div>
         ))}
+      </div>
+    </div>
+  <!-- Evaluacion y Becas -->
+  <section class="section">
+    <div class="container" style="display:grid; gap:2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <div class="reveal">
+        <h3 style="font-family:var(--font-display); color:var(--forest-mid); font-size:1.5rem; margin-bottom:1rem;">Proceso de Evaluación</h3>
+        <p style="color:var(--text-muted); line-height:1.7;">
+          Un Comité Científico Transdisciplinario revisará los resúmenes mediante un proceso ciego, empleando rúbricas que valoran de manera equitativa la solidez técnica-metodológica y la aplicabilidad práctica para la solución de problemas descritos en el Plan Nacional del SERFOR.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <h3 style="font-family:var(--font-display); color:var(--gold); font-size:1.5rem; margin-bottom:1rem;">Becas de Accesibilidad</h3>
+        <p style="color:var(--text-muted); line-height:1.7;">
+          Reafirmando nuestro compromiso con la equidad, el congreso dispondrá de un número limitado de Becas de Apoyo de Viaje y Conectividad destinadas prioritariamente a miembros de organizaciones locales de la Amazonía/Andes y estudiantes peruanos.
+        </p>
       </div>
     </div>
   </section>
@@ -172,7 +189,7 @@ const guidelines = [
         ¿Listo para enviar tu resumen?
       </h2>
       <p style="color:rgba(255,255,255,0.7); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto;">
-        Tienes hasta el <strong style="color:var(--gold);">30 de junio de 2026</strong> para enviar tu investigación. Completa el formulario en línea.
+        Tienes hasta el <strong style="color:var(--gold);">15 de junio de 2026</strong> para enviar tu investigación. Trabajemos juntos para diseñar el futuro de la primatología en el Perú. Consultas a: primatesperuapp@gmail.com
       </p>
       <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="cta-enviar-resumen">
         📋 Enviar Resumen Ahora

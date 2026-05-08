@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "date": "2026-04-30",
-    "label": "30 Abril 2026",
+    "date": "2026-05-08",
+    "label": "08 Mayo 2026",
     "title": "Apertura del llamado de resúmenes",
-    "description": "Se abre oficialmente la convocatoria para el envío de resúmenes de ponencias orales, simposios y pósters.",
+    "description": "Se abre oficialmente la plataforma para el envío de resúmenes y propuestas.",
     "type": "open",
     "status": "upcoming"
   },
   {
     "id": 2,
-    "date": "2026-06-30",
-    "label": "30 Junio 2026",
+    "date": "2026-06-15",
+    "label": "15 Junio 2026",
     "title": "Cierre de envío de resúmenes",
     "description": "Fecha límite para el envío de todos los resúmenes. No se aceptarán envíos tardíos.",
     "type": "deadline",
@@ -19,37 +19,28 @@
   },
   {
     "id": 3,
-    "date": "2026-07-31",
-    "label": "31 Julio 2026",
+    "date": "2026-07-01",
+    "label": "01 Julio 2026",
     "title": "Notificación de aceptaciones",
-    "description": "Los autores recibirán notificación sobre la aceptación o rechazo de sus resúmenes y el formato asignado.",
+    "description": "Los autores recibirán notificación sobre la aceptación de sus resúmenes y formato asignado.",
     "type": "notification",
     "status": "upcoming"
   },
   {
     "id": 4,
-    "date": "2026-08-15",
-    "label": "15 Agosto 2026",
-    "title": "Apertura de inscripciones con tarifa reducida",
-    "description": "Inicio de inscripciones con precio especial de madrugadores (early bird) para todos los asistentes.",
-    "type": "open",
-    "status": "upcoming"
-  },
-  {
-    "id": 5,
-    "date": "2026-09-15",
-    "label": "15 Septiembre 2026",
+    "date": "2026-07-15",
+    "label": "15 Julio 2026",
     "title": "Fin de inscripciones early bird",
-    "description": "Cierre de la tarifa reducida. A partir de esta fecha aplicarán tarifas regulares.",
+    "description": "Cierre de la tarifa reducida e inicio de tarifas regulares.",
     "type": "deadline",
     "status": "upcoming"
   },
   {
-    "id": 6,
-    "date": "2026-10-01",
-    "label": "Octubre 2026",
-    "title": "I Congreso Peruano de Primatología 2026",
-    "description": "¡Inicio del congreso! Lima, Perú. Tres días de ciencia, conservación y comunidad.",
+    "id": 5,
+    "date": "2026-07-30",
+    "label": "30 Julio 2026",
+    "title": "III Congreso Peruano de Primatología 2026",
+    "description": "¡Inicio del congreso! Facultad de Medicina Veterinaria UNMSM, Lima, Perú.",
     "type": "event",
     "status": "upcoming",
     "highlight": true

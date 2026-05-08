@@ -1,24 +1,24 @@
 {
-  "name": "I Congreso Peruano de Primatología 2026",
+  "name": "III Congreso Peruano de Primatología 2026",
   "shortName": "CPP 2026",
-  "slogan": "Conectando ciencia, conservación y comunidades para el futuro de los primates del Perú",
+  "slogan": "Integrando Ciencias, Saberes y Sociedad para la Conservación en el Perú",
   "dates": {
-    "event": "Octubre 2026",
+    "event": "30 de julio al 02 de agosto de 2026",
     "city": "Lima, Perú",
-    "venue": "Por confirmar"
+    "venue": "Facultad de Medicina Veterinaria de la UNMSM (Av. Circunvalación 28, San Borja, Lima)"
   },
   "contact": {
-    "email": "congreso@primatologiaperu.org",
+    "email": "primatesperuapp@gmail.com",
     "instagram": "https://instagram.com/primatologiaperu",
     "facebook": "https://facebook.com/primatologiaperu",
     "twitter": "https://twitter.com/primatologiaperu"
   },
   "organizer": {
-    "name": "Sociedad Peruana de Primatología",
-    "acronym": "SPP"
+    "name": "Asociación Peruana de Primatología",
+    "acronym": "APP"
   },
   "meta": {
-    "description": "El I Congreso Peruano de Primatología 2026 reunirá a científicos, conservacionistas y comunidades para avanzar en la protección de los primates de Perú y Latinoamérica.",
+    "description": "El III Congreso Peruano de Primatología 2026 reunirá a científicos, conservacionistas y comunidades para avanzar en la protección de los primates de Perú y Latinoamérica.",
     "keywords": "primatología, Perú, congreso, conservación, primates, Amazonía, ciencia",
     "ogImage": "/congreso-primatologia-2026/images/og-image.jpg"
   }
