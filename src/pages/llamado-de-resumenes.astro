@@ -55,7 +55,7 @@ const guidelines = [
           <div class="deadline-alert__text">
             <strong>Apertura:</strong> 8 de mayo 2026 &nbsp;|&nbsp; <strong>Cierre:</strong> 15 de junio 2026
           </div>
-          <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="https://forms.gle/Gzcr2ktTmrEnGTTh9" target="_blank" rel="noopener" class="btn btn-primary">
             Enviar Resumen →
           </a>
         </div>
@@ -128,16 +128,35 @@ const guidelines = [
       <div class="section-header reveal">
         <span class="section-label">Instrucciones</span>
         <h2 class="section-title">Lineamientos de Envío</h2>
+        <p class="section-subtitle">Asegúrate de que tu propuesta cumpla con los estándares del congreso para facilitar su evaluación.</p>
       </div>
 
-      <div class="guidelines-grid">
-        {guidelines.map((g, i) => (
-          <div class={`guideline-card reveal reveal-delay-${(i%3)+1}`}>
-            <span class="guideline-card__icon">{g.icon}</span>
-            <h3 class="guideline-card__title">{g.title}</h3>
-            <p class="guideline-card__desc">{g.desc}</p>
+      <div class="requirements-grid reveal">
+        <div class="requirement-box">
+          <h3>📋 Requisitos Generales</h3>
+          <ul>
+            <li>Envío exclusivo a través del <strong>formulario oficial</strong> en línea.</li>
+            <li>Extensión máxima de <strong>300 palabras</strong> para el resumen descriptivo.</li>
+            <li>El título debe reflejar claramente el <strong>objetivo y la idea principal</strong> del trabajo.</li>
+            <li><strong>Inclusión Lingüística:</strong> Opción de adjuntar síntesis en lengua originaria (Quechua, Awajún, etc.).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="structure-section reveal">
+        <h3>📐 Estructura del Resumen</h3>
+        <p>El contenido debe organizarse según la categoría de tu participación:</p>
+        
+        <div class="structure-grid">
+          <div class="structure-card">
+            <h4>Científicas (Empíricas)</h4>
+            <p>Incluir: Contexto/objetivo, métodos (diseño, muestra), resultados (datos concretos) y conclusiones.</p>
           </div>
-        ))}
+          <div class="structure-card">
+            <h4>Relatos Comunitarios / Descriptivos</h4>
+            <p>Incluir: Situación/problemática, acciones implementadas, desafíos superados e impacto real.</p>
+          </div>
+        </div>
       </div>
     </div>
   <!-- Criterios de Evaluación -->
@@ -280,7 +299,7 @@ const guidelines = [
       <p style="color:rgba(255,255,255,0.7); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto;">
         Tienes hasta el <strong style="color:var(--gold);">15 de junio de 2026</strong> para enviar tu resumen. Notificación de resultados: <strong>1 de julio de 2026</strong>. Trabajemos juntos para diseñar el futuro de la primatología en el Perú.
       </p>
-      <a href="https://forms.google.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="cta-enviar-resumen">
+      <a href="https://forms.gle/Gzcr2ktTmrEnGTTh9" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="cta-enviar-resumen">
         📋 Enviar Resumen
       </a>
     </div>
@@ -373,18 +392,39 @@ const guidelines = [
   @media (min-width: 640px) { .guidelines-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1024px) { .guidelines-grid { grid-template-columns: repeat(3, 1fr); } }
 
-  .guideline-card {
-    padding: 1.5rem;
-    background: rgba(255,255,255,0.85);
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(82,183,136,0.1);
+  .guideline-card__desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* New Requirements & Structure Styles */
+  .requirements-grid { margin-bottom: 3rem; }
+  .requirement-box {
+    background: rgba(255,255,255,0.9);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border-left: 5px solid var(--forest-leaf);
     box-shadow: var(--shadow-sm);
   }
-  [data-theme="dark"] .guideline-card { background: rgba(26,58,46,0.5); }
-  .guideline-card__icon { font-size: 1.75rem; margin-bottom: 0.6rem; display: block; }
-  .guideline-card__title { font-weight: 700; font-size: 0.97rem; color: var(--text-on-light); margin-bottom: 0.4rem; }
-  [data-theme="dark"] .guideline-card__title { color: var(--text-on-dark); }
-  .guideline-card__desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+  [data-theme="dark"] .requirement-box { background: rgba(26,58,46,0.5); }
+  .requirement-box h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--forest-mid); margin-bottom: 1rem; }
+  [data-theme="dark"] .requirement-box h3 { color: var(--forest-canopy); }
+  .requirement-box ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .requirement-box li { position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: var(--text-on-light); }
+  [data-theme="dark"] .requirement-box li { color: var(--text-on-dark); }
+  .requirement-box li::before { content: '→'; position: absolute; left: 0; color: var(--forest-leaf); font-weight: bold; }
+
+  .structure-section h3 { font-family: var(--font-display); font-size: 1.2rem; text-align: center; margin-bottom: 0.5rem; color: var(--forest-mid); }
+  [data-theme="dark"] .structure-section h3 { color: var(--forest-canopy); }
+  .structure-section > p { text-align: center; color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem; }
+  .structure-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 768px) { .structure-grid { grid-template-columns: repeat(2, 1fr); } }
+  .structure-card {
+    background: rgba(255,255,255,0.8);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(82,183,136,0.2);
+  }
+  [data-theme="dark"] .structure-card { background: rgba(26,58,46,0.3); }
+  .structure-card h4 { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: var(--forest-leaf); }
+  .structure-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 
   /* Policy table */
   .policy-table {
