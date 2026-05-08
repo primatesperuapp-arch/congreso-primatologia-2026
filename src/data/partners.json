@@ -61,5 +61,14 @@
     "url": "#",
     "logo": "images/aliados/logo_faunasilvestre.jpg",
     "useLogo": true
+  },
+  {
+    "id": "org8",
+    "name": "Neotropical Primate Conservation",
+    "acronym": "NPC",
+    "type": "partner",
+    "url": "#",
+    "logo": "images/aliados/logo_npc.png",
+    "useLogo": true
   }
 ]
