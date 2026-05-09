@@ -73,27 +73,89 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
         <span class="section-label">En peligro</span>
         <h2 class="section-title">Primates Amenazados del Perú</h2>
         <p class="section-subtitle">
-          Estas son algunas de las especies que el CPP 2026 busca proteger con urgencia científica y acción colectiva.
+          El congreso busca ser una plataforma de acción urgente para estas especies, integrando el monitoreo científico con la vigilancia comunitaria.
         </p>
       </div>
 
       <div class="species-grid">
         {[
-          { emoji: "🐒", name: "Mono choro de cola amarilla", sci: "Oreonax flavicauda", status: "CR", statusLabel: "En Peligro Crítico", habitat: "Selva alta del norte y centro del Perú", icon: "🔴" },
-          { emoji: "🐵", name: "Mono tocón andino", sci: "Callicebus oenanthe", status: "CR", statusLabel: "En Peligro Crítico", habitat: "Alto Mayo, San Martín", icon: "🔴" },
-          { emoji: "🦅", name: "Huapo colorado", sci: "Cacajao calvus", status: "VU", statusLabel: "Vulnerable", habitat: "Amazonía baja, ríos Ucayali y Marañón", icon: "🟡" },
-          { emoji: "🐾", name: "Mono araña de frente blanca", sci: "Ateles belzebuth", status: "EN", statusLabel: "En Peligro", habitat: "Loreto y Ucayali", icon: "🟠" },
-          { emoji: "🌿", name: "Chichico de Goeldi", sci: "Callimico goeldii", status: "VU", statusLabel: "Vulnerable", habitat: "Madre de Dios y Loreto", icon: "🟡" },
-          { emoji: "🌳", name: "Machín blanco", sci: "Cebus albifrons", status: "VU", statusLabel: "Vulnerable", habitat: "Amazonía peruana en general", icon: "🟡" },
+          { 
+            img: "choro-amarillo.png", 
+            name: "Mono choro de cola amarilla", 
+            sci: "Oreonax flavicauda", 
+            status: "CR", 
+            statusLabel: "En Peligro Crítico", 
+            habitat: "Bosques de neblina (San Martín, Amazonas)", 
+            threat: "Deforestación masiva y fragmentación de hábitat.",
+            desc: "Especie endémica del Perú y uno de los primates más raros del mundo. Su pelaje caoba denso lo protege del frío andino."
+          },
+          { 
+            img: "tocon-andino.png", 
+            name: "Mono tocón de San Martín", 
+            sci: "Plecturocebus oenanthe", 
+            status: "CR", 
+            statusLabel: "En Peligro Crítico", 
+            habitat: "Alto Mayo y cuenca del río Huallaga", 
+            threat: "Pérdida de hábitat por expansión agrícola.",
+            desc: "Pequeño primate monógamo con una de las distribuciones más restringidas. Es un símbolo de la conservación regional."
+          },
+          { 
+            img: "huapo-colorado.png", 
+            name: "Huapo colorado", 
+            sci: "Cacajao calvus ucayalii", 
+            status: "VU", 
+            statusLabel: "Vulnerable", 
+            habitat: "Selvas inundables (Loreto, Ucayali)", 
+            threat: "Caza de subsistencia y pérdida de varillales.",
+            desc: "Famoso por su rostro rojo intenso y cola corta. Vive en grupos grandes en zonas de difícil acceso de la selva baja."
+          },
+          { 
+            img: "maquisapa.png", 
+            name: "Maquisapa frente blanca", 
+            sci: "Ateles belzebuth", 
+            status: "EN", 
+            statusLabel: "En Peligro", 
+            habitat: "Norte de la Amazonía peruana", 
+            threat: "Caza intensa y baja tasa de reproducción.",
+            desc: "Dispersor de semillas clave. Sus extremidades largas y cola prehensile le permiten una agilidad asombrosa."
+          },
+          { 
+            img: "chichico.png", 
+            name: "Chichico de Goeldi", 
+            sci: "Callimico goeldii", 
+            status: "VU", 
+            statusLabel: "Vulnerable", 
+            habitat: "Sotobosque de la Amazonía suroccidental", 
+            threat: "Rareza natural y tráfico de fauna silvestre.",
+            desc: "Un primate pequeño y misterioso, totalmente negro, que prefiere el nivel bajo del bosque con densa vegetación."
+          },
+          { 
+            img: "machin-blanco.png", 
+            name: "Machín blanco", 
+            sci: "Cebus albifrons", 
+            status: "VU", 
+            statusLabel: "Vulnerable", 
+            habitat: "Vasta distribución en la cuenca amazónica", 
+            threat: "Captura para mascotas y degradación forestal.",
+            desc: "Altamente inteligente y adaptable. Juega un rol fundamental en el equilibrio de los ecosistemas forestales."
+          },
         ].map((sp, i) => (
           <div class={`species-card reveal reveal-delay-${(i%3)+1}`}>
-            <div class="species-card__emoji">{sp.emoji}</div>
-            <div class={`species-card__status species-card__status--${sp.status}`}>
-              {sp.icon} {sp.statusLabel} ({sp.status})
+            <div class="species-card__img-container">
+              <img src={`${base}images/species/${sp.img}`} alt={sp.name} class="species-card__img" />
+              <div class={`species-card__status species-card__status--${sp.status}`}>
+                {sp.statusLabel}
+              </div>
             </div>
-            <h3 class="species-card__name">{sp.name}</h3>
-            <p class="species-card__sci"><em>{sp.sci}</em></p>
-            <p class="species-card__habitat">📍 {sp.habitat}</p>
+            <div class="species-card__content">
+              <h3 class="species-card__name">{sp.name}</h3>
+              <p class="species-card__sci"><em>{sp.sci}</em></p>
+              <p class="species-card__desc-text">{sp.desc}</p>
+              <div class="species-card__info">
+                <p>📍 <strong>Hábitat:</strong> {sp.habitat}</p>
+                <p>⚠️ <strong>Amenaza:</strong> {sp.threat}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -174,27 +236,44 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   @media (min-width: 1024px) { .species-grid { grid-template-columns: repeat(3, 1fr); } }
 
   .species-card {
-    padding: 1.5rem;
     background: rgba(255,255,255,0.9);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     border: 1px solid rgba(82,183,136,0.1);
     box-shadow: var(--shadow-sm);
-    transition: transform var(--transition-mid);
+    overflow: hidden;
+    transition: transform var(--transition-mid), box-shadow var(--transition-mid);
+    display: flex;
+    flex-direction: column;
   }
-  [data-theme="dark"] .species-card { background: rgba(26,58,46,0.5); }
-  .species-card:hover { transform: translateY(-4px); }
-  .species-card__emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
-  .species-card__status {
-    font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700;
-    padding: 0.25rem 0.65rem; border-radius: 100px; border: 1px solid;
-    width: fit-content; margin-bottom: 0.6rem;
-  }
-  .species-card__status--CR { color: #d32f2f; background: rgba(211,47,47,0.1); border-color: rgba(211,47,47,0.3); }
-  .species-card__status--EN { color: #e65100; background: rgba(230,81,0,0.1); border-color: rgba(230,81,0,0.3); }
-  .species-card__status--VU { color: #f57f17; background: rgba(245,127,23,0.1); border-color: rgba(245,127,23,0.3); }
+  [data-theme="dark"] .species-card { background: rgba(26,58,46,0.55); border-color: rgba(82,183,136,0.18); }
+  .species-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
 
-  .species-card__name { font-weight: 700; font-size: 0.95rem; color: var(--text-on-light); margin-bottom: 0.2rem; }
-  [data-theme="dark"] .species-card__name { color: var(--text-on-dark); }
-  .species-card__sci { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem; }
-  .species-card__habitat { font-size: 0.78rem; color: var(--text-muted); }
+  .species-card__img-container { position: relative; height: 220px; overflow: hidden; }
+  .species-card__img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .species-card:hover .species-card__img { transform: scale(1.1); }
+
+  .species-card__status {
+    position: absolute; top: 1rem; right: 1rem;
+    font-family: var(--font-ui); font-size: 0.65rem; font-weight: 800;
+    padding: 0.3rem 0.75rem; border-radius: 100px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .species-card__status--CR { background: #d32f2f; color: #fff; }
+  .species-card__status--EN { background: #e65100; color: #fff; }
+  .species-card__status--VU { background: #f57f17; color: #fff; }
+
+  .species-card__content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+  .species-card__name { font-family: var(--font-display); font-size: 1.15rem; color: var(--forest-mid); margin-bottom: 0.25rem; }
+  [data-theme="dark"] .species-card__name { color: var(--forest-canopy); }
+  .species-card__sci { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 1rem; }
+  .species-card__desc-text { font-size: 0.88rem; color: var(--text-on-light); line-height: 1.6; margin-bottom: 1.25rem; }
+  [data-theme="dark"] .species-card__desc-text { color: rgba(240,237,232,0.85); }
+
+  .species-card__info {
+    margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(82,183,136,0.1);
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .species-card__info p { font-size: 0.78rem; color: var(--text-muted); }
+  .species-card__info strong { color: var(--forest-leaf); font-weight: 600; }
 </style>
