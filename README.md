@@ -1,4 +1,4 @@
-# 🐒 I Congreso Peruano de Primatología 2026
+# 🐒 III Congreso Peruano de Primatología 2026
 
 Sitio web oficial del **I Congreso Peruano de Primatología 2026**, construido con Astro + TailwindCSS y desplegado en GitHub Pages.
 
