@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     <div class="partners__grid reveal">
       {partners.map(partner => (
         <a
-          href={partner.url}
+          href={partner.url.startsWith('/') ? `${base}${partner.url.substring(1)}` : partner.url}
           target={partner.url !== '#' ? '_blank' : undefined}
           rel="noopener noreferrer"
           class="partner-card"
@@ -34,7 +34,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
 
     <p class="partners__note reveal">
       ¿Tu institución quiere ser aliada del congreso?
-      <a href="/contacto" class="partners__link">Contáctanos →</a>
+      <a href={`${base}contacto`} class="partners__link">Contáctanos →</a>
     </p>
   </div>
 </section>
