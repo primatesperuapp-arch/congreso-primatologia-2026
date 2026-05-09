@@ -15,15 +15,11 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   <section class="section">
     <div class="container">
       <div class="cons-intro reveal">
-        <div class="cons-intro__visual" aria-hidden="true">
-          <div class="cons-intro__icons">
-            <span style="font-size:4rem">🌿</span>
-            <span style="font-size:3rem">🤝</span>
-            <span style="font-size:4rem">🐒</span>
-          </div>
-          <p style="font-family:var(--font-display); font-style:italic; font-size:1.1rem; color:var(--forest-leaf); text-align:center; padding:1rem 0;">
+        <div class="cons-intro__visual reveal">
+          <img src={`${base}images/vision-doble-enfoque.png`} alt="Colaboración entre científicos y comunidades locales" class="cons-intro__img" />
+          <div class="cons-intro__caption">
             "La conservación nace del territorio"
-          </p>
+          </div>
         </div>
         <div class="cons-intro__text">
           <span class="section-label">Enfoque central</span>
@@ -188,15 +184,21 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   @media (min-width: 1024px) { .cons-intro { grid-template-columns: 0.5fr 1fr; } }
 
   .cons-intro__visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2.5rem;
-    background: linear-gradient(135deg, rgba(82,183,136,0.08), rgba(45,106,79,0.05));
+    position: relative;
     border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
     border: 1px solid rgba(82,183,136,0.2);
   }
-  .cons-intro__icons { display: flex; align-items: center; gap: 0.5rem; }
+  .cons-intro__img { width: 100%; height: auto; display: block; }
+  .cons-intro__caption {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(13,35,24,0.8));
+    color: #fff;
+    font-family: var(--font-display); font-style: italic; font-size: 1.1rem;
+    text-align: center;
+  }
   .cons-intro__text { display: flex; flex-direction: column; gap: 1.25rem; }
   .cons-intro__text p { font-size: 0.97rem; color: var(--text-on-light); line-height: 1.8; }
   [data-theme="dark"] .cons-intro__text p { color: rgba(240,237,232,0.85); }
