@@ -170,6 +170,11 @@ const currentPath = Astro.url.pathname;
   }
 
   /* ── Nav Links ───────────────────────────────────── */
+  .header__nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
   .header__nav-list {
     display: flex;
     align-items: center;
@@ -207,6 +212,7 @@ const currentPath = Astro.url.pathname;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex-shrink: 0;
   }
 
   .header__icon-btn {
