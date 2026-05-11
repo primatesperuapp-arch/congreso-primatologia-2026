@@ -73,8 +73,13 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   <!-- Bottom Bar -->
   <div class="footer__bottom">
     <div class="container footer__bottom-inner">
-      <p>© 2026 {site.organizer.name}. Todos los derechos reservados.</p>
-      <p>Hecho con 💚 para la conservación de primates en Perú</p>
+      <div class="footer__copyright">
+        <p>© 2026 {site.organizer.name}. Todos los derechos reservados.</p>
+        <p>Hecho con ❤️ para la conservación de primates en Perú</p>
+      </div>
+      <div class="footer__counter" title="Contador de visitas totales">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fprimatesperuapp-arch.github.io%2Fcongreso-primatologia-2026%2F&count_bg=%23D99D55&title_bg=%23593414&icon=&icon_color=%23E7E7E7&title=Visitas&edge_flat=false" alt="Contador de visitas" loading="lazy" />
+      </div>
     </div>
   </div>
 </footer>
@@ -201,7 +206,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.5rem;
     padding: 1.5rem 0;
     text-align: center;
   }
@@ -214,9 +219,23 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     }
   }
 
+  .footer__copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
   .footer__bottom p {
     font-family: var(--font-ui);
     font-size: 0.78rem;
     color: rgba(255,255,255,0.4);
+  }
+
+  .footer__counter {
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+  }
+  .footer__counter:hover {
+    opacity: 1;
   }
 </style>
