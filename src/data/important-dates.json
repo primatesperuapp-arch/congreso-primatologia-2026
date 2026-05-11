@@ -10,24 +10,6 @@
   },
   {
     "id": 2,
-    "date": "2026-06-15",
-    "label": "15 Junio 2026",
-    "title": "Cierre de envío de resúmenes",
-    "description": "Fecha límite para el envío de todos los resúmenes. No se aceptarán envíos tardíos.",
-    "type": "deadline",
-    "status": "upcoming"
-  },
-  {
-    "id": 3,
-    "date": "2026-07-01",
-    "label": "01 Julio 2026",
-    "title": "Notificación de aceptaciones",
-    "description": "Los autores recibirán notificación sobre la aceptación de sus resúmenes y formato asignado.",
-    "type": "notification",
-    "status": "upcoming"
-  },
-  {
-    "id": 4,
     "date": "2026-05-31",
     "label": "31 Mayo 2026",
     "title": "Fin de inscripciones Early Bird",
@@ -36,7 +18,34 @@
     "status": "upcoming"
   },
   {
+    "id": 3,
+    "date": "2026-06-15",
+    "label": "15 Junio 2026",
+    "title": "Cierre de envío de resúmenes",
+    "description": "Fecha límite para el envío de todos los resúmenes. No se aceptarán envíos tardíos.",
+    "type": "deadline",
+    "status": "upcoming"
+  },
+  {
+    "id": 4,
+    "date": "2026-07-01",
+    "label": "01 Julio 2026",
+    "title": "Notificación de aceptaciones",
+    "description": "Los autores recibirán notificación sobre la aceptación de sus resúmenes y formato asignado.",
+    "type": "notification",
+    "status": "upcoming"
+  },
+  {
     "id": 5,
+    "date": "2026-07-15",
+    "label": "15 Julio 2026",
+    "title": "Cierre de inscripciones regulares",
+    "description": "Fecha límite para inscribirse a tarifa regular. Pasada esta fecha, solo se podrá inscribir en sede durante el congreso.",
+    "type": "deadline",
+    "status": "upcoming"
+  },
+  {
+    "id": 6,
     "date": "2026-07-30",
     "label": "30 Julio 2026",
     "title": "III Congreso Peruano de Primatología 2026",
