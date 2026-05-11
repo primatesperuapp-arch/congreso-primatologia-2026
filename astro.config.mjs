@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://primatesperuapp-arch.github.io',
-  base: '/congreso-primatologia-2026',
+  base: '/cpp2026',
   vite: {
     plugins: [tailwindcss()]
   },
