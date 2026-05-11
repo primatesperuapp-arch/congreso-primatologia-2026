@@ -55,9 +55,14 @@ const guidelines = [
           <div class="deadline-alert__text">
             <strong>Apertura:</strong> 8 de mayo 2026 &nbsp;|&nbsp; <strong>Cierre:</strong> 15 de junio 2026
           </div>
-          <a href="https://forms.gle/Gzcr2ktTmrEnGTTh9" target="_blank" rel="noopener" class="btn btn-primary">
-            Enviar Resumen →
-          </a>
+          <div class="deadline-alert__actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="/documentos/Modelo_resumen_CPP2026.docx" download class="btn btn-secondary">
+              📥 Plantilla Word
+            </a>
+            <a href="https://forms.gle/Gzcr2ktTmrEnGTTh9" target="_blank" rel="noopener" class="btn btn-primary">
+              Enviar Resumen →
+            </a>
+          </div>
         </div>
 
         <p class="call-desc reveal">
@@ -133,13 +138,21 @@ const guidelines = [
 
       <div class="requirements-grid reveal">
         <div class="requirement-box">
-          <h3>📋 Requisitos Generales</h3>
-          <ul>
-            <li>Envío exclusivo a través del <strong>formulario oficial</strong> en línea.</li>
-            <li>Extensión máxima de <strong>300 palabras</strong> para el resumen descriptivo.</li>
-            <li>El título debe reflejar claramente el <strong>objetivo y la idea principal</strong> del trabajo.</li>
-            <li><strong>Inclusión Lingüística:</strong> Opción de adjuntar síntesis en lengua originaria (Quechua, Awajún, etc.).</li>
-          </ul>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem;">
+            <div>
+              <h3>📋 Requisitos Generales</h3>
+              <ul>
+                <li>Envío exclusivo a través del <strong>formulario oficial</strong> en línea.</li>
+                <li>Extensión máxima de <strong>300 palabras</strong> para el resumen descriptivo.</li>
+                <li>El título debe reflejar claramente el <strong>objetivo y la idea principal</strong> del trabajo.</li>
+                <li><strong>Inclusión Lingüística:</strong> Opción de adjuntar síntesis en lengua originaria (Quechua, Awajún, etc.).</li>
+              </ul>
+            </div>
+            <a href="/documentos/Modelo_resumen_CPP2026.docx" download class="btn btn-secondary" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Descargar Plantilla (.docx)
+            </a>
+          </div>
         </div>
       </div>
 
@@ -299,9 +312,14 @@ const guidelines = [
       <p style="color:rgba(255,255,255,0.7); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto;">
         Tienes hasta el <strong style="color:var(--gold);">15 de junio de 2026</strong> para enviar tu resumen. Notificación de resultados: <strong>1 de julio de 2026</strong>. Trabajemos juntos para diseñar el futuro de la primatología en el Perú.
       </p>
-      <a href="https://forms.gle/Gzcr2ktTmrEnGTTh9" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="cta-enviar-resumen">
-        📋 Enviar Resumen
-      </a>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/documentos/Modelo_resumen_CPP2026.docx" download class="btn btn-lg" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+          📥 Descargar Plantilla
+        </a>
+        <a href="https://forms.gle/Gzcr2ktTmrEnGTTh9" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="cta-enviar-resumen">
+          📋 Enviar Resumen
+        </a>
+      </div>
     </div>
   </section>
 </PageLayout>
