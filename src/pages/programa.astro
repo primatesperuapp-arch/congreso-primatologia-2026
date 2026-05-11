@@ -220,7 +220,7 @@ const typeConfig: Record<string, { color: string; label: string; icon: string }>
     font-family: var(--font-body);
     text-align: left;
   }
-  [data-theme="dark"] .program-tab {
+  :global([data-theme="dark"]) .program-tab {
     background: rgba(26,58,46,0.4);
     border-color: rgba(82,183,136,0.2);
   }
@@ -231,14 +231,14 @@ const typeConfig: Record<string, { color: string; label: string; icon: string }>
     border-color: var(--forest-leaf);
     border-bottom-color: white;
   }
-  [data-theme="dark"] .program-tab.active {
+  :global([data-theme="dark"]) .program-tab.active {
     background: var(--forest-dark);
     border-color: var(--forest-leaf);
     border-bottom-color: var(--forest-dark);
   }
 
   .program-tab__day { font-weight: 700; font-size: 0.9rem; color: var(--forest-mid); }
-  [data-theme="dark"] .program-tab__day { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .program-tab__day { color: var(--forest-canopy); }
   .program-tab__theme { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.1rem; }
 
   /* Panel */
@@ -253,12 +253,12 @@ const typeConfig: Record<string, { color: string; label: string; icon: string }>
     border-radius: 0 var(--radius-md) 0 0;
     margin-bottom: 1.25rem;
   }
-  [data-theme="dark"] .program-header-day {
+  :global([data-theme="dark"]) .program-header-day {
     background: var(--forest-dark);
     border-color: rgba(82,183,136,0.2);
   }
   .program-header-day__title { font-family: var(--font-display); font-size: 1.2rem; color: var(--text-on-light); }
-  [data-theme="dark"] .program-header-day__title { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .program-header-day__title { color: var(--text-on-dark); }
   .program-header-day__theme { font-size: 0.85rem; color: var(--forest-leaf); margin-top: 0.3rem; }
 
   /* Schedule */
@@ -286,7 +286,7 @@ const typeConfig: Record<string, { color: string; label: string; icon: string }>
     font-weight: 700;
     color: var(--text-on-light);
   }
-  [data-theme="dark"] .schedule-item__hour { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .schedule-item__hour { color: var(--text-on-dark); }
   .schedule-item__dur {
     font-family: var(--font-ui);
     font-size: 0.7rem;
@@ -323,7 +323,7 @@ const typeConfig: Record<string, { color: string; label: string; icon: string }>
     color: var(--text-on-light);
     line-height: 1.35;
   }
-  [data-theme="dark"] .schedule-item__title { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .schedule-item__title { color: var(--text-on-dark); }
 
   .schedule-item__speaker,
   .schedule-item__location {

@@ -42,7 +42,7 @@ import dates from '../../data/important-dates.json';
     background: var(--cream);
   }
 
-  [data-theme="dark"] .dates {
+  :global([data-theme="dark"]) .dates {
     background: var(--forest-darkest);
   }
 
@@ -127,7 +127,7 @@ import dates from '../../data/important-dates.json';
     position: relative;
   }
 
-  [data-theme="dark"] .timeline-item__dot {
+  :global([data-theme="dark"]) .timeline-item__dot {
     background: var(--forest-dark);
   }
 
@@ -170,7 +170,7 @@ import dates from '../../data/important-dates.json';
     line-height: 1.3;
   }
 
-  [data-theme="dark"] .timeline-item__title { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .timeline-item__title { color: var(--text-on-dark); }
 
   .timeline-item__desc {
     font-size: 0.87rem;

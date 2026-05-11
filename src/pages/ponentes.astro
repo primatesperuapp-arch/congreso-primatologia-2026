@@ -90,7 +90,7 @@ const speakers = [
     color: var(--text-on-light);
     margin-bottom: 1.5rem;
   }
-  [data-theme="dark"] .speakers-section-title { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .speakers-section-title { color: var(--text-on-dark); }
 
   /* Main speakers (2 col) */
   .speakers-main-grid {
@@ -112,7 +112,7 @@ const speakers = [
     align-items: flex-start;
     transition: transform var(--transition-mid);
   }
-  [data-theme="dark"] .speaker-full-card { background: rgba(26,58,46,0.6); }
+  :global([data-theme="dark"]) .speaker-full-card { background: rgba(26,58,46,0.6); }
   .speaker-full-card:hover { transform: translateY(-4px); }
 
   .speaker-full-card__avatar {
@@ -137,7 +137,7 @@ const speakers = [
     color: var(--text-on-light);
     margin-bottom: 0.2rem;
   }
-  [data-theme="dark"] .speaker-full-card__name { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .speaker-full-card__name { color: var(--text-on-dark); }
   .speaker-full-card__title { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.3rem; }
   .speaker-full-card__area {
     font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700;
@@ -164,7 +164,7 @@ const speakers = [
     text-align: center;
     transition: all var(--transition-mid);
   }
-  [data-theme="dark"] .speaker-card-mini { background: rgba(26,58,46,0.5); }
+  :global([data-theme="dark"]) .speaker-card-mini { background: rgba(26,58,46,0.5); }
   .speaker-card-mini:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--sc); }
 
   .speaker-card-mini__avatar {
@@ -182,7 +182,7 @@ const speakers = [
     color: var(--sc); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem;
   }
   .speaker-card-mini__name { font-weight: 700; font-size: 0.9rem; color: var(--text-on-light); margin-bottom: 0.2rem; }
-  [data-theme="dark"] .speaker-card-mini__name { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .speaker-card-mini__name { color: var(--text-on-dark); }
   .speaker-card-mini__role { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
   .speaker-card-mini__affil { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; }
   .speaker-card-mini__bio {

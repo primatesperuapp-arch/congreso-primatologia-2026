@@ -198,7 +198,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--forest-mid);
     margin-bottom: 1.5rem;
   }
-  [data-theme="dark"] .contact-info__title { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .contact-info__title { color: var(--forest-canopy); }
 
   .contact-info__items { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
 
@@ -206,7 +206,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   .contact-item__icon { font-size: 1.5rem; flex-shrink: 0; }
   .contact-item__label { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
   .contact-item__value { font-size: 0.95rem; color: var(--text-on-light); font-weight: 500; }
-  [data-theme="dark"] .contact-item__value { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .contact-item__value { color: var(--text-on-dark); }
   a.contact-item__value { color: var(--forest-leaf); }
   a.contact-item__value:hover { color: var(--forest-mid); }
 
@@ -236,13 +236,13 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     box-shadow: var(--shadow-md);
     padding: 2.5rem;
   }
-  [data-theme="dark"] .contact-form-wrapper {
+  :global([data-theme="dark"]) .contact-form-wrapper {
     background: rgba(26,58,46,0.55);
   }
 
   .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
   .contact-form__title { font-family: var(--font-display); font-size: 1.4rem; color: var(--forest-mid); }
-  [data-theme="dark"] .contact-form__title { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .contact-form__title { color: var(--forest-canopy); }
   .contact-form__subtitle { font-size: 0.87rem; color: var(--text-muted); margin-top: 0.2rem; }
 
   .form-group { display: flex; flex-direction: column; gap: 0.35rem; }

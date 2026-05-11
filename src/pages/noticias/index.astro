@@ -178,7 +178,7 @@ const news = [
     position: relative;
     overflow: hidden;
   }
-  [data-theme="dark"] .news-index-card {
+  :global([data-theme="dark"]) .news-index-card {
     background: rgba(26,58,46,0.55);
     border-color: rgba(82,183,136,0.18);
   }
@@ -202,7 +202,7 @@ const news = [
 
   .news-index-card__title { font-family: var(--font-body); font-size: 1rem; font-weight: 700; line-height: 1.4; }
   .news-index-card__title a { color: var(--text-on-light); transition: color var(--transition-fast); }
-  [data-theme="dark"] .news-index-card__title a { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .news-index-card__title a { color: var(--text-on-dark); }
   .news-index-card__title a:hover { color: var(--forest-leaf); }
 
   .news-index-card__excerpt {

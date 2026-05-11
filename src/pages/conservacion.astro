@@ -201,7 +201,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   }
   .cons-intro__text { display: flex; flex-direction: column; gap: 1.25rem; }
   .cons-intro__text p { font-size: 0.97rem; color: var(--text-on-light); line-height: 1.8; }
-  [data-theme="dark"] .cons-intro__text p { color: rgba(240,237,232,0.85); }
+  :global([data-theme="dark"]) .cons-intro__text p { color: rgba(240,237,232,0.85); }
 
   /* Initiatives */
   .initiatives-grid {
@@ -221,11 +221,11 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-mid), box-shadow var(--transition-mid);
   }
-  [data-theme="dark"] .initiative-card { background: rgba(26,58,46,0.5); }
+  :global([data-theme="dark"]) .initiative-card { background: rgba(26,58,46,0.5); }
   .initiative-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
   .initiative-card__icon { font-size: 2rem; margin-bottom: 0.75rem; }
   .initiative-card__title { font-weight: 700; font-size: 1rem; color: var(--text-on-light); margin-bottom: 0.6rem; }
-  [data-theme="dark"] .initiative-card__title { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .initiative-card__title { color: var(--text-on-dark); }
   .initiative-card__desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
 
   /* Species */
@@ -247,7 +247,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     display: flex;
     flex-direction: column;
   }
-  [data-theme="dark"] .species-card { background: rgba(26,58,46,0.55); border-color: rgba(82,183,136,0.18); }
+  :global([data-theme="dark"]) .species-card { background: rgba(26,58,46,0.55); border-color: rgba(82,183,136,0.18); }
   .species-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
 
   .species-card__img-container { position: relative; height: 220px; overflow: hidden; }
@@ -267,10 +267,10 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
 
   .species-card__content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
   .species-card__name { font-family: var(--font-display); font-size: 1.15rem; color: var(--forest-mid); margin-bottom: 0.25rem; }
-  [data-theme="dark"] .species-card__name { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .species-card__name { color: var(--forest-canopy); }
   .species-card__sci { font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-bottom: 1rem; }
   .species-card__desc-text { font-size: 0.88rem; color: var(--text-on-light); line-height: 1.6; margin-bottom: 1.25rem; }
-  [data-theme="dark"] .species-card__desc-text { color: rgba(240,237,232,0.85); }
+  :global([data-theme="dark"]) .species-card__desc-text { color: rgba(240,237,232,0.85); }
 
   .species-card__info {
     margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(82,183,136,0.1);

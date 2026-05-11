@@ -42,7 +42,7 @@ const colorMap: Record<string, string> = {
     background: var(--cream-warm);
   }
 
-  [data-theme="dark"] .objectives {
+  :global([data-theme="dark"]) .objectives {
     background: linear-gradient(180deg, #0d2318 0%, #0a1f14 100%);
   }
 
@@ -71,7 +71,7 @@ const colorMap: Record<string, string> = {
     overflow: hidden;
   }
 
-  [data-theme="dark"] .objective-card {
+  :global([data-theme="dark"]) .objective-card {
     background: rgba(26, 58, 46, 0.55);
     border-color: rgba(82,183,136,0.18);
   }
@@ -105,7 +105,7 @@ const colorMap: Record<string, string> = {
     line-height: 1.3;
   }
 
-  [data-theme="dark"] .objective-card__title {
+  :global([data-theme="dark"]) .objective-card__title {
     color: var(--text-on-dark);
   }
 

@@ -93,7 +93,7 @@ const news = [
   .news {
     background: var(--cream-warm);
   }
-  [data-theme="dark"] .news {
+  :global([data-theme="dark"]) .news {
     background: linear-gradient(180deg, #0d2318 0%, #0a1f14 100%);
   }
 
@@ -122,7 +122,7 @@ const news = [
     overflow: hidden;
   }
 
-  [data-theme="dark"] .news-card {
+  :global([data-theme="dark"]) .news-card {
     background: rgba(26,58,46,0.55);
     border-color: rgba(82,183,136,0.18);
   }
@@ -176,7 +176,7 @@ const news = [
     color: var(--text-on-light);
     transition: color var(--transition-fast);
   }
-  [data-theme="dark"] .news-card__title a { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .news-card__title a { color: var(--text-on-dark); }
   .news-card__title a:hover { color: var(--forest-leaf); }
 
   .news-card__excerpt {

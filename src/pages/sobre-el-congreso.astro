@@ -185,7 +185,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--text-on-light);
     line-height: 1.8;
   }
-  [data-theme="dark"] .about-intro__text p { color: rgba(240,237,232,0.85); }
+  :global([data-theme="dark"]) .about-intro__text p { color: rgba(240,237,232,0.85); }
 
   /* Mission/Vision */
   .mv-grid {
@@ -202,7 +202,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     border: 1px solid rgba(82,183,136,0.12);
     box-shadow: var(--shadow-sm);
   }
-  [data-theme="dark"] .mv-card {
+  :global([data-theme="dark"]) .mv-card {
     background: rgba(26,58,46,0.5);
   }
 
@@ -213,9 +213,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--forest-mid);
     margin-bottom: 1rem;
   }
-  [data-theme="dark"] .mv-card__title { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .mv-card__title { color: var(--forest-canopy); }
   .mv-card__text { font-size: 0.95rem; color: var(--text-on-light); line-height: 1.8; }
-  [data-theme="dark"] .mv-card__text { color: rgba(240,237,232,0.8); }
+  :global([data-theme="dark"]) .mv-card__text { color: rgba(240,237,232,0.8); }
 
   /* Conservation */
   .conservation-text {
@@ -230,7 +230,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--text-on-light);
     line-height: 1.8;
   }
-  [data-theme="dark"] .conservation-text p { color: rgba(240,237,232,0.8); }
+  :global([data-theme="dark"]) .conservation-text p { color: rgba(240,237,232,0.8); }
 
   .plan-box {
     background: linear-gradient(135deg, rgba(82,183,136,0.08), rgba(45,106,79,0.05));
@@ -246,9 +246,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--forest-mid);
     margin-bottom: 0.75rem;
   }
-  [data-theme="dark"] .plan-box__title { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .plan-box__title { color: var(--forest-canopy); }
   .plan-box__text { font-size: 0.9rem; color: var(--text-on-light); line-height: 1.75; }
-  [data-theme="dark"] .plan-box__text { color: rgba(240,237,232,0.8); }
+  :global([data-theme="dark"]) .plan-box__text { color: rgba(240,237,232,0.8); }
 
   /* Committee */
   .committee-grid {
@@ -266,7 +266,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     text-align: center;
     box-shadow: var(--shadow-sm);
   }
-  [data-theme="dark"] .committee-card { background: rgba(26,58,46,0.5); }
+  :global([data-theme="dark"]) .committee-card { background: rgba(26,58,46,0.5); }
 
   .committee-card__icon { font-size: 2rem; margin-bottom: 0.75rem; }
   .committee-card__role {
@@ -284,6 +284,6 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--text-on-light);
     margin-bottom: 0.2rem;
   }
-  [data-theme="dark"] .committee-card__name { color: var(--text-on-dark); }
+  :global([data-theme="dark"]) .committee-card__name { color: var(--text-on-dark); }
   .committee-card__org { font-size: 0.75rem; color: var(--text-muted); }
 </style>
