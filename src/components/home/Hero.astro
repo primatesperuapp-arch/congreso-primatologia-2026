@@ -49,9 +49,29 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Inscribirse
         </a>
-        <a href={`${base}programa`} class="btn btn-ghost btn-lg">
-          Ver Programa →
-        </a>
+      </div>
+
+      <!-- Countdown -->
+      <div class="hero__countdown animate-fade-up" style="animation-delay: 0.6s">
+        <span class="countdown-label">Faltan:</span>
+        <div class="countdown-grid" id="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-text">Días</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-text">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-text">Min</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-text">Seg</span>
+          </div>
+        </div>
       </div>
 
       <!-- Stats -->
@@ -356,9 +376,109 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     text-transform: uppercase;
   }
 
+  /* ── Countdown ───────────────────────────────────── */
+  .hero__countdown {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .countdown-label {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--forest-canopy);
+    font-weight: 700;
+  }
+
+  .countdown-grid {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(217, 157, 85, 0.2);
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-md);
+    min-width: 55px;
+  }
+
+  .countdown-number {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1.1;
+  }
+
+  .countdown-text {
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .hero__countdown {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  }
+
   /* Ensure animations only play once on load */
   .animate-fade-up {
     opacity: 0;
     animation: fadeInUp 0.7s ease forwards;
   }
 </style>
+
+<script>
+  function initCountdown() {
+    // Target: July 30, 2026, 9:00 AM
+    const targetDate = new Date('2026-07-30T09:00:00').getTime();
+    
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    const containerEl = document.getElementById('countdown');
+
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+    function update() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        if (containerEl) containerEl.innerHTML = '<span style="color:var(--forest-canopy); font-weight:700;">¡EL CONGRESO HA COMENZADO!</span>';
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.innerText = d.toString().padStart(2, '0');
+      hoursEl.innerText = h.toString().padStart(2, '0');
+      minutesEl.innerText = m.toString().padStart(2, '0');
+      secondsEl.innerText = s.toString().padStart(2, '0');
+    }
+
+    setInterval(update, 1000);
+    update();
+  }
+
+  // Initialize on load and on view change (Astro transitions if enabled)
+  initCountdown();
+  document.addEventListener('astro:page-load', initCountdown);
+</script>
