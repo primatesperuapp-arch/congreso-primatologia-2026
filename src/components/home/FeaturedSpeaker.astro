@@ -1,0 +1,186 @@
+---
+const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
+---
+
+<section class="section spotlight">
+  <div class="container spotlight__inner">
+    <div class="spotlight__visual reveal">
+      <div class="spotlight__image-wrapper">
+        <img 
+          src={`${base}images/speakers/rosamira-guillen.png`} 
+          alt="Rosamira Guillén - Ponente Magistral" 
+          class="spotlight__img"
+        />
+        <div class="spotlight__badge">
+          <span class="badge badge-natgeo">National Geographic Explorer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="spotlight__content">
+      <div class="spotlight__header reveal" style="animation-delay: 0.1s">
+        <span class="section-label">Ponente Magistral Confirmada</span>
+        <h2 class="spotlight__title">Rosamira Guillén</h2>
+        <p class="spotlight__subtitle">Directora Ejecutiva de la Fundación Proyecto Tití</p>
+      </div>
+
+      <div class="spotlight__body reveal" style="animation-delay: 0.2s">
+        <p>
+          Arquitecta y conservacionista colombiana, líder en la protección del <strong>Tití Cabeciblanco</strong>. Su labor ha sido reconocida internacionalmente con el prestigioso <strong>Whitley Award (2015)</strong> y el <strong>National Geographic Buffett Award (2017)</strong>.
+        </p>
+        <p>
+          En el III Congreso Peruano de Primatología, Rosamira compartirá su experiencia liderando estrategias integrales que combinan ciencia, desarrollo comunitario y educación ambiental para salvar a una de las especies de primates más amenazadas del mundo.
+        </p>
+      </div>
+
+      <div class="spotlight__footer reveal" style="animation-delay: 0.3s">
+        <div class="spotlight__highlights">
+          <div class="spotlight__highlight">
+            <span class="highlight-icon">🌍</span>
+            <span class="highlight-text">Liderazgo Internacional</span>
+          </div>
+          <div class="spotlight__highlight">
+            <span class="highlight-icon">🐒</span>
+            <span class="highlight-text">Conservación de Especies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .spotlight {
+    background: linear-gradient(135deg, var(--forest-darkest) 0%, #4a2b11 100%);
+    color: white;
+    padding: 6rem 0;
+    overflow: hidden;
+  }
+
+  .spotlight__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .spotlight__inner {
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 5rem;
+    }
+  }
+
+  /* ── Visual ──────────────────────────────────────── */
+  .spotlight__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .spotlight__image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(217,157,85,0.2);
+  }
+
+  .spotlight__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-slow);
+  }
+
+  .spotlight__image-wrapper:hover .spotlight__img {
+    transform: scale(1.05);
+  }
+
+  .spotlight__badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 2;
+  }
+
+  .badge-natgeo {
+    background: #FFCC00;
+    color: #000;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  /* ── Content ─────────────────────────────────────── */
+  .spotlight__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .spotlight__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--gold-light);
+    margin: 0.5rem 0;
+    line-height: 1.1;
+  }
+
+  .spotlight__subtitle {
+    font-family: var(--font-ui);
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+  }
+
+  .spotlight__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .spotlight__body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .spotlight__body strong {
+    color: var(--gold-light);
+  }
+
+  /* ── Footer ──────────────────────────────────────── */
+  .spotlight__highlights {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .spotlight__highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.06);
+    padding: 0.75rem 1.25rem;
+    border-radius: 100px;
+    border: 1px solid rgba(217,157,85,0.15);
+  }
+
+  .highlight-icon { font-size: 1.25rem; }
+  
+  .highlight-text {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+  }
+</style>
