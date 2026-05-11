@@ -1,0 +1,448 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
+
+const hotels = [
+  {
+    name: "Hostal Patiño",
+    rating: 4.2,
+    address: "Calle Horacio Patiño Cruzati 774, San Luis",
+    desc: "Alternativa acogedora e informal con restaurante, bar y jardín. Ideal para relajarse después de las sesiones del día.",
+    icon: "🏡",
+    color: "#74c69d",
+    maps: "https://maps.google.com/?q=Calle+Horacio+Pati%C3%B1o+Cruzati+774+San+Luis+Lima",
+  },
+  {
+    name: "Hotel Suite Gran Cancun",
+    rating: 4.2,
+    address: "Av. Rosa Toro 795, San Borja",
+    desc: "Práctica ubicación sobre la Av. Rosa Toro con recepción 24 horas, útil para asistentes con vuelos nocturnos.",
+    icon: "🏨",
+    color: "#52b788",
+    maps: "https://maps.google.com/?q=Av.+Rosa+Toro+795+San+Borja+Lima",
+  },
+  {
+    name: "Aqua Hotel 933",
+    rating: 4.2,
+    address: "Av. Rosa Toro 933, San Borja",
+    desc: "Bien ubicado y con recepción 24 horas. Excelente para llegadas tardías desde el interior del país.",
+    icon: "🏨",
+    color: "#52b788",
+    maps: "https://maps.google.com/?q=Av.+Rosa+Toro+933+San+Borja+Lima",
+  },
+  {
+    name: "Los Arces Hotel",
+    rating: 4.0,
+    address: "Av. Rosa Toro 690, San Borja",
+    desc: "Perfil corporativo con habitaciones elegantes y restaurante propio. Adecuado para ponentes y delegados institucionales.",
+    icon: "🏢",
+    color: "#2d6a4f",
+    maps: "https://maps.google.com/?q=Av.+Rosa+Toro+690+San+Borja+Lima",
+  },
+  {
+    name: "Hotel Rosa Toro",
+    rating: 4.0,
+    address: "Av. Rosa Toro 1095, San Borja",
+    desc: "Sencillo y funcional con Wi-Fi gratis y servicio continuo de habitaciones. Perfecto para afinar presentaciones de última hora.",
+    icon: "🏩",
+    color: "#c9a84c",
+    maps: "https://maps.google.com/?q=Av.+Rosa+Toro+1095+San+Borja+Lima",
+  },
+];
+
+const restaurants = [
+  {
+    name: "Restaurante familiar (Av. Javier Prado)",
+    rating: 4.9,
+    address: "Av. Javier Prado Este 3220, San Borja",
+    desc: "La calificación más alta del área. Espacioso, ideal para coordinaciones con el comité organizador e invitados especiales.",
+    icon: "⭐",
+    color: "#c9a84c",
+    maps: "https://maps.google.com/?q=Av.+Javier+Prado+Este+3220+San+Borja+Lima",
+  },
+  {
+    name: "La Isla del Encanto",
+    rating: 4.2,
+    address: "Av. Rosa Toro 1145, San Borja",
+    desc: "Clásico de la zona, excelente para almuerzos rápidos durante los recesos del evento.",
+    icon: "🍽️",
+    color: "#8b5e3c",
+    maps: "https://maps.google.com/?q=Av.+Rosa+Toro+1145+San+Borja+Lima",
+  },
+  {
+    name: "El Molinero San Borja",
+    rating: 4.2,
+    address: "Av. Rosa Toro 1124, San Borja",
+    desc: "Otro clásico del eje Rosa Toro. Recomendado para salidas grupales entre ponencias.",
+    icon: "🍽️",
+    color: "#8b5e3c",
+    maps: "https://maps.google.com/?q=Av.+Rosa+Toro+1124+San+Borja+Lima",
+  },
+  {
+    name: "Matambre San Borja",
+    rating: 4.2,
+    address: "Ca. de las Bellas Artes 200, San Borja",
+    desc: "Abierto hasta las 23:00 h (cerrado domingos). Gran alternativa para cenas tardías tras jornadas académicas extensas.",
+    icon: "🌙",
+    color: "#2d6a4f",
+    maps: "https://maps.google.com/?q=Ca.+de+las+Bellas+Artes+200+San+Borja+Lima",
+  },
+  {
+    name: "El Huarike",
+    rating: 4.2,
+    address: "Av. San Borja Norte 401, San Borja",
+    desc: "Perfecto para disfrutar comida local en ambiente agradable. Popular entre los vecinos de San Borja.",
+    icon: "🥘",
+    color: "#74c69d",
+    maps: "https://maps.google.com/?q=Av.+San+Borja+Norte+401+San+Borja+Lima",
+  },
+];
+
+const transport = [
+  { icon: "✈️", title: "Desde el Aeropuerto", desc: "El Aeropuerto Internacional Jorge Chávez (Callao) está a ~40 min en taxi. Usar Uber o InDriver es la opción más segura y económica (S/ 35–55)." },
+  { icon: "🚇", title: "Metropolitano", desc: "Tomar el Metropolitano hasta la estación Javier Prado y caminar ~10 min por la Av. Javier Prado Este hacia la UNMSM." },
+  { icon: "🚌", title: "Bus", desc: "Rutas que circulan por la Av. Javier Prado Este o Av. Circunvalación tienen paradas cercanas a la Facultad de Medicina Veterinaria." },
+  { icon: "🚗", title: "Taxi / Uber", desc: "Desde Miraflores ~15 min (S/ 12–18). Desde el Centro de Lima ~25 min (S/ 20–30). Usar apps de transporte para mayor seguridad." },
+];
+---
+
+<PageLayout
+  title="Información Práctica"
+  description="Guía práctica para asistentes al III Congreso Peruano de Primatología 2026: hoteles, restaurantes, cómo llegar y mapa de la zona en San Borja, Lima."
+  heroTitle="Información Práctica"
+  heroSubtitle="Todo lo que necesitas saber para tu llegada a Lima"
+  heroColor="var(--forest-dark)"
+>
+
+  <!-- Intro + Venue -->
+  <section class="section">
+    <div class="container">
+      <div class="venue-intro reveal">
+        <div class="venue-intro__icon">📍</div>
+        <div class="venue-intro__text">
+          <h2 class="venue-intro__title">Sede del Congreso</h2>
+          <p class="venue-intro__address">
+            <strong>Facultad de Medicina Veterinaria — UNMSM</strong><br />
+            Av. Circunvalación 28, San Borja, Lima, Perú
+          </p>
+          <p class="venue-intro__desc">
+            San Borja es un distrito céntrico y seguro de Lima, con excelente conectividad a los principales ejes viales. La Av. Rosa Toro, a pocos minutos a pie de la facultad, concentra la mayor oferta de hoteles y restaurantes recomendados para los asistentes.
+          </p>
+          <a
+            href="https://maps.google.com/?q=Facultad+de+Medicina+Veterinaria+UNMSM+Av.+Circunvalacion+28+San+Borja+Lima"
+            target="_blank" rel="noopener"
+            class="btn btn-secondary"
+            style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ver en Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA INTERACTIVO -->
+  <section class="section map-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ubicación</span>
+        <h2 class="section-title">Mapa de la Zona</h2>
+        <p class="section-subtitle">La sede, hoteles y restaurantes recomendados se concentran en un radio de ~1 km en San Borja.</p>
+      </div>
+      <div class="map-wrapper reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.4440428269245!2d-76.99027725964234!3d-12.081724188207081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c63563961799%3A0x4dab497dd902f39b!2sFacultad%20de%20Medicina%20Veterinaria%20UNMSM!5e0!3m2!1ses-419!2spe!4v1778279619967!5m2!1ses-419!2spe"
+          width="100%"
+          height="480"
+          style="border:0; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de la sede del III Congreso Peruano de Primatología 2026"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO LLEGAR -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Movilización</span>
+        <h2 class="section-title">¿Cómo llegar?</h2>
+      </div>
+      <div class="transport-grid">
+        {transport.map((t, i) => (
+          <div class={`transport-card reveal reveal-delay-${i+1}`}>
+            <div class="transport-card__icon">{t.icon}</div>
+            <h3 class="transport-card__title">{t.title}</h3>
+            <p class="transport-card__desc">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTELES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Alojamiento</span>
+        <h2 class="section-title">Hoteles Recomendados</h2>
+        <p class="section-subtitle">
+          Opciones cercanas a la sede con calificación mínima de 4.0 ⭐. El eje de la Av. Rosa Toro está a pocos minutos a pie de la Facultad.
+        </p>
+      </div>
+      <div class="places-grid">
+        {hotels.map((h, i) => (
+          <div class={`place-card reveal reveal-delay-${(i%3)+1}`} style={`--pc: ${h.color};`}>
+            <div class="place-card__top">
+              <span class="place-card__icon">{h.icon}</span>
+              <div class="place-card__rating">
+                ⭐ <strong>{h.rating}</strong>
+              </div>
+            </div>
+            <h3 class="place-card__name">{h.name}</h3>
+            <p class="place-card__address">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {h.address}
+            </p>
+            <p class="place-card__desc">{h.desc}</p>
+            <a href={h.maps} target="_blank" rel="noopener" class="place-card__link">
+              Ver en mapa →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RESTAURANTES -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Gastronomía</span>
+        <h2 class="section-title">Restaurantes Cercanos</h2>
+        <p class="section-subtitle">
+          Ideales para almuerzos, cenas o reuniones informales durante el congreso.
+        </p>
+      </div>
+      <div class="places-grid">
+        {restaurants.map((r, i) => (
+          <div class={`place-card reveal reveal-delay-${(i%3)+1}`} style={`--pc: ${r.color};`}>
+            <div class="place-card__top">
+              <span class="place-card__icon">{r.icon}</span>
+              <div class="place-card__rating">
+                ⭐ <strong>{r.rating}</strong>
+              </div>
+            </div>
+            <h3 class="place-card__name">{r.name}</h3>
+            <p class="place-card__address">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {r.address}
+            </p>
+            <p class="place-card__desc">{r.desc}</p>
+            <a href={r.maps} target="_blank" rel="noopener" class="place-card__link">
+              Ver en mapa →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS GENERALES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Consejos</span>
+        <h2 class="section-title">Tips para tu estadía en Lima</h2>
+      </div>
+      <div class="tips-grid reveal">
+        {[
+          { icon: "💱", tip: "La moneda oficial es el Sol peruano (S/). Los cajeros automáticos están disponibles en toda la zona." },
+          { icon: "📱", tip: "Usa aplicaciones como Uber, InDriver o Cabify para movilizarte de forma segura. Evita los taxis sin aplicación de noche." },
+          { icon: "🌡️", tip: "Lima en julio/agosto tiene clima frío y nublado (~15°C). Trae ropa abrigada, especialmente para las noches." },
+          { icon: "🔌", tip: "Los enchufes son de tipo A/B (igual que en EE.UU.). Voltaje 220V. Trae adaptador si vienes de Europa." },
+          { icon: "💧", tip: "No se recomienda beber agua del grifo. Prefiere agua embotellada o hervida durante tu estadía." },
+          { icon: "🏥", tip: "La Clínica San Borja (Av. Guardia Civil 337) está a minutos de la sede. Guarda su número: +51 1 475-4000." },
+        ].map(t => (
+          <div class="tip-card">
+            <span class="tip-card__icon">{t.icon}</span>
+            <p class="tip-card__text">{t.tip}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  /* Venue intro */
+  .venue-intro {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(82,183,136,0.15);
+    border-left: 5px solid var(--forest-leaf);
+    padding: 2rem 2.5rem;
+    box-shadow: var(--shadow-md);
+  }
+  :global([data-theme="dark"]) .venue-intro { background: rgba(26,58,46,0.55); }
+  .venue-intro__icon { font-size: 2.5rem; flex-shrink: 0; }
+  .venue-intro__title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--forest-mid);
+    margin-bottom: 0.5rem;
+  }
+  :global([data-theme="dark"]) .venue-intro__title { color: var(--forest-canopy); }
+  .venue-intro__address {
+    font-size: 1rem;
+    color: var(--text-on-light);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+  :global([data-theme="dark"]) .venue-intro__address { color: var(--text-on-dark); }
+  .venue-intro__desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* Map */
+  .map-section { padding-top: 0; }
+  .map-wrapper { width: 100%; max-width: 1100px; margin: 0 auto; }
+
+  /* Transport */
+  .transport-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) { .transport-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .transport-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .transport-card {
+    padding: 1.75rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.12);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform var(--transition-mid), box-shadow var(--transition-mid);
+  }
+  :global([data-theme="dark"]) .transport-card { background: rgba(26,58,46,0.5); }
+  .transport-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .transport-card__icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+  .transport-card__title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--forest-mid);
+    margin-bottom: 0.6rem;
+  }
+  :global([data-theme="dark"]) .transport-card__title { color: var(--forest-canopy); }
+  .transport-card__desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* Place cards (hotels & restaurants) */
+  .places-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 640px) { .places-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .places-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .place-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.1);
+    border-top: 4px solid var(--pc);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: transform var(--transition-mid), box-shadow var(--transition-mid);
+  }
+  :global([data-theme="dark"]) .place-card { background: rgba(26,58,46,0.55); }
+  .place-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+
+  .place-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+  }
+  .place-card__icon { font-size: 1.75rem; }
+  .place-card__rating {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+  }
+  .place-card__rating strong { color: var(--gold); }
+
+  .place-card__name {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-on-light);
+    line-height: 1.3;
+  }
+  :global([data-theme="dark"]) .place-card__name { color: var(--text-on-dark); }
+
+  .place-card__address {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: var(--font-ui);
+  }
+  .place-card__address svg { flex-shrink: 0; margin-top: 2px; }
+
+  .place-card__desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .place-card__link {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--pc);
+    transition: opacity var(--transition-fast);
+    margin-top: auto;
+  }
+  .place-card__link:hover { opacity: 0.7; }
+
+  /* Tips */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 640px) { .tips-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .tips-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .tip-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255,255,255,0.85);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(82,183,136,0.1);
+    box-shadow: var(--shadow-sm);
+  }
+  :global([data-theme="dark"]) .tip-card { background: rgba(26,58,46,0.45); }
+  .tip-card__icon { font-size: 1.6rem; flex-shrink: 0; }
+  .tip-card__text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+</style>
