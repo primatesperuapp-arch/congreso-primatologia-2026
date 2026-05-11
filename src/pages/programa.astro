@@ -66,8 +66,8 @@ const schedule = {
 
 
 const typeConfig: Record<string, { color: string; label: string; icon: string }> = {
-  conferencia:   { color: '#2d6a4f', label: 'Conferencia Magistral', icon: '🎤' },
-  simposio:      { color: '#52b788', label: 'Simposio', icon: '🗣️' },
+  conferencia:   { color: '#8C374E', label: 'Conferencia Magistral', icon: '🎤' },
+  simposio:      { color: '#D99D55', label: 'Simposio', icon: '🗣️' },
   ponencias:     { color: '#c9a84c', label: 'Ponencias Orales', icon: '📢' },
   posters:       { color: '#8b5e3c', label: 'Sesión de Pósters', icon: '📌' },
   taller:        { color: '#74c69d', label: 'Taller', icon: '🔬' },
@@ -228,7 +228,7 @@ const typeConfig: Record<string, { color: string; label: string; icon: string }>
     flex-direction: column;
     padding: 0.85rem 1.5rem;
     background: rgba(255,255,255,0.7);
-    border: 1.5px solid rgba(82,183,136,0.15);
+    border: 1.5px solid rgba(217,157,85,0.15);
     border-radius: var(--radius-md) var(--radius-md) 0 0;
     cursor: pointer;
     transition: all var(--transition-fast);
@@ -237,10 +237,10 @@ const typeConfig: Record<string, { color: string; label: string; icon: string }>
   }
   :global([data-theme="dark"]) .program-tab {
     background: rgba(26,58,46,0.4);
-    border-color: rgba(82,183,136,0.2);
+    border-color: rgba(217,157,85,0.2);
   }
 
-  .program-tab:hover { background: rgba(82,183,136,0.08); }
+  .program-tab:hover { background: rgba(217,157,85,0.08); }
   .program-tab.active {
     background: white;
     border-color: var(--forest-leaf);
@@ -263,14 +263,14 @@ const typeConfig: Record<string, { color: string; label: string; icon: string }>
   .program-header-day {
     padding: 1.5rem;
     background: white;
-    border: 1px solid rgba(82,183,136,0.15);
+    border: 1px solid rgba(217,157,85,0.15);
     border-top: 3px solid var(--forest-leaf);
     border-radius: 0 var(--radius-md) 0 0;
     margin-bottom: 1.25rem;
   }
   :global([data-theme="dark"]) .program-header-day {
     background: var(--forest-dark);
-    border-color: rgba(82,183,136,0.2);
+    border-color: rgba(217,157,85,0.2);
   }
   .program-header-day__title { font-family: var(--font-display); font-size: 1.2rem; color: var(--text-on-light); }
   :global([data-theme="dark"]) .program-header-day__title { color: var(--text-on-dark); }

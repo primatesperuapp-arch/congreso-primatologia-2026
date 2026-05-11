@@ -47,7 +47,7 @@
   --shadow-sm:       0 2px 8px rgba(13, 35, 24, 0.08);
   --shadow-md:       0 4px 20px rgba(13, 35, 24, 0.12);
   --shadow-lg:       0 8px 40px rgba(13, 35, 24, 0.18);
-  --shadow-glow:     0 0 30px rgba(82, 183, 136, 0.15);
+  --shadow-glow:     0 0 30px rgba(217, 157, 85, 0.15);
 
   /* === Radios === */
   --radius-sm:       6px;
@@ -197,11 +197,11 @@ h4, h5, h6 {
 .btn-primary {
   background: linear-gradient(135deg, var(--forest-mid), var(--forest-leaf));
   color: #fff;
-  box-shadow: var(--shadow-md), 0 0 20px rgba(82,183,136,0.2);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(217,157,85,0.2);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg), 0 0 30px rgba(82,183,136,0.35);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(217,157,85,0.35);
   background: linear-gradient(135deg, var(--forest-leaf), var(--forest-canopy));
 }
 
@@ -247,7 +247,7 @@ h4, h5, h6 {
    ===================================================== */
 .card {
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(82, 183, 136, 0.15);
+  border: 1px solid rgba(217, 157, 85, 0.15);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-mid), box-shadow var(--transition-mid);
@@ -256,7 +256,7 @@ h4, h5, h6 {
 
 [data-theme="dark"] .card {
   background: rgba(26, 58, 46, 0.6);
-  border-color: rgba(82, 183, 136, 0.2);
+  border-color: rgba(217, 157, 85, 0.2);
 }
 
 .card:hover {
@@ -268,14 +268,14 @@ h4, h5, h6 {
   background: rgba(253, 246, 227, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(82, 183, 136, 0.2);
+  border: 1px solid rgba(217, 157, 85, 0.2);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
 }
 
 [data-theme="dark"] .card-glass {
   background: rgba(13, 35, 24, 0.7);
-  border-color: rgba(82, 183, 136, 0.25);
+  border-color: rgba(217, 157, 85, 0.25);
 }
 
 /* =====================================================
@@ -294,9 +294,9 @@ h4, h5, h6 {
 }
 
 .badge-green {
-  background: rgba(82, 183, 136, 0.15);
+  background: rgba(217, 157, 85, 0.15);
   color: var(--forest-mid);
-  border: 1px solid rgba(82, 183, 136, 0.3);
+  border: 1px solid rgba(217, 157, 85, 0.3);
 }
 [data-theme="dark"] .badge-green { color: var(--forest-canopy); }
 
@@ -330,9 +330,9 @@ h4, h5, h6 {
   color: var(--forest-leaf);
   margin-bottom: 0.75rem;
   padding: 0.35rem 1rem;
-  background: rgba(82, 183, 136, 0.1);
+  background: rgba(217, 157, 85, 0.1);
   border-radius: 100px;
-  border: 1px solid rgba(82, 183, 136, 0.25);
+  border: 1px solid rgba(217, 157, 85, 0.25);
 }
 
 .section-title {
@@ -377,8 +377,8 @@ h4, h5, h6 {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 15px rgba(82, 183, 136, 0.3); }
-  50%       { box-shadow: 0 0 30px rgba(82, 183, 136, 0.6); }
+  0%, 100% { box-shadow: 0 0 15px rgba(217, 157, 85, 0.3); }
+  50%       { box-shadow: 0 0 30px rgba(217, 157, 85, 0.6); }
 }
 
 .animate-fade-up {
@@ -410,11 +410,11 @@ h4, h5, h6 {
    DECORATIVE — Patrones Amazónicos
    ===================================================== */
 .pattern-amazonico {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2352b788' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238C374E' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .pattern-hojas {
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232d6a4f' fill-opacity='0.04'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3Ccircle cx='0' cy='0' r='20'/%3E%3Ccircle cx='80' cy='0' r='20'/%3E%3Ccircle cx='0' cy='80' r='20'/%3E%3Ccircle cx='80' cy='80' r='20'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238C374E' fill-opacity='0.04'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3Ccircle cx='0' cy='0' r='20'/%3E%3Ccircle cx='80' cy='0' r='20'/%3E%3Ccircle cx='0' cy='80' r='20'/%3E%3Ccircle cx='80' cy='80' r='20'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* =====================================================
@@ -423,10 +423,10 @@ h4, h5, h6 {
 .gradient-hero {
   background: linear-gradient(
     135deg,
-    var(--forest-darkest) 0%,
-    var(--forest-dark) 40%,
-    #1e4d3a 70%,
-    var(--earth-dark) 100%
+    #593414 0%,
+    #8C374E 40%,
+    #593414 75%,
+    #351d0b 100%
   );
 }
 
@@ -439,11 +439,11 @@ h4, h5, h6 {
 }
 
 .gradient-card {
-  background: linear-gradient(135deg, rgba(82,183,136,0.1), rgba(201,168,76,0.05));
+  background: linear-gradient(135deg, rgba(217,157,85,0.1), rgba(140,55,78,0.05));
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--forest-leaf), var(--gold));
+  background: linear-gradient(135deg, #BF264F, #D99D55);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -458,7 +458,7 @@ h4, h5, h6 {
   z-index: 100;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(82, 183, 136, 0.15);
+  border-bottom: 1px solid rgba(217, 157, 85, 0.15);
   transition: all var(--transition-mid);
 }
 
@@ -466,7 +466,7 @@ h4, h5, h6 {
    FOOTER
    ===================================================== */
 .footer-bg {
-  background: linear-gradient(180deg, var(--forest-dark) 0%, var(--forest-darkest) 100%);
+  background: linear-gradient(180deg, #593414 0%, #351d0b 100%);
 }
 
 /* =====================================================
@@ -476,7 +476,7 @@ h4, h5, h6 {
   width: 100%;
   padding: 0.85rem 1.1rem;
   background: rgba(255, 255, 255, 0.9);
-  border: 1.5px solid rgba(82, 183, 136, 0.25);
+  border: 1.5px solid rgba(217, 157, 85, 0.25);
   border-radius: var(--radius-md);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -487,12 +487,12 @@ h4, h5, h6 {
 .form-input:focus {
   outline: none;
   border-color: var(--forest-leaf);
-  box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.12);
+  box-shadow: 0 0 0 3px rgba(217, 157, 85, 0.12);
 }
 
 [data-theme="dark"] .form-input {
   background: rgba(26, 58, 46, 0.8);
-  border-color: rgba(82, 183, 136, 0.3);
+  border-color: rgba(217, 157, 85, 0.3);
   color: var(--text-on-dark);
 }
 
@@ -522,7 +522,7 @@ h4, h5, h6 {
    SELECTION
    ===================================================== */
 ::selection {
-  background: rgba(82, 183, 136, 0.3);
+  background: rgba(217, 157, 85, 0.3);
   color: var(--forest-darkest);
 }
 
