@@ -5,43 +5,40 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
 
 <PageLayout
   title="Sobre el Congreso"
-  description="Conoce la misión, visión y objetivos del III Congreso Peruano de Primatología 2026, y su alineación con el Plan Nacional de Conservación de Primates Amenazados."
+  description="Conoce la historia del III Congreso Peruano de Primatología 2026, la reactivación de la Asociación Peruana de Primatología (APP) y el equipo organizador."
   heroTitle="Sobre el Congreso"
-  heroSubtitle="Misión, visión y contexto del III Congreso Peruano de Primatología 2026"
+  heroSubtitle="El reencuentro de la primatología peruana"
   heroColor="var(--forest-darkest)"
 >
-  <!-- Presentación -->
+  <!-- El Reencuentro -->
   <section class="section about-section">
     <div class="container">
-      <div class="about-intro">
-        <div class="about-intro__text reveal">
-          <span class="section-label">Presentación</span>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="section-label">Nuestra Historia</span>
           <h2 class="section-title" style="text-align:left; margin-bottom:1.25rem;">
-            Un congreso nacido desde la Amazonía
+            El Reencuentro de la Primatología Peruana
           </h2>
           <p class="body-lg">
-            El <strong>III Congreso Peruano de Primatología 2026</strong> es el evento nacional dedicado al estudio, conservación y conocimiento de los primates del Perú. Nace de la necesidad urgente de articular a la comunidad científica, instituciones gubernamentales y comunidades locales en torno a los primates neotropicales.
+            El <strong>III Congreso Peruano de Primatología 2026</strong> marca el reencuentro de nuestro espacio de encuentro nacional. Tras años de pausa, nos volveremos a reunir en Lima para fortalecer los lazos entre la investigación, la conservación y la sociedad.
           </p>
           <p>
-            El territorio peruano alberga una de las diversidades de primates más extraordinarias del planeta. Con aproximadamente <strong>47 especies reconocidas (55 taxones)</strong>, el Perú se posiciona en la vanguardia de la biodiversidad. Resulta fundamental destacar que <strong>11 de estos taxones son estrictamente endémicos</strong>, lo que confiere al Estado y la sociedad peruana una responsabilidad ineludible en la custodia global de este patrimonio genético.
-          </p>
-          <p>
-            Organizado en alianza con universidades nacionales, organismos de gobierno y socios internacionales, el congreso es un espacio de debate científico riguroso y generación de compromisos concretos para la conservación participativa.
+            Nuestro lema <strong>"Todxs somos primatológxs"</strong> es un llamado a la integración. Queremos romper las barreras entre la ciencia pura y la sociedad. Si te apasiona la naturaleza, si trabajas con comunidades, si eres un estudiante curioso o un ciudadano comprometido, tú también eres parte esencial de esta ciencia. Este congreso es un espacio horizontal donde cada saber cuenta y aporta de igual forma.
           </p>
         </div>
 
-        <div class="about-intro__card card-glass reveal" style="padding:2rem;">
-          <h3 style="font-family:var(--font-display); font-size:1.1rem; color:var(--forest-mid); margin-bottom:1rem;">🇵🇪 El Perú en números</h3>
-          <div style="display:flex; flex-direction:column; gap:0.85rem;">
+        <div class="about-stats-card card-glass reveal">
+          <h3 class="card-title">🇵🇪 El Perú en números</h3>
+          <div class="stats-list">
             {[
               { n: '47', l: 'especies de primates registradas' },
               { n: '11', l: 'taxones estrictamente endémicos' },
               { n: '15', l: 'géneros representados en 5 familias' },
               { n: '4°', l: 'lugar mundial en diversidad de primates' },
             ].map(item => (
-              <div style="display:flex; align-items:center; gap:0.75rem;">
-                <span style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--forest-leaf); min-width:50px;">{item.n}</span>
-                <span style="font-size:0.85rem; color:var(--text-muted);">{item.l}</span>
+              <div class="stat-row">
+                <span class="stat-number">{item.n}</span>
+                <span class="stat-label">{item.l}</span>
               </div>
             ))}
           </div>
@@ -50,70 +47,290 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     </div>
   </section>
 
-
-
-  <!-- Contexto de Conservación -->
-  <section class="section">
+  <!-- La APP y su Reactivación -->
+  <section class="section" style="background: var(--cream-warm);">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Contexto nacional</span>
-        <h2 class="section-title">Los Primates del Perú y su Conservación</h2>
-      </div>
-
-      <div class="conservation-text reveal">
-        <p>
-          Más allá de su valor intrínseco y evolutivo, los primates desempeñan un rol ecológico, cultural y social insustituible. Como dispersores de semillas y polinizadores, son críticos para la regeneración natural de los bosques y su capacidad para actuar como sumideros de carbono frente al cambio climático. Culturalmente, están profundamente entrelazados con las cosmovisiones y medios de vida de los pueblos indígenas amazónicos y andinos.
-        </p>
-        <p>
-          A pesar de su importancia, presiones antropogénicas como la expansión agrícola, la minería ilegal y el tráfico han precipitado una crisis. Como respuesta, el Estado peruano, a través de SERFOR, promulgó el <strong>Plan Nacional de Conservación de los Primates Amenazados (2019–2029)</strong>, un documento rector para revertir este declive.
-        </p>
-
-        <div class="plan-box">
-          <h3 class="plan-box__title">📋 Alineación Estratégica con SERFOR</h3>
-          <p class="plan-box__text" style="margin-bottom: 1rem;">
-            El congreso se ancla sistemáticamente en los objetivos y metas de este plan nacional, actuando como asamblea para:
+      <div class="reactivation-grid">
+        <div class="reactivation-visual reveal" aria-hidden="true">
+          <div class="logo-circle">APP</div>
+        </div>
+        <div class="reactivation-text reveal">
+          <span class="section-label">Institución</span>
+          <h2 class="section-title" style="text-align:left; margin-bottom:1.25rem;">
+            La Asociación Peruana de Primatología (APP) y su Reactivación
+          </h2>
+          <p>
+            La historia de nuestros encuentros nacionales comenzó en <strong>Piura (2017)</strong> y continuó con éxito en <strong>Lima (2019)</strong>. Tras una pausa necesaria, el espíritu de nuestra comunidad se reavivó en 2024, durante el V Congreso de la Sociedad Latinoamericana de Primatología (SLAPrim).
           </p>
-          <ul style="font-size: 0.9rem; color: var(--text-on-light); line-height: 1.6; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li><strong>Recuperación de Hábitats:</strong> Promoción de corredores ecológicos, modelamiento espacial y restauración de áreas degradadas (Línea de Acción 1).</li>
-            <li><strong>Reducción de Tráfico y Caza:</strong> Análisis de rutas de tráfico ilegal, rescate, protocolos veterinarios y acuerdos comunitarios de subsistencia (Líneas 2 y 4).</li>
-            <li><strong>Información Consistente:</strong> Levantamiento masivo de datos poblacionales, genómicos y taxonómicos para alimentar el SNIFFS estatal (Línea 5).</li>
-            <li><strong>Gobernanza Participativa:</strong> Fortalecimiento de capacidades técnicas con Gobiernos Regionales (GORE), ARFFS y organizaciones indígenas (Líneas 6, 7 y 8).</li>
-          </ul>
+          <p>
+            Allí, la delegación peruana tomó la decisión de conformar un <strong>Comité de Reactivación</strong>. Desde entonces, este equipo trabaja incansablemente para reorganizar nuestra institución, con el firme compromiso de instalar una nueva Junta Directiva que lidere el futuro de la primatología en el Perú.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-
-
-  <!-- Comité Científico -->
+  <!-- Comité Organizador -->
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">Organización</span>
+        <span class="section-label">El Equipo</span>
         <h2 class="section-title">Comité Organizador</h2>
+        <p class="section-subtitle">
+          Este congreso es el resultado del esfuerzo y coordinación de un equipo comprometido que cree en la reactivación de la APP.
+        </p>
       </div>
-      <div class="committee-grid">
+
+      <div class="organizers-grid">
         {[
-          { role: 'Presidenta', name: 'Por confirmar', org: 'Asociación Peruana de Primatología (APP)', icon: '👑' },
-          { role: 'Secretaría Científica', name: 'Por confirmar', org: 'UNMSM / Universidad Peruana', icon: '🔬' },
-          { role: 'Comité de Programa', name: 'Por confirmar', org: 'Instituciones aliadas', icon: '📋' },
-          { role: 'Comité de Comunicaciones', name: 'Por confirmar', org: 'Equipo CPP 2026', icon: '📡' },
-        ].map((member, i) => (
-          <div class={`committee-card reveal reveal-delay-${i+1}`}>
-            <div class="committee-card__icon">{member.icon}</div>
-            <div class="committee-card__role">{member.role}</div>
-            <div class="committee-card__name">{member.name}</div>
-            <div class="committee-card__org">{member.org}</div>
+          {
+            name: 'Jossy Luna Amancio',
+            org: 'Proyecto Mono Tocón (PMT)',
+            desc: 'Coordinadora de la ONG Proyecto Mono Tocón. Lidera iniciativas de sensibilización ambiental para la protección del mono tocón de San Martín.',
+            icon: '🌿'
+          },
+          {
+            name: 'Fanny Cornejo',
+            org: 'Yunkawasi',
+            desc: 'Directora ejecutiva de Yunkawasi. Ganadora del Indianapolis Prize 2023 por su labor con el mono choro de cola amarilla.',
+            icon: '🐒'
+          },
+          {
+            name: 'Raul Bello',
+            org: 'Estación Biológica Kawsay',
+            desc: 'Director de Kawsay. Biólogo-zoólogo especialista en rehabilitación y reintroducción de primates amazónicos.',
+            icon: '🔭'
+          },
+          {
+            name: 'Jaemy Romero Herrada',
+            org: 'Proyecto Mono Tocón (PMT)',
+            desc: 'Investigador de Proyecto Mono Tocón. Biólogo enfocado en la ecología y caracterización del hábitat de primates amenazados.',
+            icon: '🔬'
+          }
+        ].map((person, i) => (
+          <div class={`organizer-card reveal reveal-delay-${i+1}`}>
+            <div class="organizer-card__top">
+              <span class="organizer-card__icon">{person.icon}</span>
+              <div class="organizer-card__info">
+                <h3 class="organizer-card__name">{person.name}</h3>
+                <span class="organizer-card__org">{person.org}</span>
+              </div>
+            </div>
+            <p class="organizer-card__desc">{person.desc}</p>
           </div>
         ))}
       </div>
-      <p class="reveal" style="text-align:center; margin-top:2rem; color:var(--text-muted); font-size:0.9rem;">
-        El comité completo será anunciado próximamente. Si deseas formar parte,
-        <a href={`${base}contacto`} style="color:var(--forest-leaf); font-weight:600;">contáctanos →</a>
-      </p>
     </div>
   </section>
+
+  <!-- Alianzas que Construyen -->
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Soporte Institucional</span>
+        <h2 class="section-title">Alianzas que Construyen</h2>
+        <p class="section-subtitle">
+          Este congreso es posible gracias al esfuerzo conjunto de instituciones líderes que comparten nuestra visión.
+        </p>
+      </div>
+
+      <div class="partners-logos reveal">
+        {[
+          { name: 'Asociación Peruana de Primatología', acronym: 'APP', logo: 'images/aliados/logo_app.jpg' },
+          { name: 'Yunkawasi', acronym: 'Yunkawasi', logo: 'images/aliados/logo_yunkawasi.png' },
+          { name: 'Proyecto Mono Tocón', acronym: 'PMT', logo: 'images/aliados/logo_pmt.png' },
+          { name: 'Kawsay', acronym: 'Kawsay', logo: 'images/aliados/logo-kawsay.png' }
+        ].map(p => (
+          <div class="partner-logo-item" title={p.name}>
+            <img src={`${base}${p.logo}`} alt={`Logo ${p.acronym}`} class="partner-logo-img" />
+            <span class="partner-logo-acronym">{p.acronym}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  /* About Grid */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (min-width: 1024px) {
+    .about-grid { grid-template-columns: 1.2fr 0.8fr; }
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .about-text p {
+    font-size: 0.97rem;
+    color: var(--text-on-light);
+    line-height: 1.8;
+  }
+  :global([data-theme="dark"]) .about-text p { color: rgba(240,237,232,0.85); }
+
+  .about-stats-card {
+    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(82,183,136,0.15);
+    box-shadow: var(--shadow-lg);
+  }
+  :global([data-theme="dark"]) .about-stats-card { background: rgba(26,58,46,0.55); }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--forest-mid);
+    margin-bottom: 1.5rem;
+  }
+  :global([data-theme="dark"]) .card-title { color: var(--forest-canopy); }
+
+  .stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--forest-leaf);
+    min-width: 60px;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* Reactivation */
+  .reactivation-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .reactivation-grid { grid-template-columns: 0.6fr 1.4fr; }
+  }
+
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+    background: var(--forest-dark);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(82,183,136,0.2);
+    border: 8px solid rgba(82,183,136,0.1);
+  }
+  .reactivation-text p {
+    font-size: 0.97rem;
+    color: var(--text-on-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  :global([data-theme="dark"]) .reactivation-text p { color: rgba(240,237,232,0.85); }
+
+  /* Organizers */
+  .organizers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) { .organizers-grid { grid-template-columns: 1fr 1fr; } }
+
+  .organizer-card {
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(82,183,136,0.12);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-mid);
+  }
+  :global([data-theme="dark"]) .organizer-card { background: rgba(26,58,46,0.5); }
+  .organizer-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+
+  .organizer-card__top {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .organizer-card__icon { font-size: 2.5rem; }
+  .organizer-card__name {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--forest-mid);
+  }
+  :global([data-theme="dark"]) .organizer-card__name { color: var(--forest-canopy); }
+  .organizer-card__org {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .organizer-card__desc {
+    font-size: 0.9rem;
+    color: var(--text-on-light);
+    line-height: 1.7;
+  }
+  :global([data-theme="dark"]) .organizer-card__desc { color: rgba(240,237,232,0.8); }
+
+  /* Partners logos */
+  .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .partner-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .partner-logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(0.2) opacity(0.9);
+    transition: all var(--transition-mid);
+  }
+  .partner-logo-item:hover .partner-logo-img {
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.05);
+  }
+  .partner-logo-acronym {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+</style>
 </PageLayout>
 
 <style>
