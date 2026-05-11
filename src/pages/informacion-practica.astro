@@ -142,6 +142,37 @@ const transport = [
     </div>
   </section>
 
+  <!-- FOTOS DE LA SEDE -->
+  <section class="section photos-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Conoce la sede</span>
+        <h2 class="section-title">Facultad de Medicina Veterinaria &mdash; UNMSM</h2>
+        <p class="section-subtitle">Campus universitario ubicado en San Borja, Lima. Un espacio académico de primer nivel en el corazón de la ciudad.</p>
+      </div>
+      <div class="photos-grid reveal">
+        <figure class="photo-card photo-card--wide">
+          <img
+            src={`${base}images/sede/fmv-fachada.webp`}
+            alt="Fachada principal de la Facultad de Medicina Veterinaria UNMSM con el logo institucional"
+            loading="lazy"
+            class="photo-card__img"
+          />
+          <figcaption class="photo-card__caption">Fachada principal &bull; Av. Circunvalación 28, San Borja</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <img
+            src={`${base}images/sede/fmv-campus.jpg`}
+            alt="Vista del campus de la Facultad de Medicina Veterinaria UNMSM en San Borja, Lima"
+            loading="lazy"
+            class="photo-card__img"
+          />
+          <figcaption class="photo-card__caption">Campus universitario &bull; Sede del III CPP 2026</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- MAPA INTERACTIVO -->
   <section class="section map-section">
     <div class="container">
@@ -309,6 +340,59 @@ const transport = [
   }
   :global([data-theme="dark"]) .venue-intro__address { color: var(--text-on-dark); }
   .venue-intro__desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* Photos Gallery */
+  .photos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 768px) {
+    .photos-grid {
+      grid-template-columns: 1.5fr 1fr;
+    }
+  }
+
+  .photo-card {
+    margin: 0;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 4/3;
+  }
+  .photo-card--wide {
+    aspect-ratio: 16/9;
+  }
+  @media (min-width: 768px) {
+    .photo-card--wide {
+      aspect-ratio: unset;
+    }
+  }
+
+  .photo-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-mid);
+  }
+  .photo-card:hover .photo-card__img {
+    transform: scale(1.05);
+  }
+
+  .photo-card__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #fff;
+    font-size: 0.85rem;
+    font-family: var(--font-ui);
+    font-weight: 500;
+  }
 
   /* Map */
   .map-section { padding-top: 0; }
