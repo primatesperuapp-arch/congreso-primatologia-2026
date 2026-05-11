@@ -28,10 +28,10 @@
   },
   {
     "id": 4,
-    "date": "2026-07-15",
-    "label": "15 Julio 2026",
-    "title": "Fin de inscripciones early bird",
-    "description": "Cierre de la tarifa reducida e inicio de tarifas regulares.",
+    "date": "2026-05-31",
+    "label": "31 Mayo 2026",
+    "title": "Fin de inscripciones Early Bird",
+    "description": "Cierre de la tarifa reducida Early Bird. A partir del 1 de junio, las inscripciones se realizan a tarifa regular.",
     "type": "deadline",
     "status": "upcoming"
   },
