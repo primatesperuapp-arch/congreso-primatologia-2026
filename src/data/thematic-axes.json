@@ -6,7 +6,7 @@
     "title": "Primatología: Ecología, Etología, Genómica e Innovación",
     "description": "Monitoreo, Tecnologías de fototrampeo, drones, bioacústica, inteligencia artificial, genómica de la conservación y análisis de eDNA.",
     "subtopics": ["Ecología y Etología", "Genómica de conservación", "Inteligencia artificial", "Monitoreo tecnológico"],
-    "color": "#52b788"
+    "color": "#D99D55"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "title": "Tejiendo el Bosque: Conectividad Ecológica, Cambio Climático y Restauración",
     "description": "Dinámicas ecológicas, monitoreo poblacional, modelamiento espacial, requerimientos de hábitat y regeneración.",
     "subtopics": ["Conectividad Ecológica", "Cambio Climático", "Modelamiento espacial", "Restauración de hábitats"],
-    "color": "#2d6a4f"
+    "color": "#593414"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "title": "Salud y Rescate: El Paradigma One Health y el Bienestar Animal",
     "description": "Zoonosis, salud ecosistémica, protocolos de medicina veterinaria, centros de cría/rescate, procesos de rehabilitación y liberación.",
     "subtopics": ["One Health", "Zoonosis", "Medicina veterinaria", "Rehabilitación y rescate"],
-    "color": "#c9a84c"
+    "color": "#8C374E"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "title": "Diálogos de Coexistencia: Etnoprimatología, Gobernanza y Desarrollo Comunitario",
     "description": "Saberes tradicionales, manejo de conflictos, alternativas económicas, ecoturismo, y gestión participativa de recursos territoriales.",
     "subtopics": ["Etnoprimatología", "Gobernanza", "Ecoturismo", "Desarrollo comunitario"],
-    "color": "#8b5e3c"
+    "color": "#D99D55"
   },
   {
     "id": 5,
@@ -42,6 +42,6 @@
     "title": "Ecos de la Conservación: Ciencia Ciudadana, Narrativas Visuales y Políticas Públicas",
     "description": "Estrategias de educación ambiental, mitigación del tráfico ilegal de fauna, fotografía de conservación, y comunicación para el cambio de comportamiento.",
     "subtopics": ["Ciencia ciudadana", "Narrativas visuales", "Políticas públicas", "Educación ambiental"],
-    "color": "#74c69d"
+    "color": "#8C374E"
   }
 ]

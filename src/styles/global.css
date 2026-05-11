@@ -12,36 +12,36 @@
    CSS CUSTOM PROPERTIES — COLOR TOKENS
    ===================================================== */
 :root {
-  /* === Paleta Amazónica === */
-  --forest-darkest:  #0d2318;
-  --forest-dark:     #1a3a2e;
-  --forest-mid:      #2d6a4f;
-  --forest-leaf:     #52b788;
-  --forest-canopy:   #74c69d;
-  --forest-light:    #b7e4c7;
+  /* === Nueva Paleta (Tierra & Crema) === */
+  --forest-darkest:  #593414; /* Marrón profundo */
+  --forest-dark:     #8C374E; /* Guinda oscuro */
+  --forest-mid:      #D99D55; /* Tierra / Dorado */
+  --forest-leaf:     #D99D55; /* Acento Principal */
+  --forest-canopy:   #D99D55; 
+  --forest-light:    #F2EBDF; /* Crema */
 
   /* === Tierra y Andes === */
-  --earth-dark:      #3d2b1f;
-  --earth-mid:       #5c4033;
-  --earth-warm:      #8b5e3c;
-  --sand:            #d4a96a;
-  --gold:            #c9a84c;
-  --gold-light:      #e8c97e;
+  --earth-dark:      #593414;
+  --earth-mid:       #8C374E;
+  --earth-warm:      #D99D55;
+  --sand:            #D99D55;
+  --gold:            #D99D55;
+  --gold-light:      #F2EBDF;
 
   /* === Neutros Naturales === */
-  --cream:           #fdf6e3;
-  --cream-warm:      #f5ede0;
-  --parchment:       #e8dcc8;
+  --cream:           #F2EBDF;
+  --cream-warm:      #F2EBDF;
+  --parchment:       #F2EBDF;
 
   /* === Texto === */
-  --text-on-dark:    #f0ede8;
-  --text-on-light:   #1a2a1f;
-  --text-muted:      #6b8a76;
+  --text-on-dark:    #F2EBDF;
+  --text-on-light:   #593414;
+  --text-muted:      #8C374E;
 
   /* === Acentos === */
-  --accent-primary:  #52b788;
-  --accent-secondary: #c9a84c;
-  --accent-warm:     #e07b54;
+  --accent-primary:  #D99D55;
+  --accent-secondary: #BF264F; /* Guinda brillante solo como acento puntual */
+  --accent-warm:     #BF264F;
 
   /* === Sombras === */
   --shadow-sm:       0 2px 8px rgba(13, 35, 24, 0.08);
@@ -72,14 +72,14 @@
 
 /* Dark Mode Overrides */
 [data-theme="dark"] {
-  --cream:           #0d2318;
-  --cream-warm:      #0f2920;
-  --parchment:       #1a3a2e;
-  --text-on-light:   #e8f5ef;
-  --text-muted:      #74c69d;
-  --shadow-sm:       0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md:       0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-lg:       0 8px 40px rgba(0, 0, 0, 0.5);
+  --cream:           #593414; /* Marrón profundo como fondo oscuro */
+  --cream-warm:      #41240e;
+  --parchment:       #593414;
+  --text-on-light:   #F2EBDF;
+  --text-muted:      #D99D55;
+  --shadow-sm:       0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md:       0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg:       0 8px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* =====================================================
