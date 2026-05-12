@@ -127,6 +127,80 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     </div>
   </section>
 
+  <!-- Invitación a la APP -->
+  <section class="section join-app-section" id="unete-app" style="background: var(--cream-warm);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Únete a la comunidad</span>
+        <h2 class="section-title">Asociación Peruana de Primatología (APP)</h2>
+        <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">
+          Ser parte de la APP significa integrarse a una red activa de primatólogos, investigadores, estudiantes y organizaciones afines, con acceso a beneficios, participación en eventos, y derecho a voz y voto en nuestras asambleas.
+        </p>
+      </div>
+
+      <div class="join-content reveal">
+        <div class="table-container card-glass">
+          <table class="membership-table">
+            <thead>
+              <tr>
+                <th>Categoría</th>
+                <th>Requisitos (en PDF)</th>
+                <th>Costo Anual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Estudiante</strong><br><span class="table-desc">Pregrado o técnica</span></td>
+                <td>Carnet de estudiante vigente</td>
+                <td class="price-cell">S/ 50.00</td>
+              </tr>
+              <tr>
+                <td><strong>Profesional</strong><br><span class="table-desc">Con título o posgrado</span></td>
+                <td>Diploma o constancia de título</td>
+                <td class="price-cell">S/ 90.00</td>
+              </tr>
+              <tr>
+                <td><strong>General</strong><br><span class="table-desc">Público interesado</span></td>
+                <td>Carta breve de interés</td>
+                <td class="price-cell">S/ 70.00</td>
+              </tr>
+              <tr>
+                <td><strong>Institucional</strong><br><span class="table-desc">Para organizaciones (5 personas)</span></td>
+                <td>Carta de presentación firmada</td>
+                <td class="price-cell">S/ 200.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="join-info-grid">
+          <div class="info-card">
+            <h4 class="info-card-title">Datos para el pago</h4>
+            <p><strong>A nombre de:</strong> Estación Biológica KAWSAY*</p>
+            <p><strong>RUC:</strong> 20607343609</p>
+            <p><strong>Banco Interbank (Soles):</strong> 335-3003392978</p>
+            <p><strong>CCI:</strong> 003-335-003003392978-74</p>
+            <p class="payment-note">*De manera temporal por proceso de reactivación. Se emitirá boleta garantizando la transparencia de los fondos.</p>
+          </div>
+
+          <div class="info-card">
+            <h4 class="info-card-title">Procedimiento de Inscripción</h4>
+            <ol class="steps-list">
+              <li>Realiza el pago correspondiente y guarda el comprobante en PDF.</li>
+              <li>Prepara tus requisitos en formato PDF.</li>
+              <li>Completa el formulario web adjuntando los documentos.</li>
+            </ol>
+            <a href="https://forms.gle/4riFAaRPyQoFecAfA" target="_blank" rel="noopener noreferrer" class="btn btn-primary join-btn">
+              Llenar Formulario
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Alianzas que Construyen -->
   <section class="section" style="background: var(--cream-warm);">
     <div class="container">
@@ -352,5 +426,119 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     font-weight: 700;
     color: var(--text-muted);
   }
+
+  /* Join APP Section */
+  .join-app-section {
+    padding: 5rem 0;
+  }
+  .table-container {
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(217,157,85,0.15);
+    box-shadow: var(--shadow-md);
+    overflow-x: auto;
+    margin-bottom: 2rem;
+  }
+  :global([data-theme="dark"]) .table-container {
+    background: rgba(26,58,46,0.55);
+  }
+  .membership-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  .membership-table th {
+    font-family: var(--font-display);
+    color: var(--forest-darkest);
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid var(--forest-leaf);
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+  :global([data-theme="dark"]) .membership-table th { color: var(--forest-canopy); }
+  .membership-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(217,157,85,0.15);
+    color: var(--text-on-light);
+    font-size: 0.95rem;
+  }
+  :global([data-theme="dark"]) .membership-table td { color: rgba(240,237,232,0.85); }
+  .membership-table tr:last-child td { border-bottom: none; }
+  .table-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.2rem;
+  }
+  .price-cell {
+    font-weight: 700;
+    color: var(--forest-mid);
+    font-size: 1.1rem !important;
+    white-space: nowrap;
+  }
+  :global([data-theme="dark"]) .price-cell { color: var(--forest-canopy); }
+
+  .join-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 768px) { .join-info-grid { grid-template-columns: 1fr 1fr; } }
+  
+  .info-card {
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(217,157,85,0.15);
+    box-shadow: var(--shadow-sm);
+  }
+  :global([data-theme="dark"]) .info-card { background: rgba(26,58,46,0.55); }
+  
+  .info-card-title {
+    font-family: var(--font-display);
+    color: var(--forest-darkest);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  :global([data-theme="dark"]) .info-card-title { color: var(--forest-canopy); }
+  
+  .info-card p {
+    font-size: 0.95rem;
+    color: var(--text-on-light);
+    margin-bottom: 0.5rem;
+  }
+  :global([data-theme="dark"]) .info-card p { color: rgba(240,237,232,0.85); }
+  
+  .payment-note {
+    font-size: 0.8rem !important;
+    font-style: italic;
+    color: var(--text-muted) !important;
+    margin-top: 1rem !important;
+    line-height: 1.4;
+  }
+  
+  .steps-list {
+    margin: 0 0 1.5rem 1.2rem;
+    padding: 0;
+    font-size: 0.95rem;
+    color: var(--text-on-light);
+  }
+  :global([data-theme="dark"]) .steps-list { color: rgba(240,237,232,0.85); }
+  .steps-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  .join-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1.05rem;
+  }
 </style>
+
 </PageLayout>
