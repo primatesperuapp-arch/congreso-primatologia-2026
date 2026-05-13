@@ -49,18 +49,11 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   }
 
   .partners__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  @media (min-width: 640px) {
-    .partners__grid { grid-template-columns: repeat(3, 1fr); }
-  }
-
-  @media (min-width: 1024px) {
-    .partners__grid { grid-template-columns: repeat(6, 1fr); }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
   }
 
   .partner-card {
@@ -68,8 +61,8 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 1.25rem 0.75rem;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
     background: rgba(255,255,255,0.85);
     border-radius: var(--radius-md);
     border: 1px solid rgba(217,157,85,0.1);
@@ -77,7 +70,21 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     text-align: center;
     text-decoration: none;
     transition: all var(--transition-mid);
-    min-height: 110px;
+    min-height: 140px;
+    width: 100%;
+    max-width: calc(50% - 1rem);
+  }
+
+  @media (min-width: 640px) {
+    .partner-card {
+      max-width: calc(33.333% - 1rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .partner-card {
+      max-width: calc(25% - 1rem);
+    }
   }
 
   :global([data-theme="dark"]) .partner-card {
@@ -101,10 +108,10 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   :global([data-theme="dark"]) .partner-card__acronym { color: var(--forest-canopy); }
 
   .partner-card__logo {
-    max-width: 90px;
-    max-height: 60px;
+    max-width: 120px;
+    max-height: 80px;
     object-fit: contain;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
   }
 
   .partner-card__name {
