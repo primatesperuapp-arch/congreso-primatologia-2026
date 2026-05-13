@@ -1,47 +1,38 @@
 [
   {
     "id": 1,
-    "emoji": "🔬",
-    "code": "PRI",
-    "title": "Primatología: Ecología, Etología, Genómica e Innovación",
-    "description": "Monitoreo, Tecnologías de fototrampeo, drones, bioacústica, inteligencia artificial, genómica de la conservación y análisis de eDNA.",
-    "subtopics": ["Ecología y Etología", "Genómica de conservación", "Inteligencia artificial", "Monitoreo tecnológico"],
-    "color": "#D99D55"
-  },
-  {
-    "id": 2,
     "emoji": "🌳",
     "code": "BOS",
-    "title": "Tejiendo el Bosque: Conectividad Ecológica, Cambio Climático y Restauración",
-    "description": "Dinámicas ecológicas, monitoreo poblacional, modelamiento espacial, requerimientos de hábitat y regeneración.",
-    "subtopics": ["Conectividad Ecológica", "Cambio Climático", "Modelamiento espacial", "Restauración de hábitats"],
+    "title": "Eje 1: Bosques Conectados",
+    "description": "Este eje se enfoca en devolverle la salud a los hogares de nuestros primates. Buscamos soluciones para la fragmentación de los bosques peruanos a través de la restauración ecológica, la identificación de áreas prioritarias y la creación de corredores biológicos que aseguren el futuro de las 47 especies del país.",
+    "subtopics": ["Conectividad ecológica", "Restauración de paisajes", "Mapeo de ecosistemas vulnerables"],
     "color": "#593414"
   },
   {
-    "id": 3,
-    "emoji": "🏥",
-    "code": "SAL",
-    "title": "Salud y Rescate: El Paradigma One Health y el Bienestar Animal",
-    "description": "Zoonosis, salud ecosistémica, protocolos de medicina veterinaria, centros de cría/rescate, procesos de rehabilitación y liberación.",
-    "subtopics": ["One Health", "Zoonosis", "Medicina veterinaria", "Rehabilitación y rescate"],
+    "id": 2,
+    "emoji": "🚫",
+    "code": "CAZ",
+    "title": "Eje 2: Reducción de la Caza y el Tráfico",
+    "description": "Aquí abordamos las amenazas directas más graves. Este espacio es para discutir estrategias de control del tráfico ilegal, protocolos de rescate, centros de rehabilitación y el manejo de conflictos entre humanos y primates, buscando una convivencia armónica y segura.",
+    "subtopics": ["Lucha contra el tráfico de fauna", "Sensibilización comunitaria", "Bienestar/rehabilitación animal"],
     "color": "#8C374E"
+  },
+  {
+    "id": 3,
+    "emoji": "🔬",
+    "code": "CIE",
+    "title": "Eje 3: Ciencia para la Acción",
+    "description": "La investigación académica es la base de las decisiones del Estado. En este eje compartimos hallazgos rigurosos sobre ecología, genética, etología y sanidad (One Health), integrando nuevas tecnologías como drones e inteligencia artificial para generar datos que salven especies.",
+    "subtopics": ["Monitoreo sistemático", "Ecología de la conservación", "Etología", "Genómica de la conservación", "Innovación tecnológica"],
+    "color": "#D99D55"
   },
   {
     "id": 4,
     "emoji": "🤝",
-    "code": "DIA",
-    "title": "Diálogos de Coexistencia: Etnoprimatología, Gobernanza y Desarrollo Comunitario",
-    "description": "Saberes tradicionales, manejo de conflictos, alternativas económicas, ecoturismo, y gestión participativa de recursos territoriales.",
-    "subtopics": ["Etnoprimatología", "Gobernanza", "Ecoturismo", "Desarrollo comunitario"],
-    "color": "#D99D55"
-  },
-  {
-    "id": 5,
-    "emoji": "📣",
-    "code": "ECO",
-    "title": "Ecos de la Conservación: Ciencia Ciudadana, Narrativas Visuales y Políticas Públicas",
-    "description": "Estrategias de educación ambiental, mitigación del tráfico ilegal de fauna, fotografía de conservación, y comunicación para el cambio de comportamiento.",
-    "subtopics": ["Ciencia ciudadana", "Narrativas visuales", "Políticas públicas", "Educación ambiental"],
-    "color": "#8C374E"
+    "code": "GES",
+    "title": "Eje 4: Voces y Gestión Participativa",
+    "description": "El corazón del lema \"Todxs somos primatólogxs\". Aquí la ciencia se encuentra con la sociedad civil, las comunidades locales y los pueblos indígenas. Es el espacio para fortalecer la gobernanza, la educación ambiental y el rol de cada ciudadano en la protección de nuestra biodiversidad.",
+    "subtopics": ["Educación ambiental", "Saberes locales", "Políticas públicas", "Fortalecimiento de la APP"],
+    "color": "#74c69d"
   }
 ]

@@ -79,8 +79,12 @@ const guidelines = [
   <section class="section" style="background: var(--cream-warm);">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">Áreas temáticas</span>
-        <h2 class="section-title">Categorías Temáticas</h2>
+        <h2 class="section-title">Las Líneas de Acción</h2>
+        <p class="section-subtitle" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+          Para que el conocimiento compartido tenga un impacto en las políticas de nuestro país, el III Congreso Peruano de Primatología 2026 ha organizado sus sesiones académicas, simposios y mesas de trabajo en torno a <strong>4 Ejes Temáticos</strong> alineados con los objetivos del Plan Nacional de Conservación de primates amenazados del Perú (SERFOR).
+          <br /><br />
+          Al estructurar el evento de esta manera, garantizamos que cada presentación contribuya directamente a las metas nacionales de conservación, facilitando el diálogo entre la academia, el Estado y la sociedad civil.
+        </p>
       </div>
 
       <div class="axes-list reveal">
@@ -91,6 +95,11 @@ const guidelines = [
               <span class="axis-row__code" style={`color: ${axis.color};`}>[{axis.code}]</span>
               <strong class="axis-row__name">{axis.title}</strong>
               <span class="axis-row__desc">{axis.description}</span>
+              {axis.subtopics && (
+                <div class="axis-row__tags">
+                  <strong>Temas clave:</strong> {axis.subtopics.join(', ')}.
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -347,6 +356,9 @@ const guidelines = [
   .axis-row__name { font-size: 0.97rem; font-weight: 700; color: var(--text-on-light); }
   :global([data-theme="dark"]) .axis-row__name { color: var(--text-on-dark); }
   .axis-row__desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.55; }
+  .axis-row__tags { font-family: var(--font-ui); font-size: 0.75rem; color: var(--forest-leaf); margin-top: 0.25rem; line-height: 1.4; }
+  .axis-row__tags strong { color: var(--forest-mid); font-weight: 700; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.04em; margin-right: 0.25rem; }
+  :global([data-theme="dark"]) .axis-row__tags strong { color: var(--forest-canopy); }
 
   /* Formats */
   .formats-grid {
