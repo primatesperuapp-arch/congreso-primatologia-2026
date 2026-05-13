@@ -8,6 +8,14 @@
     "useLogo": true
   },
   {
+    "id": "org3",
+    "name": "Universidad Nacional Mayor de San Marcos",
+    "acronym": "UNMSM",
+    "url": "https://www.unmsm.edu.pe",
+    "logo": "images/aliados/logo_unmsm.png",
+    "useLogo": true
+  },
+  {
     "id": "org2",
     "name": "Facultad de Medicina Veterinaria UNMSM",
     "acronym": "FMV",
@@ -16,11 +24,11 @@
     "useLogo": true
   },
   {
-    "id": "org3",
-    "name": "Universidad Nacional Mayor de San Marcos",
-    "acronym": "UNMSM",
-    "url": "https://www.unmsm.edu.pe",
-    "logo": "images/aliados/logo_unmsm.png",
+    "id": "org7",
+    "name": "Sección de Fauna Silvestre FMV",
+    "acronym": "SFS-FMV",
+    "url": "#",
+    "logo": "images/aliados/logo_faunasilvestre.jpg",
     "useLogo": true
   },
   {
@@ -45,22 +53,6 @@
     "acronym": "Kawsay",
     "url": "#",
     "logo": "images/aliados/logo-kawsay.png",
-    "useLogo": true
-  },
-  {
-    "id": "org7",
-    "name": "Sección de Fauna Silvestre FMV",
-    "acronym": "SFS-FMV",
-    "url": "#",
-    "logo": "images/aliados/logo_faunasilvestre.jpg",
-    "useLogo": true
-  },
-  {
-    "id": "org8",
-    "name": "Neotropical Primate Conservation",
-    "acronym": "NPC",
-    "url": "#",
-    "logo": "images/aliados/logo_npc.png",
     "useLogo": true
   }
 ]
