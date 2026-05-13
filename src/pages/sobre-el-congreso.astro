@@ -1,6 +1,7 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
-const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
+import PageLayout from "../layouts/PageLayout.astro";
+const base =
+  import.meta.env.BASE_URL === "/" ? "/" : import.meta.env.BASE_URL + "/";
 ---
 
 <PageLayout
@@ -16,31 +17,44 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
       <div class="about-grid">
         <div class="about-text reveal">
           <span class="section-label">Nuestra Historia</span>
-          <h2 class="section-title" style="text-align:left; margin-bottom:1.25rem;">
+          <h2
+            class="section-title"
+            style="text-align:left; margin-bottom:1.25rem;"
+          >
             El Reencuentro de la Primatología Peruana
           </h2>
           <p class="body-lg">
-            El <strong>III Congreso Peruano de Primatología 2026</strong> marca el reencuentro de nuestro espacio de encuentro nacional. Tras años de pausa, nos volveremos a reunir en Lima para fortalecer los lazos entre la investigación, la conservación y la sociedad.
+            El <strong>III Congreso Peruano de Primatología 2026</strong> marca el
+            reencuentro de nuestro espacio de encuentro nacional. Tras años de pausa,
+            nos volveremos a reunir en Lima para fortalecer los lazos entre la investigación,
+            la conservación y la sociedad.
           </p>
           <p>
-            Nuestro lema <strong>"Todxs somos primatológxs"</strong> es un llamado a la integración. Queremos romper las barreras entre la ciencia pura y la sociedad. Si te apasiona la naturaleza, si trabajas con comunidades, si eres un estudiante curioso o un ciudadano comprometido, tú también eres parte esencial de esta ciencia. Este congreso es un espacio horizontal donde cada saber cuenta y aporta de igual forma.
+            Nuestro lema <strong>"Todxs somos primatológxs"</strong> es un llamado
+            a la integración. Queremos romper las barreras entre la ciencia pura
+            y la sociedad. Si te apasiona la naturaleza, si trabajas con comunidades,
+            si eres un estudiante curioso o un ciudadano comprometido, tú también
+            eres parte esencial de esta ciencia. Este congreso es un espacio horizontal
+            donde cada saber cuenta y aporta de igual forma.
           </p>
         </div>
 
         <div class="about-stats-card card-glass reveal">
           <h3 class="card-title">🇵🇪 El Perú en números</h3>
           <div class="stats-list">
-            {[
-              { n: '47', l: 'especies de primates registradas' },
-              { n: '11', l: 'taxones estrictamente endémicos' },
-              { n: '15', l: 'géneros representados en 5 familias' },
-              { n: '4°', l: 'lugar mundial en diversidad de primates' },
-            ].map(item => (
-              <div class="stat-row">
-                <span class="stat-number">{item.n}</span>
-                <span class="stat-label">{item.l}</span>
-              </div>
-            ))}
+            {
+              [
+                { n: "47", l: "especies de primates registradas" },
+                { n: "11", l: "taxones estrictamente endémicos" },
+                { n: "15", l: "géneros representados en 5 familias" },
+                { n: "4°", l: "lugar mundial en diversidad de primates" },
+              ].map((item) => (
+                <div class="stat-row">
+                  <span class="stat-number">{item.n}</span>
+                  <span class="stat-label">{item.l}</span>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -53,19 +67,36 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
       <div class="reactivation-grid">
         <div class="reactivation-visual reveal" aria-hidden="true">
           <div class="logo-circle">
-            <img src={`${base}images/aliados/logo_app.png`} alt="Logo Asociación Peruana de Primatología" class="logo-circle__img" />
+            <img
+              src={`${base}images/aliados/logo_app.png`}
+              alt="Logo Asociación Peruana de Primatología"
+              class="logo-circle__img"
+            />
           </div>
         </div>
         <div class="reactivation-text reveal">
           <span class="section-label">Institución</span>
-          <h2 class="section-title" style="text-align:left; margin-bottom:1.25rem;">
+          <h2
+            class="section-title"
+            style="text-align:left; margin-bottom:1.25rem;"
+          >
             La Asociación Peruana de Primatología (APP) y su Reactivación
           </h2>
           <p>
-            La historia de nuestros encuentros nacionales comenzó en <strong>Piura (2017)</strong> y continuó con éxito en <strong>Lima (2019)</strong>. Tras una pausa necesaria, el espíritu de nuestra comunidad se reavivó en 2024, durante el V Congreso de la Sociedad Latinoamericana de Primatología (SLAPrim).
+            La historia de nuestros encuentros nacionales comenzó en <strong
+              >Piura (2017)</strong
+            > y continuó con éxito en <strong>Lima (2019)</strong>. Tras una
+            pausa necesaria, el espíritu de nuestra comunidad se reavivó en
+            2024, durante el V Congreso de la Sociedad Latinoamericana de
+            Primatología (SLAPrim).
           </p>
           <p>
-            Allí, la delegación peruana tomó la decisión de conformar un <strong>Comité de Reactivación</strong>. Desde entonces, este equipo trabaja incansablemente para reorganizar nuestra institución, con el firme compromiso de instalar una nueva Junta Directiva que lidere el futuro de la primatología en el Perú.
+            Allí, la delegación peruana tomó la decisión de conformar un <strong
+              >Comité de Reactivación</strong
+            >. Desde entonces, este equipo trabaja incansablemente para
+            reorganizar nuestra institución, con el firme compromiso de instalar
+            una nueva Junta Directiva que lidere el futuro de la primatología en
+            el Perú.
           </p>
         </div>
       </div>
@@ -79,62 +110,77 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
         <span class="section-label">El Equipo</span>
         <h2 class="section-title">Comité Organizador</h2>
         <p class="section-subtitle">
-          Este congreso es el resultado del esfuerzo y coordinación de un equipo comprometido que cree en la reactivación de la APP.
+          Este congreso es el resultado del esfuerzo y coordinación de un equipo
+          comprometido que cree en la reactivación de la APP.
         </p>
       </div>
 
       <div class="organizers-grid">
-        {[
-          {
-            name: 'Jossy Luna Amancio',
-            org: 'Asociación Proyecto Mono Tocón (PMT)',
-            desc: 'Bióloga con Maestría en Espacios Naturales Protegidos. Coordinadora de Proyectos en la Asociación Proyecto Mono Tocón con 15 años de experiencia en primatología. Lidera iniciativas de restauración y conservación comunitaria.',
-            image: 'images/comite/jossy-luna.jpg'
-          },
-          {
-            name: 'Fanny M. Cornejo',
-            org: 'Yunkawasi',
-            desc: 'Bióloga y antropóloga con 20 años de experiencia. Directora de Yunkawasi y Vicepresidenta para Perú del Grupo de Especialistas en Primates (IUCN). Ganadora del Indianapolis Prize (Emerging Conservationist).',
-            image: 'images/comite/fanny-cornejo.jpg'
-          },
-          {
-            name: 'Raul F. Bello Santa Cruz',
-            org: 'Estación Biológica Kawsay',
-            desc: 'Biólogo y Magister en Conservación de Recursos Forestales. Director de la Estación Biológica Kawsay con 17 años de experiencia. Lidera programas de reintroducción de monos araña (Ateles chamek).',
-            image: 'images/comite/raul-bello.jpg'
-          },
-          {
-            name: 'Jaemy Romero Herrada',
-            org: 'Asociación Proyecto Mono Tocón (PMT)',
-            desc: 'Biólogo con doctorado en Ecología y Evolución. Investigador asociado al MHN-UNMSM y Asociación Proyecto Mono Tocón con 10 años de experiencia. Especialista en ecología conductual y espacial.',
-            image: 'images/comite/jaemy-romero.jpg'
-          }
-        ].map((person, i) => (
-          <div class={`organizer-card reveal reveal-delay-${i+1}`}>
-            <div class="organizer-card__top">
-              <div class="organizer-card__photo-wrapper">
-                <img src={`${base}${person.image}`} alt={person.name} class="organizer-card__photo" loading="lazy" />
+        {
+          [
+            {
+              name: "Jossy Luna Amancio",
+              org: "Asociación Proyecto Mono Tocón (PMT)",
+              desc: "Bióloga con Maestría en Espacios Naturales Protegidos. Coordinadora de Proyectos en la Asociación Proyecto Mono Tocón con 15 años de experiencia en primatología. Lidera iniciativas de restauración y conservación comunitaria.",
+              image: "images/comite/jossy-luna.jpg",
+            },
+            {
+              name: "Fanny M. Cornejo",
+              org: "Yunkawasi",
+              desc: "Bióloga y antropóloga con 20 años de experiencia. Directora de Yunkawasi y Vicepresidenta para Perú del Grupo de Especialistas en Primates (IUCN). Ganadora del Indianapolis Prize (Emerging Conservationist).",
+              image: "images/comite/fanny-cornejo.jpg",
+            },
+            {
+              name: "Raul F. Bello Santa Cruz",
+              org: "Estación Biológica Kawsay",
+              desc: "Biólogo y Magister en Conservación de Recursos Forestales. Director de la Estación Biológica Kawsay con 17 años de experiencia. Lidera programas de reintroducción de monos araña (Ateles chamek).",
+              image: "images/comite/raul-bello.jpg",
+            },
+            {
+              name: "Jaemy Romero Herrada",
+              org: "Asociación Proyecto Mono Tocón (PMT)",
+              desc: "Biólogo con doctorado en Ecología y Evolución. Investigador asociado al MHN-UNMSM y Asociación Proyecto Mono Tocón con 10 años de experiencia. Especialista en ecología conductual y espacial.",
+              image: "images/comite/jaemy-romero.jpg",
+            },
+          ].map((person, i) => (
+            <div class={`organizer-card reveal reveal-delay-${i + 1}`}>
+              <div class="organizer-card__top">
+                <div class="organizer-card__photo-wrapper">
+                  <img
+                    src={`${base}${person.image}`}
+                    alt={person.name}
+                    class="organizer-card__photo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="organizer-card__info">
+                  <h3 class="organizer-card__name">{person.name}</h3>
+                  <span class="organizer-card__org">{person.org}</span>
+                </div>
               </div>
-              <div class="organizer-card__info">
-                <h3 class="organizer-card__name">{person.name}</h3>
-                <span class="organizer-card__org">{person.org}</span>
-              </div>
+              <p class="organizer-card__desc">{person.desc}</p>
             </div>
-            <p class="organizer-card__desc">{person.desc}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- Invitación a la APP -->
-  <section class="section join-app-section" id="unete-app" style="background: var(--cream-warm);">
+  <section
+    class="section join-app-section"
+    id="unete-app"
+    style="background: var(--cream-warm);"
+  >
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Únete a la comunidad</span>
         <h2 class="section-title">Asociación Peruana de Primatología (APP)</h2>
         <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">
-          Ser parte de la APP significa integrarse a una red activa de primatólogos, investigadores, estudiantes y organizaciones afines, con acceso a beneficios, participación en eventos, y derecho a voz y voto en nuestras asambleas.
+          Ser parte de la APP significa integrarse a una red activa de
+          primatólogos, investigadores, estudiantes y organizaciones afines, con
+          acceso a beneficios, participación en eventos, y derecho a voz y voto
+          en nuestras asambleas.
         </p>
       </div>
 
@@ -150,22 +196,38 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
             </thead>
             <tbody>
               <tr>
-                <td><strong>Estudiante</strong><br><span class="table-desc">Pregrado o técnica</span></td>
+                <td
+                  ><strong>Estudiante</strong><br /><span class="table-desc"
+                    >Pregrado o técnica</span
+                  >
+                </td>
                 <td>Carnet de estudiante vigente</td>
                 <td class="price-cell">S/ 50.00</td>
               </tr>
               <tr>
-                <td><strong>Profesional</strong><br><span class="table-desc">Con título o posgrado</span></td>
+                <td
+                  ><strong>Profesional</strong><br /><span class="table-desc"
+                    >Con título o posgrado</span
+                  >
+                </td>
                 <td>Diploma o constancia de título</td>
                 <td class="price-cell">S/ 90.00</td>
               </tr>
               <tr>
-                <td><strong>General</strong><br><span class="table-desc">Público interesado</span></td>
+                <td
+                  ><strong>General</strong><br /><span class="table-desc"
+                    >Público interesado</span
+                  >
+                </td>
                 <td>Carta breve de interés</td>
                 <td class="price-cell">S/ 70.00</td>
               </tr>
               <tr>
-                <td><strong>Institucional</strong><br><span class="table-desc">Para organizaciones (5 personas)</span></td>
+                <td
+                  ><strong>Institucional</strong><br /><span class="table-desc"
+                    >Para organizaciones (5 personas)</span
+                  >
+                </td>
                 <td>Carta de presentación firmada</td>
                 <td class="price-cell">S/ 200.00</td>
               </tr>
@@ -180,26 +242,46 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
             <p><strong>RUC:</strong> 20607343609</p>
             <p><strong>Banco Interbank (Soles):</strong> 335-3003392978</p>
             <p><strong>CCI:</strong> 003-335-003003392978-74</p>
-            <p class="payment-note">*De manera temporal por proceso de reactivación. Se emitirá boleta garantizando la transparencia de los fondos.</p>
+            <p class="payment-note">
+              *De manera temporal por proceso de reactivación. Se emitirá boleta
+              garantizando la transparencia de los fondos.
+            </p>
           </div>
 
           <div class="info-card">
             <h4 class="info-card-title">Procedimiento de Inscripción</h4>
             <ol class="steps-list">
-              <li>Realiza el pago correspondiente y guarda el comprobante en PDF.</li>
+              <li>
+                Realiza el pago correspondiente y guarda el comprobante en PDF.
+              </li>
               <li>Prepara tus requisitos en formato PDF.</li>
               <li>Completa el formulario web adjuntando los documentos.</li>
             </ol>
-            <a href="https://forms.gle/4riFAaRPyQoFecAfA" target="_blank" rel="noopener noreferrer" class="btn btn-primary join-btn">
+            <a
+              href="https://forms.gle/4riFAaRPyQoFecAfA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary join-btn"
+            >
               Llenar Formulario
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><line x1="5" y1="12" x2="19" y2="12"></line><polyline
+                  points="12 5 19 12 12 19"></polyline>
+              </svg>
             </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- Alianzas que Construyen -->
   <section class="section" style="background: var(--cream-warm);">
@@ -208,22 +290,45 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
         <span class="section-label">Soporte Institucional</span>
         <h2 class="section-title">Alianzas que Construyen</h2>
         <p class="section-subtitle">
-          Este congreso es el resultado conjunto de instituciones líderes que comparten nuestra visión.
+          Este congreso es el resultado conjunto de instituciones líderes que
+          comparten nuestra visión.
         </p>
       </div>
 
       <div class="partners-logos reveal">
-        {[
-          { name: 'Asociación Peruana de Primatología', acronym: 'APP', logo: 'images/aliados/logo_app.png' },
-          { name: 'Yunkawasi', acronym: 'Yunkawasi', logo: 'images/aliados/logo_yunkawasi.png' },
-          { name: 'Proyecto Mono Tocón', acronym: 'PMT', logo: 'images/aliados/logo_pmt.png' },
-          { name: 'Kawsay', acronym: 'Kawsay', logo: 'images/aliados/logo-kawsay.png' }
-        ].map(p => (
-          <div class="partner-logo-item" title={p.name}>
-            <img src={`${base}${p.logo}`} alt={`Logo ${p.acronym}`} class="partner-logo-img" />
-            <span class="partner-logo-acronym">{p.acronym}</span>
-          </div>
-        ))}
+        {
+          [
+            {
+              name: "Asociación Peruana de Primatología",
+              acronym: "APP",
+              logo: "images/aliados/logo_app.png",
+            },
+            {
+              name: "Yunkawasi",
+              acronym: "Yunkawasi",
+              logo: "images/aliados/logo_yunkawasi.png",
+            },
+            {
+              name: "Proyecto Mono Tocón",
+              acronym: "PMT",
+              logo: "images/aliados/logo_pmt.png",
+            },
+            {
+              name: "Kawsay",
+              acronym: "Kawsay",
+              logo: "images/aliados/logo-kawsay.png",
+            },
+          ].map((p) => (
+            <div class="partner-logo-item" title={p.name}>
+              <img
+                src={`${base}${p.logo}`}
+                alt={`Logo ${p.acronym}`}
+                class="partner-logo-img"
+              />
+              <span class="partner-logo-acronym">{p.acronym}</span>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -238,7 +343,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     align-items: start;
   }
   @media (min-width: 1024px) {
-    .about-grid { grid-template-columns: 1.2fr 0.8fr; }
+    .about-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
   }
 
   .about-text {
@@ -251,16 +358,20 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--text-on-light);
     line-height: 1.8;
   }
-  :global([data-theme="dark"]) .about-text p { color: rgba(240,237,232,0.85); }
+  :global([data-theme="dark"]) .about-text p {
+    color: rgba(240, 237, 232, 0.85);
+  }
 
   .about-stats-card {
     padding: 2.5rem;
     border-radius: var(--radius-xl);
-    background: rgba(255,255,255,0.9);
-    border: 1px solid rgba(217,157,85,0.15);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(217, 157, 85, 0.15);
     box-shadow: var(--shadow-lg);
   }
-  :global([data-theme="dark"]) .about-stats-card { background: rgba(26,58,46,0.55); }
+  :global([data-theme="dark"]) .about-stats-card {
+    background: rgba(26, 58, 46, 0.55);
+  }
 
   .card-title {
     font-family: var(--font-display);
@@ -268,7 +379,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--forest-mid);
     margin-bottom: 1.5rem;
   }
-  :global([data-theme="dark"]) .card-title { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .card-title {
+    color: var(--forest-canopy);
+  }
 
   .stats-list {
     display: flex;
@@ -302,7 +415,10 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     align-items: center;
   }
   @media (min-width: 1024px) {
-    .reactivation-grid { grid-template-columns: 0.8fr 1.2fr; gap: 4rem; }
+    .reactivation-grid {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 4rem;
+    }
   }
 
   .logo-circle {
@@ -314,8 +430,8 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    box-shadow: 0 0 50px rgba(217,157,85,0.2);
-    border: 10px solid rgba(217,157,85,0.1);
+    box-shadow: 0 0 50px rgba(217, 157, 85, 0.2);
+    border: 10px solid rgba(217, 157, 85, 0.1);
     overflow: hidden;
     padding: 1rem;
   }
@@ -331,7 +447,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     line-height: 1.8;
     margin-bottom: 1rem;
   }
-  :global([data-theme="dark"]) .reactivation-text p { color: rgba(240,237,232,0.85); }
+  :global([data-theme="dark"]) .reactivation-text p {
+    color: rgba(240, 237, 232, 0.85);
+  }
 
   /* Organizers */
   .organizers-grid {
@@ -339,18 +457,27 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  @media (min-width: 768px) { .organizers-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 768px) {
+    .organizers-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
   .organizer-card {
     padding: 2rem;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(217,157,85,0.12);
+    border: 1px solid rgba(217, 157, 85, 0.12);
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-mid);
   }
-  :global([data-theme="dark"]) .organizer-card { background: rgba(26,58,46,0.5); }
-  .organizer-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+  :global([data-theme="dark"]) .organizer-card {
+    background: rgba(26, 58, 46, 0.5);
+  }
+  .organizer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
 
   .organizer-card__top {
     display: flex;
@@ -379,7 +506,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     font-weight: 700;
     color: var(--forest-mid);
   }
-  :global([data-theme="dark"]) .organizer-card__name { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .organizer-card__name {
+    color: var(--forest-canopy);
+  }
   .organizer-card__org {
     font-family: var(--font-ui);
     font-size: 0.75rem;
@@ -393,7 +522,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     color: var(--text-on-light);
     line-height: 1.7;
   }
-  :global([data-theme="dark"]) .organizer-card__desc { color: rgba(240,237,232,0.8); }
+  :global([data-theme="dark"]) .organizer-card__desc {
+    color: rgba(240, 237, 232, 0.8);
+  }
 
   /* Partners logos */
   .partners-logos {
@@ -434,14 +565,14 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   .table-container {
     padding: 2rem;
     border-radius: var(--radius-xl);
-    background: rgba(255,255,255,0.9);
-    border: 1px solid rgba(217,157,85,0.15);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(217, 157, 85, 0.15);
     box-shadow: var(--shadow-md);
     overflow-x: auto;
     margin-bottom: 2rem;
   }
   :global([data-theme="dark"]) .table-container {
-    background: rgba(26,58,46,0.55);
+    background: rgba(26, 58, 46, 0.55);
   }
   .membership-table {
     width: 100%;
@@ -456,15 +587,21 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     font-size: 1.1rem;
     white-space: nowrap;
   }
-  :global([data-theme="dark"]) .membership-table th { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .membership-table th {
+    color: var(--forest-canopy);
+  }
   .membership-table td {
     padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid rgba(217,157,85,0.15);
+    border-bottom: 1px solid rgba(217, 157, 85, 0.15);
     color: var(--text-on-light);
     font-size: 0.95rem;
   }
-  :global([data-theme="dark"]) .membership-table td { color: rgba(240,237,232,0.85); }
-  .membership-table tr:last-child td { border-bottom: none; }
+  :global([data-theme="dark"]) .membership-table td {
+    color: rgba(240, 237, 232, 0.85);
+  }
+  .membership-table tr:last-child td {
+    border-bottom: none;
+  }
   .table-desc {
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -477,39 +614,51 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     font-size: 1.1rem !important;
     white-space: nowrap;
   }
-  :global([data-theme="dark"]) .price-cell { color: var(--forest-canopy); }
+  :global([data-theme="dark"]) .price-cell {
+    color: var(--forest-canopy);
+  }
 
   .join-info-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  @media (min-width: 768px) { .join-info-grid { grid-template-columns: 1fr 1fr; } }
-  
+  @media (min-width: 768px) {
+    .join-info-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   .info-card {
     padding: 2rem;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(217,157,85,0.15);
+    border: 1px solid rgba(217, 157, 85, 0.15);
     box-shadow: var(--shadow-sm);
   }
-  :global([data-theme="dark"]) .info-card { background: rgba(26,58,46,0.55); }
-  
+  :global([data-theme="dark"]) .info-card {
+    background: rgba(26, 58, 46, 0.55);
+  }
+
   .info-card-title {
     font-family: var(--font-display);
     color: var(--forest-darkest);
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
-  :global([data-theme="dark"]) .info-card-title { color: var(--forest-canopy); }
-  
+  :global([data-theme="dark"]) .info-card-title {
+    color: var(--forest-canopy);
+  }
+
   .info-card p {
     font-size: 0.95rem;
     color: var(--text-on-light);
     margin-bottom: 0.5rem;
   }
-  :global([data-theme="dark"]) .info-card p { color: rgba(240,237,232,0.85); }
-  
+  :global([data-theme="dark"]) .info-card p {
+    color: rgba(240, 237, 232, 0.85);
+  }
+
   .payment-note {
     font-size: 0.8rem !important;
     font-style: italic;
@@ -517,19 +666,21 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     margin-top: 1rem !important;
     line-height: 1.4;
   }
-  
+
   .steps-list {
     margin: 0 0 1.5rem 1.2rem;
     padding: 0;
     font-size: 0.95rem;
     color: var(--text-on-light);
   }
-  :global([data-theme="dark"]) .steps-list { color: rgba(240,237,232,0.85); }
+  :global([data-theme="dark"]) .steps-list {
+    color: rgba(240, 237, 232, 0.85);
+  }
   .steps-list li {
     margin-bottom: 0.5rem;
     line-height: 1.5;
   }
-  
+
   .join-btn {
     display: inline-flex;
     align-items: center;
@@ -540,5 +691,3 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     font-size: 1.05rem;
   }
 </style>
-
-</PageLayout>
