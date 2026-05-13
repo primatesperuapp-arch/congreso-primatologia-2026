@@ -15,7 +15,7 @@ import axes from '../../data/thematic-axes.json';
     <div class="thematic__grid">
       {axes.map((axis, i) => (
         <article
-          class={`axis-card reveal reveal-delay-${(i % 3) + 1}`}
+          class={`axis-card reveal reveal-delay-${(i % 2) + 1}`}
           style={`--axis-color: ${axis.color};`}
           tabindex="0"
           role="button"
@@ -66,7 +66,11 @@ import axes from '../../data/thematic-axes.json';
   }
 
   @media (min-width: 1024px) {
-    .thematic__grid { grid-template-columns: repeat(3, 1fr); }
+    .thematic__grid { 
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 960px;
+      margin: 0 auto;
+    }
   }
 
   .axis-card {
