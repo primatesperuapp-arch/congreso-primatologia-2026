@@ -302,22 +302,22 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     align-items: center;
   }
   @media (min-width: 1024px) {
-    .reactivation-grid { grid-template-columns: 0.6fr 1.4fr; }
+    .reactivation-grid { grid-template-columns: 0.8fr 1.2fr; gap: 4rem; }
   }
 
   .logo-circle {
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
     background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    box-shadow: 0 0 40px rgba(217,157,85,0.15);
-    border: 8px solid rgba(217,157,85,0.1);
+    box-shadow: 0 0 50px rgba(217,157,85,0.2);
+    border: 10px solid rgba(217,157,85,0.1);
     overflow: hidden;
-    padding: 1.5rem;
+    padding: 1rem;
   }
   .logo-circle__img {
     width: 100%;
