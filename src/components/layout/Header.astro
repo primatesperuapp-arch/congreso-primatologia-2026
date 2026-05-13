@@ -21,11 +21,12 @@ const currentPath = Astro.url.pathname;
 
     <!-- Logo / Brand -->
     <a href={`${base}`} class="header__brand" aria-label="Inicio — Congreso Peruano de Primatología 2026">
-      <div class="header__logo" aria-hidden="true">
-        <img src={`${base}favicon.png`} alt="Logo III Congreso Peruano de Primatología" width="45" height="45" style="object-fit: contain;" />
+      <div class="header__logo-icon" aria-hidden="true">
+        <img src={`${base}favicon.png`} alt="Icono Maquisapa" width="42" height="42" />
       </div>
-      <div class="header__brand-text">
-        <span class="header__brand-main">III CONGRESO PERUANO DE PRIMATOLOGÍA</span>
+      <div class="header__logo-divider"></div>
+      <div class="header__logo-main">
+        <img src={`${base}images/logos/logo-principal.png`} alt="III Congreso Peruano de Primatología" height="38" class="header__logo-img" />
       </div>
     </a>
 
@@ -137,43 +138,45 @@ const currentPath = Astro.url.pathname;
     align-items: center;
     gap: 0.75rem;
     text-decoration: none;
-    flex: 1;
+    flex-shrink: 0;
   }
 
-  .header__brand-text {
+  .header__logo-icon {
     display: flex;
-    flex-direction: column;
-    line-height: 1.2;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+  }
+  .header__logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
-  .header__brand-main {
-    font-family: var(--font-display);
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--forest-mid);
-    line-height: 1.15;
-    max-width: 120px; /* Force into ~3 lines */
-  }
-  @media (min-width: 768px) {
-    .header__brand-main {
-      font-size: 0.75rem;
-      max-width: 130px; /* Still forces 3 lines on desktop */
-      letter-spacing: -0.01em;
-    }
-  }
-  :global([data-theme="dark"]) .header__brand-main { color: var(--forest-canopy); }
-
-  .header__brand-sub {
-    font-family: var(--font-ui);
-    font-size: 0.65rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    letter-spacing: 0.03em;
-    display: none;
+  .header__logo-divider {
+    width: 1.5px;
+    height: 32px;
+    background: var(--forest-leaf);
+    opacity: 0.4;
   }
 
-  @media (min-width: 1024px) {
-    .header__brand-sub { display: block; }
+  .header__logo-main {
+    height: 38px;
+    display: flex;
+    align-items: center;
+  }
+  .header__logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    /* Optional: Filter to make it look better on dark mode if needed, 
+       but the current logo has colored parts that should probably remain. */
+  }
+
+  /* Dark mode specific adjustments for the logo image if it becomes unreadable */
+  :global([data-theme="dark"]) .header__logo-img {
+    filter: brightness(1.1);
   }
 
   /* ── Nav Links ───────────────────────────────────── */
