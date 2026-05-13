@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "category": "Estudiante de postgrado o personal de áreas protegidas",
+    "category": "Estudiante postgrado, gestores comunitarios y guardaparques",
     "prices": {
       "early": { "app": 120, "noApp": 180 },
       "regular": { "app": 180, "noApp": 270 },
