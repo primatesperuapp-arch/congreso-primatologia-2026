@@ -24,13 +24,19 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
         <span class="badge badge-gold">30 de julio al 02 de agosto, 2026</span>
       </div>
 
-      <!-- Main Logo Banner -->
-      <div class="hero__logo-container animate-fade-up" style="animation-delay: 0.2s">
-        <img 
-          src={`${base}images/logos/logo-principal.png`} 
-          alt="III Congreso Peruano de Primatología - Lima 2026" 
-          class="hero__logo-img"
-        />
+      <!-- Combined Logo Banner -->
+      <div class="hero__logo-composite animate-fade-up" style="animation-delay: 0.2s">
+        <div class="hero__logo-icon">
+          <img src={`${base}favicon.png`} alt="Icono Maquisapa" />
+        </div>
+        <div class="hero__logo-line"></div>
+        <div class="hero__logo-body">
+          <img 
+            src={`${base}images/logos/logo-principal.png`} 
+            alt="III Congreso Peruano de Primatología - Lima 2026" 
+            class="hero__logo-img"
+          />
+        </div>
         <h1 class="sr-only">III Congreso Peruano de Primatología 2026</h1>
       </div>
 
@@ -224,9 +230,36 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     font-weight: 600;
   }
 
-  .hero__logo-container {
-    max-width: 550px;
-    margin-bottom: 1rem;
+  .hero__logo-composite {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 650px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__logo-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+  }
+  .hero__logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+  }
+
+  .hero__logo-line {
+    width: 2px;
+    height: 90px;
+    background: linear-gradient(to bottom, transparent, var(--forest-leaf), transparent);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  .hero__logo-body {
+    flex: 1;
   }
 
   .hero__logo-img {
@@ -237,9 +270,30 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   }
 
   @media (max-width: 768px) {
-    .hero__logo-container {
-      max-width: 320px;
-      margin: 0 auto;
+    .hero__logo-composite {
+      gap: 1rem;
+      max-width: 450px;
+      margin: 0 auto 1.5rem;
+    }
+    .hero__logo-icon {
+      width: 60px;
+      height: 60px;
+    }
+    .hero__logo-line {
+      height: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero__logo-composite {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+    .hero__logo-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--forest-leaf), transparent);
     }
   }
 
