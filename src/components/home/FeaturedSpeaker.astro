@@ -186,13 +186,14 @@ const featuredSpeakers = [
 
   .spotlight__track {
     position: relative;
-    min-height: 500px;
+    min-height: 650px;
     display: grid;
     grid-template-columns: 1fr;
+    align-items: center;
   }
 
   @media (min-width: 1024px) {
-    .spotlight__track { min-height: 450px; }
+    .spotlight__track { min-height: 550px; }
   }
 
   .spotlight__slide {
@@ -288,6 +289,8 @@ const featuredSpeakers = [
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    min-height: 380px; /* Ensure consistent text area height */
+    justify-content: center;
   }
 
   .spotlight__title {
