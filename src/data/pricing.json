@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "category": "Estudiante de la Facultad de Medicina Veterinaria y Ciencias Biologicas de la UNMSM",
+    "category": "DESCUENTO - Estudiantes de Veterinaria UNMSM",
     "prices": {
       "early": { "app": 60, "noApp": 100 },
       "regular": { "app": 100, "noApp": 160 },
