@@ -97,7 +97,9 @@ const guidelines = [
               <span class="axis-row__desc">{axis.description}</span>
               {axis.subtopics && (
                 <div class="axis-row__tags">
-                  <strong>Temas clave:</strong> {axis.subtopics.join(', ')}.
+                  {axis.subtopics.map(topic => (
+                    <span class="axis-tag" style={`--c: ${axis.color};`}>{topic}</span>
+                  ))}
                 </div>
               )}
             </div>
@@ -336,18 +338,30 @@ const guidelines = [
   :global([data-theme="dark"]) .call-desc { color: rgba(240,237,232,0.8); }
 
   /* Axes list */
-  .axes-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 820px; margin: 0 auto; }
+  .axes-list { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+  }
+  @media (min-width: 768px) {
+    .axes-list { grid-template-columns: repeat(2, 1fr); }
+  }
 
   .axis-row {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    background: rgba(255,255,255,0.85);
-    border-radius: var(--radius-md);
-    border-left: 4px solid var(--c);
-    box-shadow: var(--shadow-sm);
+    gap: 1.25rem;
+    padding: 2rem;
+    background: rgba(255,255,255,0.95);
+    border-radius: var(--radius-lg);
+    border-top: 5px solid var(--c);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-mid);
   }
+  .axis-row:hover { transform: translateY(-5px); }
   :global([data-theme="dark"]) .axis-row { background: rgba(26,58,46,0.5); }
 
   .axis-row__emoji { font-size: 1.75rem; flex-shrink: 0; }
@@ -356,9 +370,24 @@ const guidelines = [
   .axis-row__name { font-size: 0.97rem; font-weight: 700; color: var(--text-on-light); }
   :global([data-theme="dark"]) .axis-row__name { color: var(--text-on-dark); }
   .axis-row__desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.55; }
-  .axis-row__tags { font-family: var(--font-ui); font-size: 0.75rem; color: var(--forest-leaf); margin-top: 0.25rem; line-height: 1.4; }
-  .axis-row__tags strong { color: var(--forest-mid); font-weight: 700; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.04em; margin-right: 0.25rem; }
-  :global([data-theme="dark"]) .axis-row__tags strong { color: var(--forest-canopy); }
+  .axis-row__tags { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .axis-tag {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--c);
+    border: 1.5px solid var(--c);
+    border-radius: 100px;
+    opacity: 0.8;
+  }
+  :global([data-theme="dark"]) .axis-tag { background: rgba(0,0,0,0.2); }
 
   /* Formats */
   .formats-grid {
