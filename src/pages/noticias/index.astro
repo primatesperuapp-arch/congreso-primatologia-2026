@@ -40,18 +40,6 @@ const news = [
     author: "Comité Científico",
   },
   {
-    slug: "becas-estudiantes-latinoamerica",
-    title: "Disponibles becas de participación para estudiantes de Latinoamérica",
-    excerpt: "En alianza con SLAPrim e IPS, el congreso ofrece 20 becas parciales para estudiantes de posgrado de países latinoamericanos con proyectos de investigación en primatología.",
-    date: "2026-05-05",
-    dateFormatted: "5 de mayo, 2026",
-    category: "Becas",
-    categoryColor: "#8b5e3c",
-    emoji: "🎓",
-    readTime: "4 min",
-    author: "Comité Organizador",
-  },
-  {
     slug: "primer-ponente-magistral-confirmado",
     title: "Confirmada primera conferenciante magistral del CPP 2026",
     excerpt: "El comité tiene el placer de anunciar a la primera ponente magistral confirmada para el III Congreso Peruano de Primatología. Una investigadora de trayectoria internacional en ecología de primates amazónicos.",
@@ -90,7 +78,7 @@ const news = [
       <!-- Filters (visual only) -->
       <div class="news-filters reveal">
         <button class="filter-btn active" data-filter="all">Todas</button>
-        {['Llamado de resúmenes','Programa','Becas','Ponentes','Institucional'].map(cat => (
+        {['Llamado de resúmenes','Programa','Ponentes','Institucional'].map(cat => (
           <button class="filter-btn" data-filter={cat}>{cat}</button>
         ))}
       </div>

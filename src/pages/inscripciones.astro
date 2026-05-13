@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
 
 <PageLayout
   title="Inscripciones"
-  description="Información sobre categorías, precios, becas y proceso de inscripción al III Congreso Peruano de Primatología 2026."
+  description="Información sobre categorías, precios y proceso de inscripción al III Congreso Peruano de Primatología 2026."
   heroTitle="Inscripciones"
   heroSubtitle="Regístrate en el III Congreso Peruano de Primatología 2026"
   heroColor="var(--earth-mid)"
@@ -137,39 +137,6 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     </div>
   </section>
 
-  <!-- Becas -->
-  <section class="section" style="background: var(--cream-warm);">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Apoyo económico</span>
-        <h2 class="section-title">Programa de Becas</h2>
-      </div>
-
-      <div class="scholarships-grid">
-        {[
-          { icon: "✈️", title: "Fondo de Becas (Travel Grants)", desc: "Apoyo financiero para traslados y estadía, impulsado por aliados estratégicos. Prioriza a investigadores y líderes comunitarios de regiones Amazónicas y Andinas.", req: "Carta de motivación + Aval de organización local", deadline: "15 junio 2026" },
-        ].map((b, i) => (
-          <div class={`scholarship-card reveal reveal-delay-${i+1}`}>
-            <div class="scholarship-card__icon">{b.icon}</div>
-            <h3 class="scholarship-card__title">{b.title}</h3>
-            <p class="scholarship-card__desc">{b.desc}</p>
-            <div class="scholarship-card__req">
-              <strong>Requisitos:</strong> {b.req}
-            </div>
-            <div class="scholarship-card__deadline">
-              📅 Postular hasta: <strong>{b.deadline}</strong>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="reveal" style="text-align:center; margin-top:2rem;">
-        <a href={`${base}contacto`} class="btn btn-primary" id="cta-becas">
-          Postular a una beca →
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- Política de cancelación -->
   <section class="section">
