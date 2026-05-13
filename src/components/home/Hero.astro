@@ -28,6 +28,11 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
       <!-- Main Logo Banner -->
       <div class="hero__logo-container animate-fade-up" style="animation-delay: 0.2s">
         <img 
+          src={`${base}images/aliados/logo_app.png`} 
+          alt="Asociación Peruana de Primatología" 
+          class="hero__logo-app"
+        />
+        <img 
           src={`${base}images/logos/logo-principal.png`} 
           alt="III Congreso Peruano de Primatología - Lima 2026" 
           class="hero__logo-img"
@@ -229,8 +234,18 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   }
 
   .hero__logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
     max-width: 550px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__logo-app {
+    height: 110px;
+    width: auto;
+    object-fit: contain;
   }
 
   .hero__logo-img {
@@ -243,7 +258,11 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   @media (max-width: 768px) {
     .hero__logo-container {
       max-width: 280px;
-      margin: 0 auto 0.25rem;
+      margin: 0 auto 0.5rem;
+      align-items: center;
+    }
+    .hero__logo-app {
+      height: 80px;
     }
   }
 
