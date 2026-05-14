@@ -253,7 +253,7 @@ doc.add_page_break()
 h1('5. Llamado de Resúmenes')
 body('Apertura: 8 de mayo 2026  |  Cierre: 15 de junio 2026')
 body('Lugar: Facultad de Medicina Veterinaria UNMSM (Av. Circunvalación 28, San Borja, Lima).')
-body('El Comité Organizador del III Congreso Peruano de Primatología se complace en invitar a investigadores, estudiantes, gestores de áreas protegidas, organizaciones indígenas, comunidades locales, centros de rescate y fotógrafos de conservación a presentar sus propuestas.')
+body('El Comité Organizador del III Congreso Peruano de Primatología se complace en invitar a investigadores, estudiantes, gestores de áreas protegidas, organizaciones indígenas, comunidades locales, centros de rescate y artistas de conservación a presentar sus propuestas.')
 
 h2('Formatos de Presentación')
 formatos = [
