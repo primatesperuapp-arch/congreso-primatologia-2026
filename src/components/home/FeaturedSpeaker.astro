@@ -60,6 +60,16 @@ const featuredSpeakers = [
 ---
 
 <section class="section spotlight" id="featured-slider">
+  <div class="container" style="margin-bottom: 4rem;">
+    <div class="section-header reveal">
+      <span class="section-label" style="color: var(--gold-light);">Liderazgo y Excelencia</span>
+      <h2 class="section-title" style="color: #fff;">Ponentes Magistrales Confirmados</h2>
+      <p class="section-subtitle" style="color: rgba(255,255,255,0.7); max-width: 850px; margin: 0 auto;">
+        Estamos trabajando para reunir en Lima a los mejores representantes de la primatología mundial y a aquellas personas que, con su esfuerzo y visión, lideran propuestas transformadoras para la protección de nuestra biodiversidad y el bienestar de los ecosistemas.
+      </p>
+    </div>
+  </div>
+
   <div class="spotlight__slider">
     <div class="spotlight__track" id="slider-track">
       {featuredSpeakers.map((speaker, index) => (
@@ -86,7 +96,6 @@ const featuredSpeakers = [
 
             <div class="spotlight__content">
               <div class="spotlight__header">
-                <span class="section-label">Ponente Magistral Confirmado/a</span>
                 <h2 class="spotlight__title">{speaker.name}</h2>
                 <p class="spotlight__subtitle">{speaker.subtitle}</p>
               </div>
