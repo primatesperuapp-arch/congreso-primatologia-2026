@@ -61,6 +61,14 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
         </div>
       </div>
 
+      <!-- Disclaimer de Membresía Independiente -->
+      <div class="membership-disclaimer reveal">
+        <span class="disclaimer-icon">⚠️</span>
+        <p class="disclaimer-text">
+          <strong>Importante:</strong> El pago detallado aquí corresponde <strong>exclusivamente a la membresía anual de la APP</strong> y no cubre la entrada o inscripción al III Congreso Peruano de Primatología 2026 (cuyos precios y pasos de registro se detallan arriba).
+        </p>
+      </div>
+
       <!-- Bloque de Pago e Instrucciones -->
       <div class="join-app__info-panel reveal">
         <div class="info-panel__bank">
@@ -348,5 +356,35 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
   .btn-glow {
     position: relative;
     animation: pulse-glow 3s infinite;
+  }
+
+  .membership-disclaimer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    background: rgba(201, 168, 76, 0.08);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius-sm);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+  }
+
+  .disclaimer-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .disclaimer-text {
+    font-size: 0.88rem;
+    color: var(--text-on-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  :global([data-theme="dark"]) .disclaimer-text {
+    color: var(--text-on-dark);
   }
 </style>

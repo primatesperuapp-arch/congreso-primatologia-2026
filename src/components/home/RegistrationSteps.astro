@@ -59,7 +59,12 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
         <p class="step-card__desc">
           Completa el formulario web de registro de pago adjuntando tu comprobante y tus documentos de requisitos correspondientes.
         </p>
-      </div>
+    <!-- Disclaimer de Pago Diferenciado -->
+    <div class="registration-disclaimer reveal">
+      <span class="disclaimer-icon">⚠️</span>
+      <p class="disclaimer-text">
+        <strong>Atención:</strong> Este registro y pago son <strong>exclusivos para la inscripción al Congreso</strong>. Ser miembro de la Asociación Peruana de Primatología (APP) requiere un pago y registro de membresía independiente (detallado al final de esta página).
+      </p>
     </div>
 
     <!-- Acciones llamativas -->
@@ -232,5 +237,34 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
 
   .btn-primary:hover .btn-icon {
     transform: translateX(4px);
+  }
+
+  .registration-disclaimer {
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(201, 168, 76, 0.08);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius-sm);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .disclaimer-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .disclaimer-text {
+    font-size: 0.88rem;
+    color: var(--text-on-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  :global([data-theme="dark"]) .disclaimer-text {
+    color: var(--text-on-dark);
   }
 </style>
