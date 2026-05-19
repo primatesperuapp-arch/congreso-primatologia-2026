@@ -1,0 +1,236 @@
+---
+const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
+---
+
+<section class="section reg-steps" id="como-inscribirse">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Paso a paso</span>
+      <h2 class="section-title">¿Cómo inscribirse al Congreso?</h2>
+      <p class="section-subtitle">
+        Sigue estos tres sencillos pasos para asegurar tu participación en el reencuentro de la primatología peruana.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <!-- Paso 1 -->
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-card__badge">01</div>
+        <div class="step-card__icon-wrapper">
+          <svg class="step-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="2" y1="10" x2="22" y2="10"></line>
+          </svg>
+        </div>
+        <h3 class="step-card__title">Realiza el pago</h3>
+        <p class="step-card__desc">
+          Realiza el depósito, transferencia bancaria o pago por <strong>Plin</strong> y guarda el comprobante de pago legible en formato <strong>PDF</strong> o imagen.
+        </p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-card__badge">02</div>
+        <div class="step-card__icon-wrapper">
+          <svg class="step-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+        <h3 class="step-card__title">Prepara tus requisitos</h3>
+        <p class="step-card__desc">
+          Prepara tus documentos en formato <strong>PDF</strong> si accedes a tarifas reducidas (carnet de estudiante vigente o acreditación de miembro de la APP).
+        </p>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-card__badge">03</div>
+        <div class="step-card__icon-wrapper">
+          <svg class="step-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 class="step-card__title">Completa el formulario</h3>
+        <p class="step-card__desc">
+          Completa el formulario web de registro de pago adjuntando tu comprobante y tus documentos de requisitos correspondientes.
+        </p>
+      </div>
+    </div>
+
+    <!-- Acciones llamativas -->
+    <div class="steps-actions reveal">
+      <a
+        href="https://forms.gle/nTKgiQEpBX1GJtc19"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary btn-lg btn-glow"
+      >
+        📋 Llenar Formulario de Inscripción
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a href={`${base}inscripciones`} class="btn btn-secondary btn-lg">
+        Ver Tarifas y Datos Bancarios
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reg-steps {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+    border-top: 1px solid rgba(217, 157, 85, 0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Patrón sutil de fondo */
+  .reg-steps::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23593414' fill-opacity='0.5'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .step-card {
+    position: relative;
+    padding: 3rem 2rem 2.25rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(217, 157, 85, 0.18);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all var(--transition-mid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  :global([data-theme="dark"]) .step-card {
+    background: rgba(41, 25, 12, 0.4);
+    border-color: rgba(217, 157, 85, 0.22);
+  }
+
+  .step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    border-color: var(--forest-leaf);
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  :global([data-theme="dark"]) .step-card:hover {
+    background: rgba(59, 34, 15, 0.75);
+    border-color: var(--forest-canopy);
+  }
+
+  .step-card__badge {
+    position: absolute;
+    top: -1.25rem;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, var(--forest-mid), var(--forest-leaf));
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    box-shadow: var(--shadow-md), 0 0 15px rgba(217, 157, 85, 0.2);
+  }
+
+  .step-card__icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    background: rgba(217, 157, 85, 0.1);
+    color: var(--forest-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all var(--transition-mid);
+  }
+
+  :global([data-theme="dark"]) .step-card__icon-wrapper {
+    background: rgba(217, 157, 85, 0.15);
+    color: var(--forest-canopy);
+  }
+
+  .step-card:hover .step-card__icon-wrapper {
+    background: linear-gradient(135deg, var(--forest-mid), var(--forest-leaf));
+    color: #fff;
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .step-card__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .step-card__title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: var(--text-on-light);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+
+  :global([data-theme="dark"]) .step-card__title {
+    color: var(--text-on-dark);
+  }
+
+  .step-card__desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  :global([data-theme="dark"]) .step-card__desc {
+    color: rgba(242, 235, 223, 0.75);
+  }
+
+  .steps-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-glow {
+    position: relative;
+    animation: pulse-glow 3s infinite;
+  }
+
+  .btn-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-fast);
+  }
+
+  .btn-primary:hover .btn-icon {
+    transform: translateX(4px);
+  }
+</style>

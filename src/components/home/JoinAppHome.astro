@@ -1,0 +1,352 @@
+---
+const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL + '/';
+---
+
+<section class="section join-app" id="membresia-app">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Comunidad</span>
+      <h2 class="section-title">Únete a la Asociación Peruana de Primatología (APP)</h2>
+      <p class="section-subtitle">
+        Sé parte de la red de primatología más activa del país. Integra esfuerzos científicos, de conservación y comunitarios por el futuro de nuestros primates.
+      </p>
+    </div>
+
+    <!-- Contenedor Principal: Membresías y Datos de Pago -->
+    <div class="join-app__content">
+      <!-- Grid de Categorías en Tarjetas Vistosas -->
+      <div class="memberships-grid">
+        <!-- Estudiante -->
+        <div class="member-card reveal reveal-delay-1">
+          <div class="member-card__icon">🎓</div>
+          <h3 class="member-card__title">Estudiante</h3>
+          <p class="member-card__desc">Pregrado o técnica de carreras afines.</p>
+          <div class="member-card__price">S/ 50.00<small>/ año</small></div>
+          <div class="member-card__req">
+            <span>Requisito:</span> Carnet de estudiante vigente en PDF.
+          </div>
+        </div>
+
+        <!-- General -->
+        <div class="member-card reveal reveal-delay-2">
+          <div class="member-card__icon">🌿</div>
+          <h3 class="member-card__title">General</h3>
+          <p class="member-card__desc">Público en general interesado en la primatología.</p>
+          <div class="member-card__price">S/ 70.00<small>/ año</small></div>
+          <div class="member-card__req">
+            <span>Requisito:</span> Carta breve de interés en PDF.
+          </div>
+        </div>
+
+        <!-- Profesional -->
+        <div class="member-card reveal reveal-delay-3">
+          <div class="member-card__icon">🐒</div>
+          <h3 class="member-card__title">Profesional</h3>
+          <p class="member-card__desc">Profesionales con título universitario o posgrado.</p>
+          <div class="member-card__price">S/ 90.00<small>/ año</small></div>
+          <div class="member-card__req">
+            <span>Requisito:</span> Diploma o constancia de título en PDF.
+          </div>
+        </div>
+
+        <!-- Institucional -->
+        <div class="member-card reveal reveal-delay-4">
+          <div class="member-card__icon">🏢</div>
+          <h3 class="member-card__title">Institucional</h3>
+          <p class="member-card__desc">Organizaciones o colectivos (incluye hasta 5 personas).</p>
+          <div class="member-card__price">S/ 200.00<small>/ año</small></div>
+          <div class="member-card__req">
+            <span>Requisito:</span> Carta de presentación firmada en PDF.
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque de Pago e Instrucciones -->
+      <div class="join-app__info-panel reveal">
+        <div class="info-panel__bank">
+          <h3 class="info-panel__title">💳 Datos de Pago para la Membresía</h3>
+          <div class="info-panel__details">
+            <p><strong>Titular:</strong> Estación Biológica KAWSAY*</p>
+            <p><strong>RUC:</strong> 20607343609</p>
+            <p><strong>Banco:</strong> Interbank (Cuenta Corriente Soles)</p>
+            <p><strong>Cuenta:</strong> 335-3003392978</p>
+            <p><strong>Código Interbancario (CCI):</strong> 003-335-003003392978-74</p>
+          </div>
+          <p class="info-panel__note">
+            *De manera temporal por proceso de reactivación. Se emitirá boleta garantizando la transparencia de los fondos.
+          </p>
+        </div>
+
+        <div class="info-panel__proc">
+          <h3 class="info-panel__title">✍️ Procedimiento de Inscripción a la APP</h3>
+          <ol class="info-panel__steps">
+            <li>Realiza el pago de la membresía anual y guarda el voucher en PDF.</li>
+            <li>Prepara el documento de requisito para tu categoría en PDF.</li>
+            <li>Completa el formulario oficial adjuntando ambos archivos.</li>
+          </ol>
+          <a
+            href="https://forms.gle/4riFAaRPyQoFecAfA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-lg join-app__btn btn-glow"
+          >
+            Formulario de Registro APP →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .join-app {
+    background: linear-gradient(180deg, var(--cream-warm) 0%, var(--cream) 100%);
+    border-top: 1px solid rgba(217, 157, 85, 0.15);
+    position: relative;
+  }
+
+  .join-app__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  /* Grid de Tarjetas de Membresía */
+  .memberships-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .memberships-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .memberships-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .member-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(217, 157, 85, 0.16);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-mid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  :global([data-theme="dark"]) .member-card {
+    background: rgba(26, 43, 35, 0.4);
+    border-color: rgba(217, 157, 85, 0.22);
+  }
+
+  .member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--forest-mid), var(--forest-leaf));
+    opacity: 0.7;
+    transition: opacity var(--transition-mid);
+  }
+
+  .member-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+    border-color: var(--forest-leaf);
+    background: #fff;
+  }
+
+  :global([data-theme="dark"]) .member-card:hover {
+    background: rgba(43, 27, 14, 0.7);
+    border-color: var(--forest-canopy);
+  }
+
+  .member-card:hover::before {
+    opacity: 1;
+  }
+
+  .member-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    transition: transform var(--transition-mid);
+  }
+
+  .member-card:hover .member-card__icon {
+    transform: scale(1.15) translateY(-2px);
+  }
+
+  .member-card__title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--forest-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  :global([data-theme="dark"]) .member-card__title {
+    color: var(--forest-canopy);
+  }
+
+  .member-card__desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+
+  :global([data-theme="dark"]) .member-card__desc {
+    color: rgba(242, 235, 223, 0.7);
+  }
+
+  .member-card__price {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--forest-leaf);
+    margin-bottom: 1.25rem;
+  }
+
+  .member-card__price small {
+    font-size: 0.8rem;
+    font-family: var(--font-ui);
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-left: 0.2rem;
+  }
+
+  .member-card__req {
+    font-size: 0.78rem;
+    color: var(--text-on-light);
+    background: rgba(217, 157, 85, 0.08);
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    line-height: 1.4;
+    border: 1px dashed rgba(217, 157, 85, 0.2);
+  }
+
+  :global([data-theme="dark"]) .member-card__req {
+    color: var(--text-on-dark);
+    background: rgba(217, 157, 85, 0.1);
+  }
+
+  .member-card__req span {
+    font-weight: 700;
+    color: var(--forest-mid);
+  }
+
+  /* Panel de Información Adicional */
+  .join-app__info-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(217, 157, 85, 0.18);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (min-width: 768px) {
+    .join-app__info-panel {
+      grid-template-columns: 1fr 1fr;
+      padding: 2.5rem;
+    }
+  }
+
+  :global([data-theme="dark"]) .join-app__info-panel {
+    background: rgba(41, 25, 12, 0.4);
+    border-color: rgba(217, 157, 85, 0.22);
+  }
+
+  .info-panel__bank, .info-panel__proc {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .info-panel__bank {
+      border-right: 1px dashed rgba(217, 157, 85, 0.25);
+      padding-right: 2rem;
+    }
+  }
+
+  .info-panel__title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--forest-dark);
+    font-weight: 600;
+  }
+
+  :global([data-theme="dark"]) .info-panel__title {
+    color: var(--forest-canopy);
+  }
+
+  .info-panel__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .info-panel__details p {
+    font-size: 0.92rem;
+    color: var(--text-on-light);
+  }
+
+  :global([data-theme="dark"]) .info-panel__details p {
+    color: var(--text-on-dark);
+  }
+
+  .info-panel__note {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .info-panel__steps {
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .info-panel__steps li {
+    font-size: 0.92rem;
+    color: var(--text-on-light);
+    line-height: 1.6;
+  }
+
+  :global([data-theme="dark"]) .info-panel__steps li {
+    color: var(--text-on-dark);
+  }
+
+  .join-app__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .btn-glow {
+    position: relative;
+    animation: pulse-glow 3s infinite;
+  }
+</style>
