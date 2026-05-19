@@ -98,6 +98,15 @@ const base =
             una nueva Junta Directiva que lidere el futuro de la primatología en
             el Perú.
           </p>
+          <div class="reactivation-actions reveal">
+            <a href="#unete-app" class="btn btn-primary btn-glow-forest">
+              ✨ ¡Quiero asociarme a la APP y apoyar la primatología!
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -185,6 +194,14 @@ const base =
       </div>
 
       <div class="join-content reveal">
+        <!-- Disclaimer de Pago Diferenciado -->
+        <div class="membership-disclaimer">
+          <span class="disclaimer-icon">⚠️</span>
+          <p class="disclaimer-text">
+            <strong>Importante:</strong> El pago detallado en esta sección corresponde <strong>exclusivamente a la membresía anual de la APP</strong> y no cubre la entrada o inscripción al III Congreso Peruano de Primatología 2026 (cuyos precios y pasos de registro se detallan en la sección de <a href={`${base}inscripciones`} style="color: inherit; text-decoration: underline; font-weight: 700;">Inscripciones</a>).
+          </p>
+        </div>
+
         <div class="table-container card-glass">
           <table class="membership-table">
             <thead>
@@ -261,9 +278,9 @@ const base =
               href="https://forms.gle/4riFAaRPyQoFecAfA"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn btn-primary join-btn"
+              class="btn btn-primary join-btn btn-glow-gold"
             >
-              Llenar Formulario
+              🚀 Llenar Formulario de Registro APP
               <svg
                 width="20"
                 height="20"
@@ -689,5 +706,89 @@ const base =
     width: 100%;
     margin-top: 0.5rem;
     font-size: 1.05rem;
+  }
+
+  .reactivation-actions {
+    margin-top: 1.75rem;
+  }
+
+  /* Glow animations */
+  .btn-glow-forest {
+    position: relative;
+    animation: pulse-glow-forest 3s infinite;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  @keyframes pulse-glow-forest {
+    0% {
+      box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 12px rgba(46, 125, 50, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+    }
+  }
+
+  .btn-glow-gold {
+    position: relative;
+    animation: pulse-glow-gold 3s infinite;
+  }
+
+  @keyframes pulse-glow-gold {
+    0% {
+      box-shadow: 0 0 0 0 rgba(217, 157, 85, 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 12px rgba(217, 157, 85, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(217, 157, 85, 0);
+    }
+  }
+
+  .btn-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 0.5rem;
+    transition: transform var(--transition-fast);
+  }
+
+  .btn-glow-forest:hover .btn-icon {
+    transform: translateX(4px);
+  }
+
+  /* Disclaimer Styles */
+  .membership-disclaimer {
+    max-width: 100%;
+    margin-bottom: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(201, 168, 76, 0.08);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius-sm);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .disclaimer-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .disclaimer-text {
+    font-size: 0.88rem;
+    color: var(--text-on-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  :global([data-theme="dark"]) .disclaimer-text {
+    color: var(--text-on-dark);
   }
 </style>
