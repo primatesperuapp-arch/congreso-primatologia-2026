@@ -59,6 +59,9 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
         <p class="step-card__desc">
           Completa el formulario web de registro de pago adjuntando tu comprobante y tus documentos de requisitos correspondientes.
         </p>
+      </div>
+    </div>
+
     <!-- Disclaimer de Pago Diferenciado -->
     <div class="registration-disclaimer reveal">
       <span class="disclaimer-icon">⚠️</span>
@@ -133,6 +136,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
   }
 
   :global([data-theme="dark"]) .step-card {
@@ -210,6 +214,7 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.7;
+    flex-grow: 1;
   }
 
   :global([data-theme="dark"]) .step-card__desc {
@@ -248,13 +253,15 @@ const base = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL +
     border-radius: var(--radius-sm);
     display: flex;
     gap: 1rem;
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
   }
 
   .disclaimer-icon {
     font-size: 1.5rem;
     flex-shrink: 0;
+    line-height: 1;
+    margin-top: 0.15rem;
   }
 
   .disclaimer-text {

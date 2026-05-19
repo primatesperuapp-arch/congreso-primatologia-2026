@@ -189,6 +189,10 @@ const speakers = [
     box-shadow: var(--shadow-sm);
     text-align: center;
     transition: all var(--transition-mid);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
   }
   :global([data-theme="dark"]) .speaker-card-mini { background: rgba(26,58,46,0.5); }
   .speaker-card-mini:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--sc); }
@@ -226,5 +230,7 @@ const speakers = [
   .speaker-card-mini__bio {
     font-size: 0.78rem; color: var(--text-muted); line-height: 1.55;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    margin-top: auto;
+    padding-top: 0.5rem;
   }
 </style>

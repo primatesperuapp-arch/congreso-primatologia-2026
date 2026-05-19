@@ -652,6 +652,9 @@ const base =
     border-radius: var(--radius-lg);
     border: 1px solid rgba(217, 157, 85, 0.15);
     box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   :global([data-theme="dark"]) .info-card {
     background: rgba(26, 58, 46, 0.55);
@@ -680,8 +683,9 @@ const base =
     font-size: 0.8rem !important;
     font-style: italic;
     color: var(--text-muted) !important;
-    margin-top: 1rem !important;
+    margin-top: auto !important;
     line-height: 1.4;
+    padding-top: 1rem;
   }
 
   .steps-list {
@@ -772,13 +776,15 @@ const base =
     border-radius: var(--radius-sm);
     display: flex;
     gap: 1rem;
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
   }
 
   .disclaimer-icon {
     font-size: 1.5rem;
     flex-shrink: 0;
+    line-height: 1;
+    margin-top: 0.15rem;
   }
 
   .disclaimer-text {
